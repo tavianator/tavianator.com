@@ -2,6 +2,10 @@
 
 [Home](README.md)
 
+# 2016
+
+- [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
+
 # 2010
 
 - [Solving Cubic Polynomials](2010/solving_cubic_polynomials.md)
