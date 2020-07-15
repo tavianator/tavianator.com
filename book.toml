@@ -10,3 +10,4 @@ default-theme = "coal"
 preferred-dark-theme = "coal"
 additional-css = ["custom.css"]
 additional-js = ["katex.js"]
+git-repository-url = "https://github.com/tavianator/tavianator.com"
