@@ -12,7 +12,7 @@ I used to work at [Microsoft Research Montreal], and before that at a startup ca
 
 I'm probably @tavianator on your favourite website:
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: 1em;">
+<div class="elsewhere">
     <a href="https://twitter.com/tavianator"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
     <a href="https://github.com/tavianator"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
     <a href="https://www.reddit.com/user/tavianator"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>

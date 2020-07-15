@@ -23,6 +23,25 @@
     margin-left: 0;
 }
 
+.elsewhere {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 1em;
+}
+
+.elsewhere a,
+.elsewhere a:link,
+.elsewhere a:visited {
+    color: var(--fg);
+    transition: color 0.5s;
+    text-decoration: none;
+}
+
+.elsewhere a:hover {
+    color: var(--links);
+}
+
 .content h1 {
     margin-bottom: 0.25em;
 }
