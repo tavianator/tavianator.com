@@ -1,5 +1,10 @@
 # A quick trick for faster naïve matrix multiplication
 
+<div class="infobar">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-11-12
+    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+</div>
+
 If you need to multiply some matrices together very quickly, usually it's best to use a highly optimized library like [ATLAS].
 But sometimes adding such a dependency isn't worth it, if you're worried about portability, code size, etc.
 If you just need good performance, rather than the *best possible* performance, it can make sense to hand-roll your own matrix multiplication function.
@@ -221,8 +226,3 @@ void matmul(double *dest, const double *lhs, const double *rhs,
 
 On my computer, that drops the time to multiply two 256×256 matrices from 37ms to 13ms (with `gcc -O3`).
 ATLAS does it in 5ms though, so always use something like it if it's available.
-
-
----
-
-2016-11-12

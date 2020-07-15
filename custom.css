@@ -1,3 +1,32 @@
+.infobar {
+    color: var(--icons);
+    border-bottom: 1px solid var(--icons);
+}
+
+.infobar a,
+.infobar a:link,
+.infobar a:visited {
+    color: var(--icons);
+    transition: color 0.5s;
+    text-decoration: none;
+}
+
+.infobar a:hover {
+    color: var(--icons-hover);
+}
+
+.infobar i {
+    margin-left: 0.5em;
+}
+
+.infobar > i:first-child {
+    margin-left: 0;
+}
+
+.content h1 {
+    margin-bottom: 0.25em;
+}
+
 .content p {
     text-align: justify;
     hyphens: auto;
@@ -15,4 +44,3 @@
 .katex {
     white-space: nowrap;
 }
-

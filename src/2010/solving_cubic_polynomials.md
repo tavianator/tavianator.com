@@ -1,5 +1,10 @@
 # Solving Cubic Polynomials
 
+<div class="infobar">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-11-17
+    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+</div>
+
 Although a closed form solution exists for the roots of polynomials of degree ≤ 4, the general formulae for cubics (and quartics) is ugly.
 Various simplifications can be made; commonly, the cubic `$a_3 x^3 + a_2 x^2 + a_1 x + a_0$` is transformed by substituting `$x = t - a_2 / 3 a_3$`, giving
 
@@ -57,8 +62,3 @@ If `$p = 0$`, the only root is `$t_0 = 0$`; otherwise, the duplicate root is `$-
 My C implementation of this solution method can be seen in the `dmnsn_solve_cubic()` function [here].
 
 [here]: /cgit/dimension.git/tree/libdimension/math/polynomial.c#n322
-
-
----
-
-2010-11-17

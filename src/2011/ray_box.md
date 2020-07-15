@@ -1,5 +1,11 @@
 # Fast, Branchless Ray/Bounding Box Intersections
 
+<div class="infobar">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2011-05-02
+    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+    <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
+</div>
+
 <ins>(Update: [part 2](../2015/ray_box_nan.md))</ins>
 
 Axis-aligned bounding boxes (AABBs) are universally used to bound finite objects in ray-tracing.
@@ -470,8 +476,3 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > > ★ [**Tavian Barnes**](/), 2018-04-07
 > >
 > > [https://tavianator.com/fast-branchless-raybounding-box-intersections-part-2-nans/#comment-52153](https://tavianator.com/fast-branchless-raybounding-box-intersections-part-2-nans/#comment-52153)
-
-
----
-
-2011-05-02

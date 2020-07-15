@@ -1,5 +1,11 @@
 # Fast, Branchless Ray/Bounding Box Intersections, Part 2: NaNs
 
+<div class="infobar">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-03-23
+    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+    <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
+</div>
+
 In [part 1], I outlined an algorithm for computing intersections between rays and axis-aligned bounding boxes.
 The idea to eliminate branches by relying on IEEE 754 floating point properties goes back to Brian Smits in <a name="citor-1" href="#cite-1">[1]</a>, and the implementation was fleshed out by Amy Williams. et al. in <a name="citor-2" href="#cite-2">[2]</a>.
 
@@ -291,9 +297,3 @@ In my next post on this topic, I'll talk about low-level implementation details,
 >
 > It seems to me it is not related at all with software speed up, but it shows how to eliminate false negatives when using floating point.
 > Did you know about this problem?
-
-
-
----
-
-2015-03-23

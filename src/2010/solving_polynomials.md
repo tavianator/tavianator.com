@@ -1,5 +1,10 @@
 # Solving Polynomials
 
+<div class="infobar">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-10-28
+    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+</div>
+
 A well known (if not by name) theorem is the [Abel–Ruffini theorem], which states that there is no algebraic expression for the roots of polynomials with degree higher than 4.
 
 [Abel–Ruffini theorem]: http://en.wikipedia.org/wiki/Abel%E2%80%93Ruffini_theorem
@@ -35,8 +40,3 @@ Cauchy provides a general upper bound `$1 + (\max_{i=0}^{n-1} |p_i|) / |p_n|$` w
 A C implementation of this algorithm as a root-solver in my ray-tracer Dimension can be seen [here].
 
 [here]: /cgit/dimension.git/tree/libdimension/math/polynomial.c
-
-
----
-
-2010-10-28
