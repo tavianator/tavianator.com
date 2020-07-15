@@ -4,6 +4,10 @@
     word-wrap: break-word;
 }
 
+.content a:target {
+    scroll-margin-top: var(--menu-bar-height);
+}
+
 .katex {
     white-space: nowrap;
 }
