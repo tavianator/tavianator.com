@@ -4,6 +4,10 @@
     word-wrap: break-word;
 }
 
+.content blockquote p {
+    text-align: left;
+}
+
 .content a:target {
     scroll-margin-top: var(--menu-bar-height);
 }

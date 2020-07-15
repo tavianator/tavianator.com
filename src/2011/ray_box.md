@@ -472,8 +472,6 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > > [https://tavianator.com/fast-branchless-raybounding-box-intersections-part-2-nans/#comment-52153](https://tavianator.com/fast-branchless-raybounding-box-intersections-part-2-nans/#comment-52153)
 
 
-
-
 ---
 
 2011-05-02
