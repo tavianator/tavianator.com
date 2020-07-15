@@ -1,0 +1,10 @@
+.content main {
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+}
+
+.katex {
+    white-space: nowrap;
+}
+

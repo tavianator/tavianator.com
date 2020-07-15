@@ -8,3 +8,5 @@ build-dir = "site"
 [output.html]
 default-theme = "coal"
 preferred-dark-theme = "coal"
+additional-css = ["custom.css"]
+additional-js = ["katex.js"]
