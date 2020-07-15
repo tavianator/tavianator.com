@@ -6,6 +6,10 @@
 
 - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
 
+# 2011
+
+- [Fast, Branchless Ray/Bounding Box Intersections](2011/ray_box.md)
+
 # 2010
 
 - [Solving Cubic Polynomials](2010/solving_cubic_polynomials.md)
