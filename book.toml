@@ -1,0 +1,10 @@
+[book]
+authors = ["Tavian Barnes"]
+title = "tavianator.com"
+
+[build]
+build-dir = "site"
+
+[output.html]
+default-theme = "coal"
+preferred-dark-theme = "coal"
