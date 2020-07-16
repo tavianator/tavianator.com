@@ -19,6 +19,7 @@
 
 # 2013
 
+- [Java Generics Quirks](2013/java_quirks.md)
 - [Fair and Square, or How to Count to a Googol](2013/fair_and_square.md)
 
 # 2012
