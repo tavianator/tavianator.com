@@ -86,7 +86,8 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 
 ## Comments
 
-> **Phil**, 2012-04-01
+> **Phil**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2012-04-01
 >
 > This doesn't seem to work out for me for negative direction vectors.
 > Looking forward, I can see a box that's there, but looking backwards, I again see the same box mirrored, even though in this direction it's not "there".
@@ -112,31 +113,36 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > }
 > ```
 >
-> > ★ [**Tavian Barnes**](/), 2012-04-03
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2012-04-03
 > >
 > > Right, because the test is only for whether the line intersects the box at all.
 > > The line extends both forwards and backwards.
 > > Just add a tmax >= 0 check.
 > > It's tmax, not tmin, since tmin will be < 0 if the ray originates inside the box.
 
-> **Sergiy**, 2012-12-30
+> **Sergiy**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2012-12-30
 >
 > Thanks. Works nicely and fast. I updated it a bit, to use SSE (though Vectormath), floats only.
 >
 > https://gist.github.com/4412640#file-bbox-cpp-L14
 >
-> > ★ [**Tavian Barnes**](/), 2013-01-04
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2013-01-04
 > >
 > > You're welcome!
 > > I can't see that gist though (says "OAuth failure").
 > > What kind of performance did the vectorisation give you?
 
-> [**Bram Stolk**](http://stolk.org/), 2014-12-29
+> [**Bram Stolk**](http://stolk.org/)
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-12-29
 >
 > To get the actual intersection, would I just use tmin, and multiply it with ray dir, adding ray origin?
 > And what if I'm just interested in which face was intersected? x+,x-,y+,y-,z+ or z-?
 >
-> > ★ [**Tavian Barnes**](/), 2015-01-11
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-01-11
 > >
 > > Yes, that's what I'd do.
 > > Except if the ray origin is inside the box (tmin < 0), you need to use tmax instead.
@@ -146,7 +152,8 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > >
 > > For a cube centered at the origin, a neat trick is to take the component of the intersection point with the largest absolute value.
 > >
-> > > [**Bram Stolk**](http://stolk.org/), 2015-01-11
+> > > [**Bram Stolk**](http://stolk.org/)
+> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-01-11
 > > >
 > > > Thanks Tavianator,
 > > >
@@ -155,26 +162,31 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > > > If close enough to face, I assume that face was hit.<br>
 > > > I can live with the few false positives, as I shoot over 100M photons each frame anyway.
 > > >
-> > > > [**Bram Stolk**](http://stolk.org/), 2015-01-11
+> > > > [**Bram Stolk**](http://stolk.org/)
+> > > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-01-11
 > > > >
 > > > > Oops... that should be 100K photons of course.
 > > > >
-> > > > > ★ [**Tavian Barnes**](/), 2015-01-12
+> > > > > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > > > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-01-12
 > > > > >
 > > > > > Haha I was *really* impressed for a second :)
 > > > > >
 > > > > > The cube trick does not require sorting, just selecting the max from three candidates.
 > >
-> > > **Francisco**, 2015-03-12
+> > > **Francisco**
+> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-03-12
 > > >
 > > > So if I return a vec3 with tmin, tmax and a float hit = step(tmin,tmax)\*step(0,tmax), I basically know that if hit > 0 then ro+rd\*tmin is my lower bound intersection point (entry point) and ro+rd\*tmax is my higher bound intersection point (exit point), right?
 > > > However, if tmin < 0, I'm inside the bounding box, which means I don't need the entry point and I can just use the ray origin as my starting point.
 > > >
-> > > > ★ [**Tavian Barnes**](/), 2015-03-12
+> > > > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-03-12
 > > > >
 > > > > Sorry, not sure what you mean by `step()`. You can get the starting point as `ro + td*max(tmin, 0.0)`.
 > > > >
-> > > > > **Francisco**, 2015-04-01
+> > > > > **Francisco**
+> > > > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-04-01
 > > > > >
 > > > > > step(edge,A) returns 1 if A >= edge, 0 elsewise.
 > > > > > So I know if it was a hit if tmax >= tmin AND tmax >= 0.
@@ -183,24 +195,29 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > > > > > I implemented this in C++ and it works perfectly for any ray direction.
 > > > > > However, in GLSL it seems to have problems with negative directions.
 
-> [**Jon olick**](http://jonolick.com/), 2015-01-22
+> [**Jon olick**](http://jonolick.com/)
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-01-22
 >
 > Something to consider here is that 0 \* inf =nan which occurs when the ray starts exactly on the edge of a box
 >
-> > ★ [**Tavian Barnes**](/), 2015-01-31
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-01-31
 > >
 > > True, if you want consistent handling of that case while staying branch-free, you have to do a little more work.
 > > This is worth another post actually, I'll write one up.
 > >
-> > > **Josh**, 2017-08-14
+> > > **Josh**
+> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-08-14
 > > >
 > > > Did you do another post?
 > > >
-> > > > ★ [**Tavian Barnes**](/), 2017-08-16
+> > > > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-08-16
 > > > >
 > > > > Yep: [https://tavianator.com/2015/03/fast-branchless-raybounding-box-intersections-part-2-nans/](https://tavianator.com/2015/03/fast-branchless-raybounding-box-intersections-part-2-nans/)
 
-> **Chris**, 2015-03-08
+> **Chris**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-03-08
 >
 > Thanks for posting this (so long ago)!
 > I used this in my own code, and wondered if it is possible to save 2 of the subtractions by taking advantage of the fact that min(x+a, y+a) = min(x,y)+a (for some constant a):
@@ -227,7 +244,8 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > }
 > ```
 >
-> > ★ [**Tavian Barnes**](/), 2015-03-11
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-03-11
 > >
 > > I think that should work, but there's a couple bugs in your example code.
 > > And actually for the test as written you can omit `r.offset` entirely since it doesn't affect the `tmax >= tmin` check at the end.
@@ -257,15 +275,18 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > >
 > > I'll try it out and see how much faster it is, thanks!
 
-> **Mario**, 2015-05-16
+> **Mario**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-05-16
 >
 > What if I want to know the 't' of the intersection?
 >
-> > ★ [**Tavian Barnes**](/), 2015-05-16
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-05-16
 > >
 > > `$t = t_{\min}$`, unless `$t_{\min} < 0$`, in which case you're inside the box and `$t = t_{\max}$`.
 
-> [**Cody Bloemhard**](http://ocdy1001.blogspot.nl/), 2015-05-29
+> [**Cody Bloemhard**](http://ocdy1001.blogspot.nl/)
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-05-29
 >
 > Very useful! faster the any method i tried.
 > not because of the !(use of divisions), but because the implementation of the slab method is far simpler than others do.
@@ -273,7 +294,8 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > now my raycasting method has the speed i wanted.
 > Thanks for that.
 
-> **Ciyo**, 2015-12-01
+> **Ciyo**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-12-01
 >
 > Hello, many thanks for this useful information!
 >
@@ -281,22 +303,26 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 >
 > Thank you!
 >
-> > **Phlimy**, 2016-09-06
+> > **Phlimy**
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-09-06
 > >
 > > I would really like to know too!
 
-> **Diego Sinay**, 2016-05-12
+> **Diego Sinay**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-05-12
 >
 > Hi, great read!<br>
 > One quick question.<br>
 > I had no problem using the first implementation for my ray-tracing algorithm, but can't implement that faster version since I can't get the inverse of the direction vector(doesn't it have to be squared?).<br>
 > Any help is appreciated, Thanks!
 >
-> > ★ [**Tavian Barnes**](/), 2016-05-16
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-05-16
 > >
 > > You can just compute (1/x, 1/y, 1/z) as the inverse. You don't have to square it.
 > >
-> > > **SW**, 2018-02-27
+> > > **SW**
+> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-02-27
 > > >
 > > > I know this is from a couple of years but ago now, but I’m really confused by this.
 > > >
@@ -310,23 +336,27 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > > >
 > > > Sorry if this is a stupid question!
 > > >
-> > > > ★ [**Tavian Barnes**](/), 2018-02-27
+> > > > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-02-27
 > > > >
 > > > > 1/0 is not zero. In IEEE 754 arithmetic, it is +inf.
 > > > >
-> > > > > **SW**, 2018-02-27
+> > > > > **SW**
+> > > > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-02-27
 > > > > >
 > > > > > So the inverse of a ray going positive X direction is (1, +inf, +inf)?<br>
 > > > > > I'm having a hard time understanding that! I'm trying to find some sources to explain this but comin up short.<br>
 > > > > > I would have though the inverse ray would be (x*-1, y*-1, z*-1), making an inverse ray of positive X as (-1, 0, 0). Then it's a ray going in the opposite direction.<br>
 > > > > > By the way, thank you for answering, I realise I'm probably asking really stupid questions.
 > > > > >
-> > > > > > ★ [**Tavian Barnes**](/), 2018-02-27
+> > > > > > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > > > > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-02-27
 > > > > > >
 > > > > > > The "inverse" is not a ray at all.
 > > > > > > It's just three numbers that are the (multiplicative) inverses of the direction components.
 
-> [**Phil**](https://kleinfreund.de/), 2016-06-23
+> [**Phil**](https://kleinfreund.de/)
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-06-23
 >
 > Hey there,
 >
@@ -341,7 +371,8 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 >
 > Nevermind me. Thank you for the write-up in both articles. :)
 
-> **Dave**, 2016-09-27
+> **Dave**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-09-27
 >
 > Does anyone know why this doesn't seem to work in GLSL for all angles?
 >
@@ -382,26 +413,30 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > }
 > ```
 >
-> > ★ [**Tavian Barnes**](/), 2016-09-29
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-09-29
 > >
 > > What do you mean "doesn't work"?
 > > What happens?
 > > Do you have a numerical example that gets evaluated wrong?
 >
-> > **skewed**, 2018-01-31
+> > **skewed**
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-01-31
 > >
 > > `INFINITY is defined as const float INFINITY = 1.0 / 0.0;`
 > >
 > > You can't divide by zero like this.
 > > The result is undefined in glsl, which means the implementation is free to do whatever nonsense it wants to when it encounters this statement (except - according to the spec - crash).
 
-> **Ali**, 2017-02-01
+> **Ali**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-02-01
 >
 > How to find the intersection points of a Cartesian grid and a boundary (e.g. a circle, an ellipse, an arbitrary shape)?
 > I am interested in the intersection of the boundary with the cartesian grid.
 > Any suggestion/algorithm, kindly email me.
 
-> [**Mark R**](http://www.io7m.com/), 2017-05-16
+> [**Mark R**](http://www.io7m.com/)
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-05-16
 >
 > Hello.
 >
@@ -415,7 +450,8 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > Maybe I've misunderstood the intent of the other article: What changes do I need to make to reliably catch ray/edge intersections?
 > I care less about efficiency and more about avoiding false negatives.
 >
-> > ★ [**Tavian Barnes**](/), 2017-05-17
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-05-17
 > >
 > > If you're not concerned with efficiency too much, just take the "naïve" code from part 2 and swap `<=`/`>=` with `<`/`>`:
 > >
@@ -439,11 +475,13 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > > }
 > > ```
 > >
-> > > [**Mark R**](http://www.io7m.com/), 2017-05-17
+> > > [**Mark R**](http://www.io7m.com/)
+> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-05-17
 > > >
 > > > Ah, OK, thanks!
 
-> **Amomum**, 2017-06-09
+> **Amomum**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-06-09
 >
 > Can you please explain what is this 'double t' parameter is?
 >
@@ -452,7 +490,8 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > It hurts me to say this but I believe that some of the functions do require comments about their input parameters.
 > Or more obvious names.
 >
-> > ★ [**Tavian Barnes**](/), 2017-06-13
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-06-13
 > >
 > > A common way of defining lines (see `dmnsn_ray`) is by the parametric formula `origin + t*direction`.
 > > Commonly we restrict `t >= 0` to get a half-line starting from the given origin.
@@ -461,7 +500,8 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > >
 > > I agree that should be better documented! :)
 
-> **Kanzaki**, 2018-04-02
+> **Kanzaki**
+> <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-04-02
 >
 > Hi, thanks a lot for sharing.
 >
@@ -473,6 +513,7 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 >
 > Thanks a lot.
 >
-> > ★ [**Tavian Barnes**](/), 2018-04-07
+> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
+> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-04-07
 > >
 > > [https://tavianator.com/fast-branchless-raybounding-box-intersections-part-2-nans/#comment-52153](https://tavianator.com/fast-branchless-raybounding-box-intersections-part-2-nans/#comment-52153)

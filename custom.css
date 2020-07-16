@@ -56,6 +56,14 @@
     text-align: left;
 }
 
+.content blockquote i.fa {
+    margin-left: 0.5em;
+}
+
+.content blockquote i.fa:first-child {
+    margin-left: 0;
+}
+
 .content a:target {
     scroll-margin-top: var(--menu-bar-height);
 }
