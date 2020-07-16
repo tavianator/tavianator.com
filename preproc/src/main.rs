@@ -21,9 +21,6 @@ impl SiteProc {
 
     pub fn visit_book_item(&self, item: &mut BookItem) {
         if let BookItem::Chapter(chapter) = item {
-            // Numbered chapters don't make much sense on a blog
-            chapter.number = None;
-
             // Implement our Markdown extensions
             let mut content = String::with_capacity(2 * chapter.content.len());
             let parser = new_cmark_parser(&chapter.content);
