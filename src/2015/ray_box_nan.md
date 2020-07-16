@@ -1,11 +1,14 @@
 # Fast, Branchless Ray/Bounding Box Intersections, Part 2: NaNs
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-03-23
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
-    <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
-    <a href="https://old.reddit.com/r/GraphicsProgramming/comments/338n9k/fast_branchless_raybounding_box_intersections/"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>
+
+<fa:clock-o> 2015-03-23
+<fa:user> Tavian Barnes
+[<fa:comments> Comments](#comments)
+[<fa:reddit> Reddit](https://old.reddit.com/r/GraphicsProgramming/comments/338n9k/fast_branchless_raybounding_box_intersections/)
+
 </div>
+
 
 In [part 1], I outlined an algorithm for computing intersections between rays and axis-aligned bounding boxes.
 The idea to eliminate branches by relying on IEEE 754 floating point properties goes back to Brian Smits in <a name="citor-1" href="#cite-1">[1]</a>, and the implementation was fleshed out by Amy Williams. et al. in <a name="citor-2" href="#cite-2">[2]</a>.
@@ -226,41 +229,41 @@ In my next post on this topic, I'll talk about low-level implementation details,
 ## Comments
 
 > **Sven-Hendrik Haase**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-11-20
+> <fa:clock-o> 2015-11-20
 >
 > For some reason, your code doesn't yield any results in my program.
-> I'm using glm and wrote it like this: [https://gist.github.com/a64045811d5dcf378b6a](https://gist.github.com/a64045811d5dcf378b6a)
+> I'm using glm and wrote it like this: <https://gist.github.com/a64045811d5dcf378b6a>
 >
 > It just never collides with anything.
-> However, this: [https://gist.github.com/a64045811d5dcf378b6a](https://gist.github.com/a64045811d5dcf378b6a) from scratchapixel.com works just fine.
+> However, this: <https://gist.github.com/a64045811d5dcf378b6a> from scratchapixel.com works just fine.
 >
 > I would like to use your algorithm, though, since it's likely faster. Can you help me figure out where I went wrong?
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-12-01
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2015-12-01
 > >
 > > Well, [here](https://gist.github.com/svenstaro/a64045811d5dcf378b6a/cf04bfee0446fb7be71d4c35308d2a1d8591e303#file-intersections-hpp-L5), you are multiplying by `dir.x` instead of `dir_inv.x`.
 > >
 > > > **Sven-Hendrik Haase**
-> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-12-03
+> > > <fa:clock-o> 2015-12-03
 > > >
 > > > Oh gee, thanks man!
 > > > Awesome work.
 
 > **Anna**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-02-08
+> <fa:clock-o> 2017-02-08
 >
 > Hi!
 > Why is this article using "return tmax > tmin" rather then "return tmax >= tmin" from the previous article?
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-02-18
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2017-02-18
 > >
 > > You will have tmax == tmin whenever the ray exactly intersects an edge or corner of the bounding box.
 > > Since we already decided that a ray that lies exactly in the plane of a face isn't an intersection, I thought it made sense for the edges and corners to not count either.
 > >
 > > > **Sebastien Maraux**
-> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-05-28
+> > > <fa:clock-o> 2018-05-28
 > > >
 > > > Nice article.
 > > > I tried the SSE implementation, and some unit tests at home are failing on specific case, namely BBoxes with very small size in one dimension : if the dimension size is lost by the float / double precision when substracted to origin, a comparison with tmax >= tmin is mandatory.
@@ -269,44 +272,44 @@ In my next post on this topic, I'll talk about low-level implementation details,
 > > > I consider that points on edges / corners are inside the intersection to get rid of this, as it does not lead to issues in my use case.
 
 > **Matas Peciukonis**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-03-26
+> <fa:clock-o> 2017-03-26
 >
 > How do you get the normals of the box, I don't understand, without them , how do you shade anything?
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-02-18
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2017-02-18
 > >
 > > This is for bounding boxes, not box objects in a scene.
 > > But if you want to use this approach for boxes in your scene, you can compute the intersection point in object space (assuming your box is from (-1, -1, -1) to (1, 1, 1)) and then clip all the values that aren't very close to -1 or 1 to zero.
 > > For example, if the intersection point is (-1, 0.1, 0.9), the normal is (-1, 0, 0).
 > >
 > > > [**John Novak**](http://www.johnnovak.net/)
-> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2017-06-13
+> > > <fa:clock-o> 2017-06-13
 > > >
 > > > I actually came up with a somewhat similar solution for a fast box normal calculation routine.
 > > > As usual, there were a few subtleties to this...
 > > >
-> > > [http://blog.johnnovak.net/2016/10/22/the-nim-raytracer-project-part-4-calculating-box-normals/](http://blog.johnnovak.net/2016/10/22/the-nim-raytracer-project-part-4-calculating-box-normals/)
+> > > <http://blog.johnnovak.net/2016/10/22/the-nim-raytracer-project-part-4-calculating-box-normals/>
 
 > **Aleksei**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-08-02
+> <fa:clock-o> 2018-08-02
 >
-> Hi,<br>
+> Hi, \
 > Code doesn't work if you want to intersect a ray with infinity thin box, like AABB of a plane.
 > However it works if we change it to: return tmax >= max(tmin, 0.0);
 >
 > > **Tara**
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2019-03-25
+> > <fa:clock-o> 2019-03-25
 > >
-> > YES!<br>
+> > YES! \
 > > I spent half a fucking day debugging this shit cuz no attention was paid to that problem!
 > >
 > > Use >= instead of >!!!
 
 > **Eric James**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2018-09-09
+> <fa:clock-o> 2018-09-09
 >
-> An interesting approach of eliminating floating point round off errors during the computation of the Slabs Method t intersection distances can be found here: [https://github.com/constantinides/RAABB](https://github.com/constantinides/RAABB)
+> An interesting approach of eliminating floating point round off errors during the computation of the Slabs Method t intersection distances can be found here: <https://github.com/constantinides/RAABB>
 >
 > It seems to me it is not related at all with software speed up, but it shows how to eliminate false negatives when using floating point.
 > Did you know about this problem?

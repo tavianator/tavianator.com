@@ -1,10 +1,13 @@
 # Righteous hack: getting 2<sup>63</sup> - 1 points in a silly Facebook game
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-12-13
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
-    <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
+
+<fa:clock-o> 2010-12-13
+<fa:user> Tavian Barnes
+[<fa:comments> Comments](#comments)
+
 </div>
+
 
 Security through obscurity doesn't work.
 Every once in a while I like to prove this fact, by getting worldwide high scores on vulnerable leaderboards.
@@ -56,23 +59,23 @@ If you do it right, the game will greet you with "Congratulations! You've just s
 ## Comments
 
 > **lloyd**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-12-15
+> <fa:clock-o> 2010-12-15
 >
 > i just cant get the 8-byte key
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-12-15
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2010-12-15
 > >
 > > Look for the RC4_KEY variable.
 
 > **JC**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-12-21
+> <fa:clock-o> 2010-12-21
 >
-> Hello,<br>
-> I'm currently trying to modify a different game but also from MindJolt.<br>
-> It seems Googling for "servlet/NextSubmitScore" I was able to find your page.<br>
-> I'm also having trouble finding the RC4 key.<br>
-> Do we dump the api_as2_local.swf? ie. swfdump -D api_as2_local.swf?<br>
+> Hello, \
+> I'm currently trying to modify a different game but also from MindJolt. \
+> It seems Googling for "servlet/NextSubmitScore" I was able to find your page. \
+> I'm also having trouble finding the RC4 key. \
+> Do we dump the api_as2_local.swf? ie. swfdump -D api_as2_local.swf? \
 >
 > I'm not able to find the RC4_KEY variable anywhere :S
 >
@@ -84,12 +87,12 @@ If you do it right, the game will greet you with "Congratulations! You've just s
 > -JC
 >
 > > **JC**
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-12-21
+> > <fa:clock-o> 2010-12-21
 > >
 > > NM found the RC4_KEY... Now I gotta figure out how to decrypt/encrypt string given key. :D
 
 > **Nick**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2011-01-11
+> <fa:clock-o> 2011-01-11
 >
 > Very cool.
 > After getting the #1 legit high score for the week on that typing game, I was curious about the hacked ones.
@@ -99,8 +102,8 @@ If you do it right, the game will greet you with "Congratulations! You've just s
 >
 > You have a pretty neat website -- just thought I'd share that.
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2011-01-11
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2011-01-11
 > >
 > > Thanks.
 > > Why do an AJAX request for the high scorers anyway?
@@ -110,7 +113,7 @@ If you do it right, the game will greet you with "Congratulations! You've just s
 > > But you've only got a signed 32-bit integer to work with when you do it that way, so the 4 or so 64-bit scores must've been done this way.
 > >
 > > > **Nick**
-> > > <i class="fa fa-clock-o" aria-hidden="true"></i> 2011-01-12
+> > > <fa:clock-o> 2011-01-12
 > > >
 > > > Oh, I wasn't writing my own requests -- I was just reading Facebook's with Firebug.
 > > > As far as I know, that's the only way to find the profile id's of the high scorers.

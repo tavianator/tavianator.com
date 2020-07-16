@@ -1,0 +1,12 @@
+[package]
+name = "preproc"
+version = "0.1.0"
+authors = ["Tavian Barnes <tavianator@tavianator.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "*"
+mdbook = "*"
+pulldown-cmark = "*"
+pulldown-cmark-to-cmark = "*"
+serde_json = "*"

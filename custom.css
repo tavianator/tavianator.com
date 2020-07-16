@@ -3,6 +3,10 @@
     border-bottom: 1px solid var(--icons);
 }
 
+.infobar p {
+    margin: 1px 0;
+}
+
 .infobar a,
 .infobar a:link,
 .infobar a:visited {
@@ -19,11 +23,11 @@
     margin-left: 0.5em;
 }
 
-.infobar > i:first-child {
+.infobar p > i:first-child {
     margin-left: 0;
 }
 
-.elsewhere {
+.elsewhere p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

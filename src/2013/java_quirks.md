@@ -1,8 +1,10 @@
 # Java Generics Quirks
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2013-07-18
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+
+<fa:clock-o> 2013-07-18
+<fa:user> Tavian Barnes
+
 </div>
 
 
@@ -35,14 +37,14 @@ Answers:
 
 - `List<List<? extends Number>>` [does not capture a `List<List<Number>>`](http://stackoverflow.com/questions/3546745/multiple-wildcards-on-a-generic-methods-makes-java-compiler-and-me-very-confu/3547372#3547372).
   In fact, it does not capture at all, so the assignment `warmUp = list` is <span style="font-weight: bold; color: red;">invalid</span>.
-- `ListOfListOf<Number> normalCast = (ListOfListOf<Number>) list;`<br>
+- `ListOfListOf<Number> normalCast = (ListOfListOf<Number>) list;` \
   Eclipse says <span style="font-weight: bold; color: green;">yes</span>, `javac` says <span style="font-weight: bold; color: green;">yes</span>.
-- `ListOfListOf<?> wildcardCast = (ListOfListOf<?>) list;`<br>
+- `ListOfListOf<?> wildcardCast = (ListOfListOf<?>) list;` \
   Eclipse says "<span style="font-weight: bold; color: red;">no way man</span>!"
   `javac` says "<span style="font-weight: bold; color: green;">sure</span>."
-- `List<? extends List<? extends Number>> wider = list;`<br>
+- `List<? extends List<? extends Number>> wider = list;` \
   Just a normal widening conversion. Eclipse and javac say "<span style="font-weight: bold; color: green;">whatever, man</span>."
-- `ListOfListOf<?> narrowingCast = (ListOfListOf<?>) wider;`<br>
+- `ListOfListOf<?> narrowingCast = (ListOfListOf<?>) wider;` \
   Eclipse says "<span style="font-weight: bold; color: green;">no problem</span>," `javac` says "<span style="font-weight: bold; color: red;">I'm sorry, Dave. I'm afraid I can't do that</span>."
 
 Ready to go again?

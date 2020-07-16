@@ -1,7 +1,10 @@
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-10-24
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+
+<fa:clock-o> 2010-10-24
+<fa:user> Tavian Barnes
+
 </div>
+
 
 Hell is freezing over.
 Or something.

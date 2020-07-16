@@ -1,9 +1,11 @@
 # Facebook Hacker Cup Qualification Round: Double Squares
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2011-01-10
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
-    <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
+
+<fa:clock-o> 2011-01-10
+<fa:user> Tavian Barnes
+[<fa:comments> Comments](#comments)
+
 </div>
 
 Facebook has decided to hold a programming competition, I guess.
@@ -95,12 +97,12 @@ Apparently plenty of people did that very same thing, so Facebook later decided 
 ## Comments
 
 > [**Luis Argote**](http://argote.mx/)
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2011-01-10
+> <fa:clock-o> 2011-01-10
 >
 > Hello, nice answer, I went for something much more straightforward but did the same thing with the time...
 > BTW, what are you using to display your source code in a box?
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2011-01-10
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2011-01-10
 > >
 > > The plugin's called WP-Syntax.

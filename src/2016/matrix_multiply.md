@@ -1,9 +1,12 @@
 # A quick trick for faster naïve matrix multiplication
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-11-12
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+
+<fa:clock-o> 2016-11-12
+<fa:user> Tavian Barnes
+
 </div>
+
 
 If you need to multiply some matrices together very quickly, usually it's best to use a highly optimized library like [ATLAS].
 But sometimes adding such a dependency isn't worth it, if you're worried about portability, code size, etc.

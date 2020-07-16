@@ -3,11 +3,14 @@
 # k-d Forests
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-03-10
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
-    <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
-    <a href="https://www.reddit.com/r/programming/comments/205p2a/kd_forests_optimizing_all_rgb_colors_in_one_image/"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>
+
+<fa:clock-o> 2014-03-10
+<fa:user> Tavian Barnes
+[<fa:comments> Comments](#comments)
+[<fa:reddit> Reddit](https://www.reddit.com/r/programming/comments/205p2a/kd_forests_optimizing_all_rgb_colors_in_one_image/)
+
 </div>
+
 
 Recently I saw an interesting [Code Golf] problem: [create an image using all possible RGB colours].
 The [top ranked submission], by József Fejes, contained some truly beautiful images, but they took an immense amount of time to generate.
@@ -84,18 +87,18 @@ Thanks to József Fejes for the concept.
 ## Comments
 
 > [**Andrew McDowell**](http://www.mcdowella.demon.co.uk/)
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-03-12
+> <fa:clock-o> 2014-03-12
 >
-> There is some more info on this sort of thing at [http://en.wikipedia.org/wiki/Dynamization](http://en.wikipedia.org/wiki/Dynamization), [http://wwwisg.cs.uni-magdeburg.de/ag/lehre/SS2009/GDS/slides/S12.pdf](http://wwwisg.cs.uni-magdeburg.de/ag/lehre/SS2009/GDS/slides/S12.pdf), and [http://www.mpi-inf.mpg.de/~mehlhorn/ftp/mehlhorn27.pdf](http://www.mpi-inf.mpg.de/~mehlhorn/ftp/mehlhorn27.pdf).
+> There is some more info on this sort of thing at <http://en.wikipedia.org/wiki/Dynamization>, <http://wwwisg.cs.uni-magdeburg.de/ag/lehre/SS2009/GDS/slides/S12.pdf>, and <http://www.mpi-inf.mpg.de/~mehlhorn/ftp/mehlhorn27.pdf>.
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-03-12
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2014-03-12
 > >
 > > Thanks for the links!
 > > I've seen the technique applied before but it's interesting to see the black-box analysis.
 
 > [Leland Batey](http://lelandbatey.com/)
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-03-13
+> <fa:clock-o> 2014-03-13
 >
 > Hey, I encountered some errors with building this, and I wanted to share how I resolved them.
 >
@@ -106,19 +109,19 @@ Thanks to József Fejes for the concept.
 > The change is the addition of `-lpng` on the end.
 > That resolved my compilation problem.
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-03-13
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2014-03-13
 > >
 > > Yeah it's good practice to put the -l\*s after the source files but I forgot. Fixed now, thanks!
 
 > **Gregor_TL**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-03-19
+> <fa:clock-o> 2014-03-19
 >
 > How did you generate \*hue and \*hue2 images?
 > What makes them so different?
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-03-19
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2014-03-19
 > >
 > > You can see in József's hue-sorted images that there are some artefacts near the edges.
 > > This happens because there are naturally "holes" in the image as it's generated, and by the time the purple pixels are being placed, those holes are the only empty places for them.
@@ -131,20 +134,20 @@ Thanks to József Fejes for the concept.
 > > You can see that in the code [here](/cgit/kd-forest.git/commit/?id=cd9936f9b09720c949c5fe8262eca45c31244fe3).
 
 > **sammko**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-07-30
+> <fa:clock-o> 2014-07-30
 >
 > Hi, I rendered a 22-bit animation (2048x2048) and cropped it down to 1080p.
 > You can see the result on [YouTube](https://youtu.be/NVmJV7qxClI).
 > Thanks for the algorithm :D
 
 > **MrNosco**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-09-01
+> <fa:clock-o> 2015-09-01
 >
-> You shouldn't use uint8_t pixel[3] notation in function arguments.<br>
+> You shouldn't use uint8_t pixel[3] notation in function arguments. \
 > It might look like sizeof(pixel) should be sizeof(uint8_t[3]), but it's actually sizeof(uint_t*).
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-09-02
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2015-09-02
 > >
 > > Yeah I read [this thread](https://lkml.org/lkml/2015/9/3/428%20rel=) too.
 > > But because this is my code, I get to have my own opinions on what I should and shouldn't do.
@@ -152,7 +155,7 @@ Thanks to József Fejes for the concept.
 > > You'd have a point if I actually used `sizeof(pixel)` anywhere, but I don't.
 
 > **Henry**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2020-01-15
+> <fa:clock-o> 2020-01-15
 >
 > Hey I'm trying to do something similar a, but I have a question for you.
 >
@@ -163,8 +166,8 @@ Thanks to József Fejes for the concept.
 >
 > Am I correct in thinking your averaging scheme is slightly different to the original guy's, or if not how did you do nearest neighbor search for the average selection case?
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2020-01-30
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2020-01-30
 > >
 > > You're right!
 > > I didn't realize that's what the original code did.

@@ -3,10 +3,13 @@
 # Porting k-d forests to Rust
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2020-05-03
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
-    <a href="https://www.reddit.com/r/rust/comments/gctk67/porting_kd_forests_to_rust/"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>
+
+<fa:clock-o> 2020-05-03
+<fa:user> Tavian Barnes
+[<fa:reddit> Reddit](https://www.reddit.com/r/rust/comments/gctk67/porting_kd_forests_to_rust/)
+
 </div>
+
 
 I recently decided to give a serious go to learning [Rust].
 As my first non-toy project, I decided to port an old piece of code I'd been wanting to dust off anyway: [k-d forests].

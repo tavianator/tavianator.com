@@ -1,10 +1,12 @@
 # Fair and Square, or How to Count to a Googol
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2013-04-15
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
-    <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
-    <a href="https://www.reddit.com/r/programming/comments/1ce2ku/my_solution_for_fair_and_square_google_code_jam/"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>
+
+<fa:clock-o> 2013-04-15
+<fa:user> Tavian Barnes
+[<fa:comments> Comments](#comments)
+[<fa:reddit> Reddit](https://www.reddit.com/r/programming/comments/1ce2ku/my_solution_for_fair_and_square_google_code_jam/)
+
 </div>
 
 
@@ -338,7 +340,7 @@ However, I feel like this function could be modified in some way to account for 
 ## Comments
 
 > **Zoli**
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2013-05-06
+> <fa:clock-o> 2013-05-06
 >
 > Really nice analysis of the problem!
 > Unfortunately during the competition I did not realize the part that the square root can only contain 0s, 1s, 2s or 3, so my algorithm was not fast enough for the large dataset.
@@ -347,8 +349,8 @@ However, I feel like this function could be modified in some way to account for 
 > Should I read lots of algorithm books or compete on TopCoder or other competitions, or what do you suggest?
 > How long did it take for you to analyze this problem quite thoroughly?
 >
-> > <i class="fa fa-user" aria-hidden="true"></i> [**Tavian Barnes**](/)
-> > <i class="fa fa-clock-o" aria-hidden="true"></i> 2013-05-30
+> > <fa:user> [**Tavian Barnes**](/)
+> > <fa:clock-o> 2013-05-30
 > >
 > > It took me the day to get that problem done (and it was the only one I did), and about another to write this up.
 > >

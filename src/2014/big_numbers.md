@@ -1,9 +1,11 @@
 # Big Numbers
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-01-08
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
-    <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
+
+<fa:clock-o> 2014-01-08
+<fa:user> Tavian Barnes
+[<fa:comments> Comments](#comments)
+
 </div>
 
 
@@ -131,6 +133,6 @@ That means `$\mathcal{G}(m)$` grows faster than any function that can be shown t
 ## Comments
 
 > [**Luqman**](http://luqmansahaf.blogspot.com/)
-> <i class="fa fa-clock-o" aria-hidden="true"></i> 2016-03-17
+> <fa:clock-o> 2016-03-17
 >
-> This is good explanation of ordinals: [http://www.sjsu.edu/faculty/watkins/ordinals.htm](http://www.sjsu.edu/faculty/watkins/ordinals.htm)
+> This is good explanation of ordinals: <http://www.sjsu.edu/faculty/watkins/ordinals.htm>

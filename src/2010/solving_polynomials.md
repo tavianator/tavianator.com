@@ -1,9 +1,12 @@
 # Solving Polynomials
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2010-10-28
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+
+<fa:clock-o> 2010-10-28
+<fa:user> Tavian Barnes
+
 </div>
+
 
 A well known (if not by name) theorem is the [Abel–Ruffini theorem], which states that there is no algebraic expression for the roots of polynomials with degree higher than 4.
 

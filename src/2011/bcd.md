@@ -1,8 +1,10 @@
 # Fast Binary-Coded Decimal Addition and Subtraction
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2011-04-05
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+
+<fa:clock-o> 2011-04-05
+<fa:user> Tavian Barnes
+
 </div>
 
 

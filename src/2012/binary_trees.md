@@ -1,8 +1,10 @@
 # Iterating Over Binary Trees
 
 <div class="infobar">
-    <i class="fa fa-clock-o" aria-hidden="true"></i> 2012-04-19
-    <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+
+<fa:clock-o> 2012-04-19
+<fa:user> Tavian Barnes
+
 </div>
 
 
