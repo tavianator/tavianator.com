@@ -5,6 +5,11 @@
 # 2020
 
 - [Porting k-d forests to Rust](2020/porting_kd_forests.md)
+
+# 2018
+
+- [spawn() of Satan](2018/spawn_of_satan.md)
+
 # 2016
 
 - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
