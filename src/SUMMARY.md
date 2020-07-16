@@ -20,6 +20,7 @@
 # 2011
 
 - [Fast, Branchless Ray/Bounding Box Intersections](2011/ray_box.md)
+- [Facebook Hacker Cup Qualification Round: Double Squares](2011/double_squares.md)
 
 # 2010
 
