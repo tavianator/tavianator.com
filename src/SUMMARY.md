@@ -17,6 +17,10 @@
 
 - [k-d Forests](2014/kd_forests.md)
 
+# 2013
+
+- [Fair and Square, or How to Count to a Googol](2013/fair_and_square.md)
+
 # 2012
 
 - [Iterating Over Binary Trees](2012/binary_trees.md)
