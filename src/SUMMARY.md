@@ -21,6 +21,7 @@
 
 # 2014
 
+- [A Beautiful Ray/Mesh Intersection Algorithm](2014/ray_mesh.md)
 - [A Beautiful Ray/Triangle Intersection Method](2014/ray_triangle.md)
 - [k-d Forests](2014/kd_forests.md)
 - [Big Numbers](2014/big_numbers.md)
