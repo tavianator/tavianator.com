@@ -23,6 +23,7 @@
 
 # 2010
 
+- [Righteous hack: getting 2⁶³ - 1 points in a silly Facebook game](2010/righteous_hack.md)
 - [Solving Cubic Polynomials](2010/solving_cubic_polynomials.md)
 - [Solving Polynomials](2010/solving_polynomials.md)
 - [.com](2010/first.md)
