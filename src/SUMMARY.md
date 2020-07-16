@@ -9,6 +9,7 @@
 # 2018
 
 - [spawn() of Satan](2018/spawn_of_satan.md)
+- [Cracking DHCE (Diffie-Hellman color exchange)](2018/dhce.md)
 
 # 2016
 
