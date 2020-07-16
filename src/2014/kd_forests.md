@@ -6,6 +6,7 @@
     <i class="fa fa-clock-o" aria-hidden="true"></i> 2014-03-10
     <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
     <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
+    <a href="https://www.reddit.com/r/programming/comments/205p2a/kd_forests_optimizing_all_rgb_colors_in_one_image/"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>
 </div>
 
 Recently I saw an interesting [Code Golf] problem: [create an image using all possible RGB colours].

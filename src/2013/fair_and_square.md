@@ -4,6 +4,7 @@
     <i class="fa fa-clock-o" aria-hidden="true"></i> 2013-04-15
     <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
     <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
+    <a href="https://www.reddit.com/r/programming/comments/1ce2ku/my_solution_for_fair_and_square_google_code_jam/"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>
 </div>
 
 

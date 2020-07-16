@@ -4,6 +4,7 @@
     <i class="fa fa-clock-o" aria-hidden="true"></i> 2015-03-23
     <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
     <a href="#comments"><i class="fa fa-comments"></i> Comments</a>
+    <a href="https://old.reddit.com/r/GraphicsProgramming/comments/338n9k/fast_branchless_raybounding_box_intersections/"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>
 </div>
 
 In [part 1], I outlined an algorithm for computing intersections between rays and axis-aligned bounding boxes.

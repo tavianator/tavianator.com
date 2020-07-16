@@ -5,6 +5,7 @@
 <div class="infobar">
     <i class="fa fa-clock-o" aria-hidden="true"></i> 2020-05-03
     <i class="fa fa-user" aria-hidden="true"></i> Tavian Barnes
+    <a href="https://www.reddit.com/r/rust/comments/gctk67/porting_kd_forests_to_rust/"><i class="fa fa-reddit" aria-hidden="true"></i> Reddit</a>
 </div>
 
 I recently decided to give a serious go to learning [Rust].
