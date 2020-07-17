@@ -2,6 +2,10 @@
 
 - [Home](README.md)
 
+- [Projects](projects/README.md)
+  - [bfs](projects/bfs.md)
+  - [acap](projects/acap.md)
+
 - [2020]()
   - [Porting k-d forests to Rust](2020/porting_kd_forests.md)
 
