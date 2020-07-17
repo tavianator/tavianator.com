@@ -14,5 +14,5 @@ no-section-label = true
 git-repository-url = "https://github.com/tavianator/tavianator.com"
 
 [preprocessor.site]
-command = "./preproc/target/debug/preproc"
+command = "./target/debug/preproc"
 renderer = ["html"]
