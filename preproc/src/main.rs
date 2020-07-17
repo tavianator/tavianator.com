@@ -5,19 +5,42 @@ use mdbook::errors::Error;
 use mdbook::preprocess::{CmdPreprocessor, Preprocessor, PreprocessorContext};
 use mdbook::utils::new_cmark_parser;
 
-use pulldown_cmark::{CowStr, Event, Tag, LinkType};
+use pulldown_cmark::{CodeBlockKind, CowStr, Event, Tag, LinkType};
 
 use pulldown_cmark_to_cmark::cmark;
 use pulldown_cmark_to_cmark::State as CmarkState;
 
-use std::io;
+use std::io::{self, Write};
 use std::iter;
-use std::process;
+use std::process::{self, Command, Stdio};
+
+fn katex(latex: &str, display: bool) -> String {
+    let args: &[&str] = if display {
+        &["-d"]
+    } else {
+        &[]
+    };
+    let mut child = Command::new("./node_modules/.bin/katex")
+        .args(args)
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .spawn()
+        .expect("Failed to execute katex");
+
+    let stdin = child.stdin.as_mut().unwrap();
+    write!(stdin, "{}", latex).expect("Pipe to katex failed");
+
+    let output = child.wait_with_output().expect("katex failed");
+    let html = String::from_utf8(output.stdout).expect("katex output not UTF-8");
+
+    html.trim().to_string()
+}
 
 /// Transducer states.
 #[derive(Debug, Clone, Copy)]
 enum State {
     Default,
+    Math,
     SkipToEnd,
 }
 
@@ -27,6 +50,7 @@ struct Transducer {
     content: String,
     state: State,
     cstate: Option<CmarkState<'static>>,
+    math: String,
 }
 
 impl Transducer {
@@ -35,6 +59,7 @@ impl Transducer {
             content: String::new(),
             state: State::Default,
             cstate: None,
+            math: String::new(),
         }
     }
 
@@ -49,7 +74,38 @@ impl Transducer {
                             self.state = State::SkipToEnd;
                         }
                     }
+                    Event::Code(ref code) => {
+                        if code.starts_with("$") && code.ends_with("$") {
+                            let end = code.len() - 1;
+                            let html = katex(&code[1..end], false);
+                            event = Event::Html(CowStr::from(html));
+                        }
+                    }
+                    Event::Start(Tag::CodeBlock(CodeBlockKind::Fenced(ref lang))) => {
+                        if lang.as_ref() == "math" {
+                            self.state = State::Math;
+                            return;
+                        }
+                    }
                     _ => {}
+                }
+            }
+
+            State::Math => {
+                match event {
+                    Event::Text(ref text) => {
+                        self.math.push_str(text);
+                        return;
+                    }
+                    Event::End(_) => {
+                        let html = katex(&self.math, true);
+                        event = Event::Html(CowStr::from(html));
+                        self.state = State::Default;
+                        self.math.clear();
+                    }
+                    _ => {
+                        return;
+                    }
                 }
             }
 
