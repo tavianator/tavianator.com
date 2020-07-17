@@ -50,10 +50,6 @@ impl SiteProc {
                 }
             }
             chapter.content = content;
-
-            for sub_item in chapter.sub_items.iter_mut() {
-                self.visit_book_item(sub_item);
-            }
         }
     }
 }
