@@ -22,6 +22,7 @@
 
 # 2014
 
+- [Efficient Integer Exponentiation in C](2014/int_exp.md)
 - [Exact Bounding Boxes for Spheres/Ellipsoids](2014/ellipsoid_bounding_boxes.md)
 - [A Beautiful Ray/Mesh Intersection Algorithm](2014/ray_mesh.md)
 - [A Beautiful Ray/Triangle Intersection Method](2014/ray_triangle.md)
