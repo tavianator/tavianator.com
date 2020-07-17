@@ -19,7 +19,7 @@ So in this post, I'm going to attack the security of the color exchange protocol
 [Diffie–Hellman key exchange]: https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
 [as well]: https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange#/media/File:Diffie-Hellman_Key_Exchange-modified.png
 
-To summarize and somewhat formalize the "DHCE" protocol, suppose we have a `$\mathrm{mix}(x, y, r)$` function that mixes the colors `$x$` and `$y$` in an `$r : (1−r)$` ratio. Starting with a shared, public color `$S$`, Alice and Bob do the following:
+To summarize and somewhat formalize the "DHCE" protocol, suppose we have a `$\mathrm{mix}(x, y, r)$` function that mixes the colors `$x$` and `$y$` in an `$r : (1 - r)$` ratio. Starting with a shared, public color `$S$`, Alice and Bob do the following:
 
 | Alice                                    | Bob                                      |
 | ---------------------------------------- | ---------------------------------------- |
