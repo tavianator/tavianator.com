@@ -1,7 +1,3 @@
-.chapter strong[aria-hidden="true"] {
-    display: none;
-}
-
 .infobar {
     color: var(--icons);
     border-bottom: 1px solid var(--icons);
@@ -27,7 +23,8 @@
     margin-left: 0.5em;
 }
 
-.infobar p > i:first-child {
+.infobar p > i:first-child,
+.infobar p > a:first-child i {
     margin-left: 0;
 }
 
