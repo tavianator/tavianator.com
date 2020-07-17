@@ -11,6 +11,7 @@
 
 - [2016]()
   - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
+  - [The Approximating and Eliminating Search Algorithm](2016/aesa.md)
 
 - [2015]()
   - [Java autoboxing performance](2015/autoboxing.md)
