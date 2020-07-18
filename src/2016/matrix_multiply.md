@@ -29,24 +29,20 @@ C_{i,j} = \sum_k A_{i,k} \, B_{k,j}
     from { background-color: var(--bg); }
     to { background-color: var(--fg); }
 }
-
 @keyframes matrix-fade-out {
     from { background-color: var(--fg); }
     to { background-color: var(--bg); }
 }
-
 .matrix-fade-in {
     background-color: var(--fg);
     animation-name: matrix-fade-in;
     animation-duration: 1s;
 }
-
 .matrix-fade-out {
     background-color: var(--bg);
     animation-name: matrix-fade-out;
     animation-duration: 1s;
 }
-
 .matrix-faded {
     background-color: var(--bg);
 }
@@ -58,17 +54,14 @@ function squish(node) {
     node.style.border = "0";
     node.style.padding = "0";
 }
-
 function createMatrix(rows, cols, node) {
     var table = document.createElement("table");
     table.style.width = "auto";
     table.style.display = "inline-table";
     table.style.verticalAlign = "middle";
     squish(table);
-
     var tbody = document.createElement("tbody");
     table.appendChild(tbody);
-
     var matrix = [];
     for (var i = 0; i < rows; ++i) {
         var tr = document.createElement("tr");
@@ -85,23 +78,18 @@ function createMatrix(rows, cols, node) {
         tbody.appendChild(tr);
         matrix.push(row);
     }
-
     node.appendChild(table);
     return matrix;
 }
-
 var rows = 8;
 var mid = 8;
 var cols = 8;
-
 var slowC = createMatrix(rows, cols, document.getElementById("matrix-slow-C"));
 var slowA = createMatrix(rows, mid, document.getElementById("matrix-slow-A"));
 var slowB = createMatrix(mid, cols, document.getElementById("matrix-slow-B"));
-
 var slowI = 0;
 var slowJ = 0;
 var slowK = -1;
-
 function fade(matrix, oldI, oldJ, newI, newJ) {
     if (oldI != newI || oldJ != newJ) {
         if (oldI >= 0 && oldJ >= 0) {
@@ -110,12 +98,10 @@ function fade(matrix, oldI, oldJ, newI, newJ) {
     }
     matrix[newI][newJ].className = "matrix-fade-in";
 }
-
 function slowAnimate() {
     var oldI = slowI;
     var oldJ = slowJ;
     var oldK = slowK;
-
     ++slowK;
     if (slowK == mid) {
         slowK = 0;
@@ -128,12 +114,10 @@ function slowAnimate() {
     if (slowI == rows) {
         slowI = 0;
     }
-
     fade(slowC, oldI, oldJ, slowI, slowJ);
     fade(slowA, oldI, oldK, slowI, slowK);
     fade(slowB, oldK, oldJ, slowK, slowJ);
 }
-
 setInterval(slowAnimate, 125);
 </script>
 
@@ -175,16 +159,13 @@ C_{i} = \sum_j A_{i,j} \, B_j
 var fastC = createMatrix(rows, cols, document.getElementById("matrix-fast-C"));
 var fastA = createMatrix(rows, mid, document.getElementById("matrix-fast-A"));
 var fastB = createMatrix(mid, cols, document.getElementById("matrix-fast-B"));
-
 var fastI = 0;
 var fastJ = 0;
 var fastK = -1;
-
 function fastAnimate() {
     var oldI = fastI;
     var oldJ = fastJ;
     var oldK = fastK;
-
     ++fastK;
     if (fastK == cols) {
         fastK = 0;
@@ -197,12 +178,10 @@ function fastAnimate() {
     if (fastI == rows) {
         fastI = 0;
     }
-
     fade(fastC, oldI, oldK, fastI, fastK);
     fade(fastA, oldI, oldJ, fastI, fastJ);
     fade(fastB, oldJ, oldK, fastJ, fastK);
 }
-
 setInterval(fastAnimate, 125);
 </script>
 
