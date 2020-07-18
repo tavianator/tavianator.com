@@ -5,51 +5,88 @@ use mdbook::errors::Error;
 use mdbook::preprocess::{CmdPreprocessor, Preprocessor, PreprocessorContext};
 use mdbook::utils::new_cmark_parser;
 
-use pulldown_cmark::{Event, Tag, LinkType};
+use pulldown_cmark::{CowStr, Event, Tag, LinkType};
 
 use pulldown_cmark_to_cmark::cmark;
+use pulldown_cmark_to_cmark::State as CmarkState;
 
 use std::io;
+use std::iter;
 use std::process;
 
-pub struct SiteProc;
+/// Transducer states.
+#[derive(Debug, Clone, Copy)]
+enum State {
+    Default,
+    SkipToEnd,
+}
 
-impl SiteProc {
-    pub fn new() -> SiteProc {
-        SiteProc
+/// Our cmark --> cmark transducer.
+#[derive(Debug)]
+struct Transducer {
+    content: String,
+    state: State,
+    cstate: Option<CmarkState<'static>>,
+}
+
+impl Transducer {
+    fn new() -> Self {
+        Self {
+            content: String::new(),
+            state: State::Default,
+            cstate: None,
+        }
     }
 
-    pub fn visit_book_item(&self, item: &mut BookItem) {
-        if let BookItem::Chapter(chapter) = item {
-            // Implement our Markdown extensions
-            let mut content = String::with_capacity(2 * chapter.content.len());
-            let parser = new_cmark_parser(&chapter.content);
-            let mut state = None;
-            let mut wait_for_end = false;
-            for event in parser {
+    fn push(&mut self, mut event: Event) {
+        match self.state {
+            State::Default => {
                 match event {
                     Event::Start(Tag::Link(LinkType::Autolink, ref dest, _)) => {
                         if dest.starts_with("fa:") {
-                            content.push_str("<i class=\"fa fa-");
-                            content.push_str(&dest[3..]);
-                            content.push_str("\" aria-hidden=\"true\"></i>");
-                            wait_for_end = true;
-                        }
-                    }
-                    Event::End(_) => {
-                        if wait_for_end {
-                            wait_for_end = false;
-                            continue;
+                            let html = format!("<i class=\"fa fa-{}\" aria-hidden=\"true\"></i>", &dest[3..]);
+                            event = Event::Html(CowStr::from(html));
+                            self.state = State::SkipToEnd;
                         }
                     }
                     _ => {}
                 }
-
-                if !wait_for_end {
-                    state = Some(cmark(std::iter::once(event), &mut content, state).unwrap());
-                }
             }
-            chapter.content = content;
+
+            State::SkipToEnd => {
+                match event {
+                    Event::End(_) => {
+                        self.state = State::Default;
+                    }
+                    _ => {}
+                }
+                return;
+            }
+        }
+
+        self.cstate = Some(cmark(iter::once(event), &mut self.content, self.cstate.take()).unwrap());
+    }
+}
+
+/// Our pre-processor
+#[derive(Debug)]
+struct SiteProc;
+
+impl SiteProc {
+    fn new() -> SiteProc {
+        SiteProc
+    }
+
+    fn visit_book_item(&self, item: &mut BookItem) {
+        if let BookItem::Chapter(chapter) = item {
+            // Implement our Markdown extensions
+            let mut transducer = Transducer::new();
+
+            for event in new_cmark_parser(&chapter.content) {
+                transducer.push(event);
+            }
+
+            chapter.content = transducer.content;
         }
     }
 }
