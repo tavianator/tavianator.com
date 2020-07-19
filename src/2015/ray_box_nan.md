@@ -11,7 +11,7 @@
 
 
 In [part 1], I outlined an algorithm for computing intersections between rays and axis-aligned bounding boxes.
-The idea to eliminate branches by relying on IEEE 754 floating point properties goes back to Brian Smits in <a name="citor-1" href="#cite-1">[1]</a>, and the implementation was fleshed out by Amy Williams. et al. in <a name="citor-2" href="#cite-2">[2]</a>.
+The idea to eliminate branches by relying on IEEE 754 floating point properties goes back to Brian Smits in [^smits], and the implementation was fleshed out by Amy Williams. et al. in [^williams].
 
 [part 1]: ../2011/ray_box.md
 
@@ -107,7 +107,7 @@ The operations neither propagate nor suppress NaNs; instead, when either argumen
 In contrast, the IEEE 754-specified min/max operations (called "minNum" and "maxNum") suppress NaNs, always returning a number if possible.
 This is also the behaviour of C99's `fmin()` and `fmax()` functions.
 On the other hand, Java's `Math.min()` and `Math.max()` functions propagate NaNs, staying consistent with most other binary operations on floating point values.
-<a name="citor-3" href="#cite-3">[3]</a> and <a name="citor-4" href="#cite-4">[4]</a> have some more discussion about the various min/max implementations in the wild.
+[^llvm] and [^haskell] have some more discussion about the various min/max implementations in the wild.
 
 
 ## The problem
@@ -138,7 +138,7 @@ When at most one argument is NaN, we can simulate the IEEE behaviour with
 \end{aligned}
 ```
 
-Thierry Berger-Perrin applies a similar strategy in <a name="citor-5" href="#cite-5">[5]</a>, effectively computing
+Thierry Berger-Perrin applies a similar strategy in [^berger-perrin], effectively computing
 
 ```c
 tmin = max(tmin, min(min(t1, t2), INFINITY));
@@ -208,20 +208,23 @@ bool intersection(box b, ray r) {
 }
 ```
 
-The program I used to test various `intersection()` implementations is given in <a name="citor-6" href="#cite-6">[6]</a>.
+The program I used to test various `intersection()` implementations is given in [^gist].
 In my next post on this topic, I'll talk about low-level implementation details, including vectorization, to get the most performance possible out of this algorithm.
 
 
 ---
 
-<ol style="list-style: none; padding-left: 0;">
-    <li><a name="cite-1" href="#citor-1">[1]</a>: Brian Smits: <a href="http://www.cs.utah.edu/~bes/papers/fastRT/">Efficiency Issues for Ray Tracing</a>.  <em>Journal of Graphics Tools</em> (1998).
-    <li><a name="cite-2" href="#citor-2">[2]</a>: Amy Williams. et al.: <a href="http://www.cs.utah.edu/~awilliam/box/">An Efficient and Robust Ray-Box Intersection Algorithm</a>.  <em>Journal of Graphics Tools</em> (2005).
-    <li><a name="cite-3" href="#citor-3">[3]</a>: <a href="https://groups.google.com/forum/#!topic/llvm-dev/-SKl0nOJW_w">https://groups.google.com/forum/#!topic/llvm-dev/-SKl0nOJW_w</a>
-    <li><a name="cite-4" href="#citor-4">[4]</a>: <a href="https://ghc.haskell.org/trac/ghc/ticket/9251">https://ghc.haskell.org/trac/ghc/ticket/9251</a>
-    <li><a name="cite-5" href="#citor-5">[5]</a>: <a href="http://www.flipcode.com/archives/SSE_RayBox_Intersection_Test.shtml">http://www.flipcode.com/archives/SSE_RayBox_Intersection_Test.shtml</a>
-    <li><a name="cite-6" href="#citor-6">[6]</a>: <a href="https://gist.github.com/tavianator/132d081ed4d410c755fd">https://gist.github.com/tavianator/132d081ed4d410c755fd</a>
-</ol>
+[^smits]: Brian Smits: [Efficiency Issues for Ray Tracing](http://www.cs.utah.edu/~bes/papers/fastRT/). _Journal of Graphics Tools_ (1998).
+
+[^williams]: Amy Williams. et al.: [An Efficient and Robust Ray-Box Intersection Algorithm](http://www.cs.utah.edu/~awilliam/box/).  _Journal of Graphics Tools_ (2005).
+
+[^llvm]: <https://groups.google.com/forum/#!topic/llvm-dev/-SKl0nOJW_w>
+
+[^haskell]: <https://ghc.haskell.org/trac/ghc/ticket/9251>
+
+[^berger-perrin]: <http://www.flipcode.com/archives/SSE_RayBox_Intersection_Test.shtml>
+
+[^gist]: <https://gist.github.com/tavianator/132d081ed4d410c755fd>
 
 
 ---
