@@ -14,6 +14,7 @@
   - [Cracking DHCE (Diffie-Hellman color exchange)](2018/dhce.md)
 
 - [2017]()
+  - [bfs from the ground up, part 3: optimization](2017/bfs_3.md)
   - [bfs from the ground up, part 2: traversal](2017/bfs_2.md)
 
 - [2016]()
