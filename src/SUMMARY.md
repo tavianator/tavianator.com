@@ -15,6 +15,7 @@
 
 - [2016]()
   - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
+  - [bfs from the ground up, part 1: traversal](2016/bfs_1.md)
   - [The Approximating and Eliminating Search Algorithm](2016/aesa.md)
 
 - [2015]()
