@@ -13,6 +13,9 @@
   - [spawn() of Satan](2018/spawn_of_satan.md)
   - [Cracking DHCE (Diffie-Hellman color exchange)](2018/dhce.md)
 
+- [2017]()
+  - [bfs from the ground up, part 2: traversal](2017/bfs_2.md)
+
 - [2016]()
   - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
   - [bfs from the ground up, part 1: traversal](2016/bfs_1.md)
