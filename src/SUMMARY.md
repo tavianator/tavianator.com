@@ -7,6 +7,7 @@
   - [acap](projects/acap.md)
 
 - [2020]()
+  - [Makeover](2020/makeover.md)
   - [Porting k-d forests to Rust](2020/porting_kd_forests.md)
 
 - [2018]()
