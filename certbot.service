@@ -1,0 +1,10 @@
+[Unit]
+Description=Let's Encrypt
+After=nginx.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/certbot --nginx --agree-tos -n --email tavianator@tavianator.com -d tavianator.com -d www.tavianator.com -d tavian.dev -d www.tavian.dev
+
+[Install]
+WantedBy=multi-user.target
