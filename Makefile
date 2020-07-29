@@ -5,10 +5,10 @@ default:
 
 pod:
 	podman pod create --name tavianator.com -p 80:80 -p 443:443
-	podman create --pod tavianator.com tavianator/tavianator.com-blog
-	podman create --pod tavianator.com -v /srv/git:/srv/git:ro tavianator/tavianator.com-cgit
-	podman create --pod tavianator.com -v /home/tavianator/aur:/usr/share/nginx/html:ro tavianator/tavianator.com-aur
-	podman create --pod tavianator.com -v /etc/letsencrypt:/etc/letsencrypt tavianator/tavianator.com-proxy
+	podman create --pod tavianator.com --name tavianator.com-blog tavianator/tavianator.com-blog
+	podman create --pod tavianator.com --name tavianator.com-cgit -v /srv/git:/srv/git:ro tavianator/tavianator.com-cgit
+	podman create --pod tavianator.com --name tavianator.com-aur -v /home/tavianator/aur:/usr/share/nginx/html:ro tavianator/tavianator.com-aur
+	podman create --pod tavianator.com --name tavianator.com-proxy -v /etc/letsencrypt:/etc/letsencrypt tavianator/tavianator.com-proxy
 
 pod-build: \
     pod-build-blog \
