@@ -3,12 +3,16 @@ default:
 	cargo install mdbook
 	mdbook build
 
+POD := tavianator.com
+IMAGE := tavianator/tavianator.com
+AUTO_UPDATE := --label io.containers.autoupdate=image
+
 pod:
-	podman pod create --name tavianator.com -p 80:80 -p 443:443
-	podman create --pod tavianator.com --name tavianator.com-blog tavianator/tavianator.com-blog
-	podman create --pod tavianator.com --name tavianator.com-cgit -v /srv/git:/srv/git:ro tavianator/tavianator.com-cgit
-	podman create --pod tavianator.com --name tavianator.com-aur -v /home/tavianator/aur:/usr/share/nginx/html:ro tavianator/tavianator.com-aur
-	podman create --pod tavianator.com --name tavianator.com-proxy -v /etc/letsencrypt:/etc/letsencrypt tavianator/tavianator.com-proxy
+	podman pod create --name $(POD) -p 80:80 -p 443:443
+	podman create --pod $(POD) $(AUTO_UPDATE) --name $(POD)-blog $(IMAGE)-blog
+	podman create --pod $(POD) $(AUTO_UPDATE) --name $(POD)-cgit -v /srv/git:/srv/git:ro $(IMAGE)-cgit
+	podman create --pod $(POD) $(AUTO_UPDATE) --name $(POD)-aur -v /home/tavianator/aur:/usr/share/nginx/html:ro $(IMAGE)-aur
+	podman create --pod $(POD) $(AUTO_UPDATE) --name $(POD)-proxy -v /etc/letsencrypt:/etc/letsencrypt $(IMAGE)-proxy
 
 pod-build: \
     pod-build-blog \
@@ -17,7 +21,7 @@ pod-build: \
     pod-build-proxy
 
 pod-build-%:
-	podman build -t tavianator/tavianator.com-$* -f infra/$* .
+	podman build -t $(IMAGE)-$* -f infra/$* .
 
 pod-push: \
     pod-push-blog \
@@ -26,9 +30,9 @@ pod-push: \
     pod-push-proxy
 
 pod-push-%:
-	podman push tavianator/tavianator.com-$*
+	podman push $(IMAGE)-$*
 
 systemd:
-	cd /etc/systemd/system && podman generate systemd -fn tavianator.com
+	cd /etc/systemd/system && podman generate systemd --new -fn $(POD)
 
 .PHONY: default pod pod-build pod-push systemd
