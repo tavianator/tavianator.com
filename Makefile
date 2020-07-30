@@ -4,7 +4,7 @@ default:
 	mdbook build
 
 POD := tavianator.com
-IMAGE := tavianator/tavianator.com
+IMAGE := docker.io/tavianator/tavianator.com
 AUTO_UPDATE := --label io.containers.autoupdate=image
 
 pod:
