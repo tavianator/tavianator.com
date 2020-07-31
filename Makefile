@@ -3,6 +3,9 @@ default:
 	cargo install mdbook
 	mdbook build
 
+watch: default
+	mdbook watch
+
 clean:
 	mdbook clean
 	cargo clean
@@ -39,4 +42,4 @@ pod-push-%:
 systemd:
 	cd /etc/systemd/system && podman generate systemd --new -fn $(POD)
 
-.PHONY: default clean pod pod-build pod-push systemd
+.PHONY: default watch clean pod pod-build pod-push systemd
