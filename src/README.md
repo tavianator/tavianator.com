@@ -10,6 +10,14 @@ I used to work at [Microsoft Research Montreal], and before that at a startup ca
 [Maluuba]: https://en.wikipedia.org/wiki/Maluuba
 [University of Calgary]: https://ucalgary.ca/
 
+Check out some of the [projects](projects/README.md) I'm working on, or read some of the highlights from my blog (the full archive is in the sidebar):
+
+- [Makeover](2020/makeover.md) (latest post)
+- [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
+- [Exact Bounding Boxes for Spheres/Ellipsoids](2014/ellipsoid_bounding_boxes.md)
+- [Ray/Triangle Intersections](2014/ray_triangle.md), [Ray/Mesh Intersections](2014/ray_mesh.md)
+- [Ray/Bounding Box Intersections](2011/ray_box.md) ([part 2: NaNs](2015/ray_box_nan.md))
+
 I'm probably @tavianator on your favourite website:
 
 <div class="elsewhere">
@@ -21,3 +29,5 @@ I'm probably @tavianator on your favourite website:
 [<fa:instagram> Instagram](https://www.instagram.com/tavianator)
 
 </div>
+
+---
