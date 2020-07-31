@@ -3,6 +3,10 @@ default:
 	cargo install mdbook
 	mdbook build
 
+clean:
+	mdbook clean
+	cargo clean
+
 POD := tavianator.com
 IMAGE := docker.io/tavianator/tavianator.com
 AUTO_UPDATE := --label io.containers.autoupdate=image
@@ -35,4 +39,4 @@ pod-push-%:
 systemd:
 	cd /etc/systemd/system && podman generate systemd --new -fn $(POD)
 
-.PHONY: default pod pod-build pod-push systemd
+.PHONY: default clean pod pod-build pod-push systemd
