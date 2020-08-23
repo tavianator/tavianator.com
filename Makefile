@@ -15,7 +15,7 @@ IMAGE := docker.io/tavianator/tavianator.com
 AUTO_UPDATE := --label io.containers.autoupdate=image
 
 pod:
-	podman pod create --replace --name $(POD) -p 80:80 -p 443:443
+	podman pod create --replace --name $(POD) --net=host
 	podman create --replace --pod $(POD) $(AUTO_UPDATE) --name $(POD)-blog $(IMAGE)-blog
 	podman create --replace --pod $(POD) $(AUTO_UPDATE) --name $(POD)-cgit -v /srv/git:/srv/git:ro $(IMAGE)-cgit
 	podman create --replace --pod $(POD) $(AUTO_UPDATE) --name $(POD)-aur -v /home/tavianator/aur:/usr/share/nginx/html:ro $(IMAGE)-aur
