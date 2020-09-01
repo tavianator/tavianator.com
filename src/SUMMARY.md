@@ -5,6 +5,7 @@
 - [Projects](projects/README.md)
   - [bfs](projects/bfs.md)
   - [acap](projects/acap.md)
+  - [bistring](projects/bistring.md)
 
 - [2020]()
   - [Makeover](2020/makeover.md)
