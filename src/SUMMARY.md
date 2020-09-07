@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2020]()
+  - [OOMify](2020/oomify.md)
   - [Makeover](2020/makeover.md)
   - [Porting k-d forests to Rust](2020/porting_kd_forests.md)
 
