@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2020]()
+  - [Proving that 1 + 1 = 10 in Rust](2020/one_plus_one.md)
   - [OOMify](2020/oomify.md)
   - [Makeover](2020/makeover.md)
   - [Porting k-d forests to Rust](2020/porting_kd_forests.md)
