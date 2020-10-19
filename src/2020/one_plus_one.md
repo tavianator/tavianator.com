@@ -189,7 +189,7 @@ We can implement a [full adder](https://en.wikipedia.org/wiki/Adder_(electronics
 #
 fn full_adder(a: Bit, b: Bit, c: Bit) -> (Bit, Bit) {
     let (d, e) = half_adder(a, b);
-    let (f, g) = half_adder(d, c);
+    let (f, g) = half_adder(c, d);
     let (h, _) = half_adder(e, g);
     (f, h)
 }
@@ -322,7 +322,7 @@ Here's a [ripple-carry adder](https://en.wikipedia.org/wiki/Adder_(electronics)#
 #
 # fn full_adder(a: Bit, b: Bit, c: Bit) -> (Bit, Bit) {
 #     let (d, e) = half_adder(a, b);
-#     let (f, g) = half_adder(d, c);
+#     let (f, g) = half_adder(c, d);
 #     let (h, _) = half_adder(e, g);
 #     (f, h)
 # }
@@ -532,7 +532,7 @@ Multiplication has a nice recursive definition too:
 #
 # fn full_adder(a: Bit, b: Bit, c: Bit) -> (Bit, Bit) {
 #     let (d, e) = half_adder(a, b);
-#     let (f, g) = half_adder(d, c);
+#     let (f, g) = half_adder(c, d);
 #     let (h, _) = half_adder(e, g);
 #     (f, h)
 # }
