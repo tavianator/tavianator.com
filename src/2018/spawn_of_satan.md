@@ -281,6 +281,6 @@ I'm not just venting frustration — I've decided to do something about all this
 It's part of [`bfs`], but it should be fairly self-contained.
 If there's enough interest I could separate it out into its own project.
 
-[API]: https://github.com/tavianator/bfs/blob/master/spawn.h
-[here]: https://github.com/tavianator/bfs/blob/master/spawn.c
+[API]: https://github.com/tavianator/bfs/blob/main/spawn.h
+[here]: https://github.com/tavianator/bfs/blob/main/spawn.c
 [`bfs`]: https://github.com/tavianator/bfs
