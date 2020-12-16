@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/tavianator
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://tavianator.com
+  * I am tavianator (https://keybase.io/tavianator) on keybase.
+  * I have a public key with fingerprint 76F5 CE72 4EDE CE11 1DE3  5E27 938E 1B24 4D3D B9E1
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010186fb1a9bba8c470d5821ec5dceeb3309f697879d3a5d26a26ddf3c99afd83cf70a",
+      "fingerprint": "76f5ce724edece111de35e27938e1b244d3db9e1",
+      "host": "keybase.io",
+      "key_id": "938e1b244d3db9e1",
+      "kid": "010186fb1a9bba8c470d5821ec5dceeb3309f697879d3a5d26a26ddf3c99afd83cf70a",
+      "uid": "1c3956e7f959e7875912ca62b3ecfe19",
+      "username": "tavianator"
+    },
+    "service": {
+      "hostname": "tavianator.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1607007068,
+  "expire_in": 157680000,
+  "prev": "3bffabc9af813964d14c43c5afb4d84b8bafbe32295f30c5c3a230557e2c3892",
+  "seqno": 4,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUm1QVFUYXtiVVlYZiHFnktjgqjFNgPf7Y5GwpiknBtdGJCVivR/n7l6B3WXv
+ZQFxm8Ip234gigYjzpCUDaYCjaXIR1FiggY2iEkakCUQIlERFB9h9zL5q3525syc
+c97zPM95nndO+Uq9zhhUURa1Ni35/O2gK2Oczt45v7ME4txCMWQtgXLA0gJyBSAr
+9hxJgKwQjMAITYocwjIcx9I8TsECQaMI4AmBB4DDMJgRSYaiKUbAWEJASRYlBUHE
+eIZhRYHGeJGCWSgeEiWXA3g9XsmlqLIUKRI8oFAcCIAHCIIIACMASjEYDRAOxXEB
+EzgGICrR6ZY1hmqOY2WQKLnVmnqwL9n7D/z/7LtgSQ7hMYYgASUyBANUEsEgKM+S
+KIcBXgQIowFl4HWxeUBFK6xPYl2s4vZC/nhIrfskHmit1bL8C5PIu/NUvsfrVty8
+O1e9cyqKR7ZqXKXYo4ELAWf/R8bOSS5B7aXK8AGvLLldkBVRkbwiaboICVOwOkk6
+HgJFHskL7JKGICiShtWhvQN8qiTGiVkiy/FqWhrBGBIXEJzHMZ5gRQ4XaJyjOXUH
+MBRlCBGDeYLHWBSDCYICKI/RDAppyfJdbsiKqz5Zh6opSw41UYEXQP7QQDBm0AUZ
+ddHmWINvuse7ebAnIvrH7LgH/29ZsPb5dKHLwx9UsplwXe1pOuR42gXHS1k37iwM
+1FSPn2l23fvoZhNTpWR86imYiXpvTUj0a/ZL+Sm7Dww0Nz5nqumqDwzHo7OJmY2L
+sbeGh7rHbI6SDyrRky39E/V3a3Y4t1mZmYmDVzMmOvndW1ufads5N1vw8UjF6jv3
+LNWl4a3D5rEOzwpuXD5oiSG7e+uNm2tufxI4aulhX9xRSzVnJLQN+kdWRT4qGPLP
++CeFNlDV9VRYSmCosLTIoO/d/sUbxRcKkoypW39Ki/yqveY6jV/76/JZS7rsNG0Y
+bSubGDpa1HUiaG7x+9K5wMRv58LX7as0JgT2wsHTQ1N9+Gz07zGmpjLJvy1AxK7B
+L6OR+/OCzjeGNQy+++s7IXtdvbNvtS9k5sxY5s/CM/kW055Xl314/Zsk+5uJBuFx
+cEveeOjh6qm6lf5dx+O+HX0hOWVXpeV+enl2l76hLGaRudk5nqTf0t43o3v/WvJa
+7O3SH1Lt26/esMUlv/5l2Cu2TQe621aXb9hyN+bUxV8WKlocm5oO98nmk+nr9A89
+H9jTyGSFfnfM1xHvcyac6438rP/0+iO944vz649Y9NOGCNMh28tw5WPmK8Dc8kj/
+3ND9VGGRsD399eenDuf2y+bhkcyfB6ZKTjzRFdFon7Sx0yuiOiZHa5cX/ukxjl00
+NSx4xlZtbH22bsBT/uS+Opo7dmnaOF/1h/I3
+=k4z1
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tavianator
+
+==================================================================
