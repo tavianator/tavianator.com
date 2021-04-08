@@ -19,7 +19,7 @@
 
 - [2017]()
   - [bfs from the ground up, part 3: optimization](2017/bfs_3.md)
-  - [bfs from the ground up, part 2: traversal](2017/bfs_2.md)
+  - [bfs from the ground up, part 2: parsing](2017/bfs_2.md)
 
 - [2016]()
   - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
