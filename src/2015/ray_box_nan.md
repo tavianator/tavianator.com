@@ -22,13 +22,13 @@ bool intersection(box b, ray r) {
     double tmin = -INFINITY, tmax = INFINITY;
 
     for (int i = 0; i < 3; ++i) {
-        if (ray.dir[i] != 0.0) {
+        if (r.dir[i] != 0.0) {
             double t1 = (b.min[i] - r.origin[i])/r.dir[i];
             double t2 = (b.max[i] - r.origin[i])/r.dir[i];
 
             tmin = max(tmin, min(t1, t2));
             tmax = min(tmax, max(t1, t2));
-        } else if (ray.origin[i] <= b.min[i] || ray.origin[i] >= b.max[i]) {
+        } else if (r.origin[i] <= b.min[i] || r.origin[i] >= b.max[i]) {
             return false;
         }
     }
@@ -56,8 +56,8 @@ bool intersection(box b, ray r) {
 ```
 
 Are the two algorithms really equivalent?
-We've eliminated the `$\mathtt{ray.dir}_i \ne 0$` checks by relying on [IEEE 754] floating point behaviour.
-When `$\mathtt{ray.dir}_i = \pm 0$`, `$\mathtt{ray.dir\_inv}_i = \pm \infty$`.
+We've eliminated the `$\mathtt{r.dir}_i \ne 0$` checks by relying on [IEEE 754] floating point behaviour.
+When `$\mathtt{r.dir}_i = \pm 0$`, `$\mathtt{r.dir\_inv}_i = \pm \infty$`.
 If the ray origin's `$i$` coordinate is inside the box, meaning `$\mathtt{b.min}_i < \mathtt{r.origin}_i < \mathtt{b.max}_i$`, we'll have `$t_1 = -t_2 = \pm \infty$`.
 Since `$\max(n, -\infty) = \min(n, +\infty) = n$` for all `$n$`, `$t_{\min}$` and `$t_{\max}$` will remain unchanged.
 
