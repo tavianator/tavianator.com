@@ -13,6 +13,9 @@ google-analytics = "UA-51266553-1"
 no-section-label = true
 git-repository-url = "https://github.com/tavianator/tavianator.com"
 
+[output.html.print]
+enable = false
+
 [preprocessor.site]
 command = "./target/debug/preproc"
 renderer = ["html"]
