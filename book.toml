@@ -7,8 +7,8 @@ build-dir = "site"
 
 [output.html]
 theme = "theme"
-default-theme = "coal"
-preferred-dark-theme = "coal"
+default-theme = "light"
+preferred-dark-theme = "navy"
 google-analytics = "UA-51266553-1"
 no-section-label = true
 git-repository-url = "https://github.com/tavianator/tavianator.com"
