@@ -28,7 +28,7 @@ pod-build: \
     pod-build-proxy
 
 pod-build-%:
-	podman build -t $(IMAGE)-$* -f infra/$* .
+	podman build --pull -t $(IMAGE)-$* -f infra/$* .
 
 pod-push: \
     pod-push-blog \
