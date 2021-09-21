@@ -1,6 +1,6 @@
 default:
 	cargo build
-	cargo install mdbook --version=0.4.8
+	cargo install mdbook --version=0.4.12
 	mdbook build
 
 watch: default
