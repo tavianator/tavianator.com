@@ -18,20 +18,17 @@ pod:
 	podman pod create --replace --name $(POD) --ip 10.88.0.2
 	$(CREATE) --name $(POD)-blog $(IMAGE)-blog
 	$(CREATE) --name $(POD)-cgit -v /srv/git:/srv/git:ro $(IMAGE)-cgit
-	$(CREATE) --name $(POD)-aur -v /home/tavianator/aur:/usr/share/nginx/html:ro $(IMAGE)-aur
 
 pod-build: \
     pod-build-blog \
-    pod-build-cgit \
-    pod-build-aur
+    pod-build-cgit
 
 pod-build-%:
 	podman build --pull -t $(IMAGE)-$* -f infra/$* .
 
 pod-push: \
     pod-push-blog \
-    pod-push-cgit \
-    pod-push-aur
+    pod-push-cgit
 
 pod-push-%:
 	podman push $(IMAGE)-$*
