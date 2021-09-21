@@ -1,0 +1,87 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.content .infobar {
+    color: var(--icons);
+    border-bottom: 1px solid var(--icons);
+}
+
+.content .infobar p {
+    margin: 1px 0;
+}
+
+.content .infobar a,
+.content .infobar a:link,
+.content .infobar a:visited {
+    color: var(--icons);
+    transition: color 0.5s;
+    text-decoration: none;
+}
+
+.content .infobar a:hover {
+    color: var(--icons-hover);
+}
+
+.content .infobar i {
+    margin-left: 0.5em;
+}
+
+.content .infobar p > i:first-child,
+.content .infobar p > a:first-child i {
+    margin-left: 0;
+}
+
+.content .elsewhere p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 1em;
+}
+
+.content .elsewhere a,
+.content .elsewhere a:link,
+.content .elsewhere a:visited {
+    color: var(--fg);
+    transition: color 0.5s;
+    text-decoration: none;
+}
+
+.content .elsewhere a:hover {
+    color: var(--links);
+}
+
+.content h1 {
+    margin-bottom: 0.25em;
+}
+
+.content p {
+    text-align: justify;
+    hyphens: auto;
+    word-wrap: break-word;
+}
+
+.content blockquote p {
+    text-align: left;
+}
+
+.content blockquote i.fa {
+    margin-left: 0.5em;
+}
+
+.content blockquote i.fa:first-child {
+    margin-left: 0;
+}
+
+.content a:target,
+.content .footnote-definition:target {
+    scroll-margin-top: var(--menu-bar-height);
+}
+
+.content sup {
+    line-height: 0;
+}
+
+.katex {
+    white-space: nowrap;
+}
