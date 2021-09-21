@@ -14,13 +14,15 @@ html {
 .content .infobar a,
 .content .infobar a:link,
 .content .infobar a:visited {
+    background-color: transparent;
     color: var(--icons);
-    transition: color 0.5s;
     text-decoration: none;
+    transition: color 0.5s;
 }
 
 .content .infobar a:hover {
     color: var(--icons-hover);
+    transition: color 0.15s;
 }
 
 .content .infobar i {
@@ -32,23 +34,31 @@ html {
     margin-left: 0;
 }
 
+.content main a:link,
+.content main a:link .hljs,
+.content main a:visited,
+.content main a:visited .hljs {
+    color: var(--fg);
+    text-decoration: dotted underline;
+    transition: background-color 0.5s;
+}
+
+.content main a:hover {
+    background-color: var(--theme-hover);
+    transition: background-color 0.15s;
+}
+
 .content .elsewhere p {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    column-gap: 1em;
 }
 
 .content .elsewhere a,
 .content .elsewhere a:link,
 .content .elsewhere a:visited {
-    color: var(--fg);
-    transition: color 0.5s;
+    flex: 1;
+    text-align: center;
     text-decoration: none;
-}
-
-.content .elsewhere a:hover {
-    color: var(--links);
 }
 
 .content h1 {
