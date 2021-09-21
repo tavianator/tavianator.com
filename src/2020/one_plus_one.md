@@ -11,10 +11,10 @@
 
 *"There are 10 types of people: those who understand binary, and those who don't."*
 
-I recently read [this writeup] about using Rust's type system to prove that 1 + 1 = 2, and was inspired to make a version of it with a more efficient representation.
+I recently read [this writeup][OP] about using Rust's type system to prove that 1 + 1 = 2, and was inspired to make a version of it with a more efficient representation.
 To recap (but really, read that post first if you haven't already), they used the [Peano] representation of the natural numbers, which is based on the *successor* function `$S$`:
 
-[this writeup]: https://gist.github.com/gretingz/bc194c20a2de2c7bcc0f457282ba2662
+[OP]: https://web.archive.org/web/20210125085329/https://gist.github.com/gretingz/bc194c20a2de2c7bcc0f457282ba2662
 [Peano]: https://en.wikipedia.org/wiki/Peano_axioms
 
 ```math
@@ -741,11 +741,9 @@ where
 ```
 
 But it doesn't work (try it).
-The [original post] also ran into a similar error.
+The [original post][OP] also ran into a similar error.
 I don't exactly understand why, but it seems like Rust's trait solver likes it when recursive `where` clauses involve obviously "smaller" structures than `Self`, so the recursion terminates more easily.
 It's the `((Zero, Product<A, (B1, B2)>), Nil, Zero): RippleAdder` bound that's giving us trouble, since `(Zero, Product<A, (B1, B2)>)` can be bigger than the inputs.
-
-[original post]: https://gist.github.com/gretingz/bc194c20a2de2c7bcc0f457282ba2662
 
 So I had to think up a different multiplication algorithm with a simpler recursive structure that would pass the type checker.
 The trick I used is to do all the shifting (`B -> (Zero, B)`) ahead of time so I don't have to put it in a `where` clause.

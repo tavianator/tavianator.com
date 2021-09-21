@@ -149,7 +149,7 @@ Thanks to József Fejes for the concept.
 > > <fa:user> [**Tavian Barnes**](/)
 > > <fa:clock-o> 2015-09-02
 > >
-> > Yeah I read [this thread](https://lkml.org/lkml/2015/9/3/428%20rel=) too.
+> > Yeah I read [this thread](https://lkml.org/lkml/2015/9/3/428) too.
 > > But because this is my code, I get to have my own opinions on what I should and shouldn't do.
 > > The `[3]` is useful documentation.
 > > You'd have a point if I actually used `sizeof(pixel)` anywhere, but I don't.

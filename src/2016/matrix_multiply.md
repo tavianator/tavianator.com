@@ -12,7 +12,7 @@ If you need to multiply some matrices together very quickly, usually it's best t
 But sometimes adding such a dependency isn't worth it, if you're worried about portability, code size, etc.
 If you just need good performance, rather than the *best possible* performance, it can make sense to hand-roll your own matrix multiplication function.
 
-[ATLAS]: http://acts.nersc.gov/atlas/
+[ATLAS]: http://math-atlas.sourceforge.net/
 
 Unfortunately, the way that matrix multiplication is usually taught:
 

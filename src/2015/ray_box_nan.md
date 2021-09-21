@@ -5,7 +5,7 @@
 <fa:clock-o> 2015-03-23
 <fa:user> Tavian Barnes
 [<fa:comments> Comments](#comments)
-[<fa:reddit> Reddit](https://old.reddit.com/r/GraphicsProgramming/comments/338n9k/fast_branchless_raybounding_box_intersections/)
+[<fa:reddit> Reddit](https://reddit.com/r/GraphicsProgramming/comments/338n9k/fast_branchless_raybounding_box_intersections/)
 
 </div>
 
@@ -292,7 +292,7 @@ In my next post on this topic, I'll talk about low-level implementation details,
 > > > I actually came up with a somewhat similar solution for a fast box normal calculation routine.
 > > > As usual, there were a few subtleties to this...
 > > >
-> > > <http://blog.johnnovak.net/2016/10/22/the-nim-raytracer-project-part-4-calculating-box-normals/>
+> > > <https://blog.johnnovak.net/2016/10/22/the-nim-ray-tracer-project-part-4-calculating-box-normals/>
 
 > **Aleksei**
 > <fa:clock-o> 2018-08-02

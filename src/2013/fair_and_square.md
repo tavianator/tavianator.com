@@ -10,12 +10,12 @@
 </div>
 
 
-[Fair and Square] is a problem from the qualification round of [Google Code Jam] 2013.
+[Fair and Square] is a problem from the qualification round of [Google Code Jam 2013].
 The gist of the problem is to find out how many integers in a given range are both a palindrome, and the square of a palindrome.
 Such numbers are called "fair and square." A number is a palindrome iff its value is the same when written forwards or backwards, in base 10.
 
-[Fair and Square]: https://code.google.com/codejam/contest/2270488/dashboard#s=p2
-[Google Code Jam]: https://code.google.com/codejam
+[Fair and Square]: https://codingcompetitions.withgoogle.com/codejam/round/0000000000432dfc/0000000000433335
+[Google Code Jam 2013]: https://codingcompetitions.withgoogle.com/codejam/archive/2013
 
 The small input has very modest bounds on size: the interval `$[A, B]$` is bounded by `$1 \le A \le B \le 1000$`.
 It's perfectly reasonable to check for each integer in that range whether it is a palindrome, and whether it is a perfect square of a palindrome.

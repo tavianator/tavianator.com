@@ -80,7 +80,7 @@ The storage requirement is `$6\,(n + 1)$` floating-point values, which is equiva
 The implementation of this algorithm in my ray tracer [Dimension] is available [here].
 
 [Dimension]: /dimension/
-[here]: /cgit/dimension.git/tree/libdimension/triangle_fan.c
+[here]: /cgit/dimension.git/tree/libdimension/model/objects/triangle_fan.c
 
 ---
 

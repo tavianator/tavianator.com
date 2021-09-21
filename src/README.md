@@ -10,7 +10,7 @@ I used to work at [Microsoft Research Montreal], and before that at a startup ca
 [Maluuba]: https://en.wikipedia.org/wiki/Maluuba
 [University of Calgary]: https://ucalgary.ca/
 
-Check out some of the [projects](projects/README.md) I'm working on, or read some of the highlights from my blog (the full archive is in the sidebar):
+Check out some of the [projects](projects/index.html) I'm working on, or read some of the highlights from my blog (the full archive is in the sidebar):
 
 - [Proving that 1 + 1 = 10 in Rust](2020/one_plus_one.md) (latest post)
 - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
