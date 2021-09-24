@@ -13,6 +13,9 @@ google-analytics = "UA-51266553-1"
 no-section-label = true
 git-repository-url = "https://github.com/tavianator/tavianator.com"
 
+[output.html.playground]
+copyable = false
+
 [output.html.print]
 enable = false
 
