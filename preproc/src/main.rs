@@ -82,7 +82,7 @@ impl SiteProc {
             // Implement our Markdown extensions
             let mut transducer = Transducer::new();
 
-            for event in new_cmark_parser(&chapter.content) {
+            for event in new_cmark_parser(&chapter.content, false) {
                 transducer.push(event);
             }
 

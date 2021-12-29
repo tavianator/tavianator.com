@@ -5,8 +5,8 @@ authors = ["Tavian Barnes <tavianator@tavianator.com>"]
 edition = "2018"
 
 [dependencies]
-clap = "2.33.3"
-mdbook = "0.4.12"
-pulldown-cmark = "0.7.2"
-pulldown-cmark-to-cmark = "5.0.0"
+clap = "2.34.0"
+mdbook = "0.4.14"
+pulldown-cmark = "0.8.0"
+pulldown-cmark-to-cmark = "7.1.1"
 serde_json = "1.0.68"
