@@ -2,7 +2,7 @@
 name = "preproc"
 version = "0.1.0"
 authors = ["Tavian Barnes <tavianator@tavianator.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 clap = "2.34.0"

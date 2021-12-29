@@ -56,7 +56,7 @@ use Bit::*;
 
 The simplest piece of arithmetic we can implement is a [half adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Half_adder):
 
-```rust,edition2018
+```rust
 # #[derive(Clone, Copy, Debug)]
 # enum Bit {
 #     Zero,
@@ -170,7 +170,7 @@ println!("It works!");
 
 We can implement a [full adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Full_adder) on top of the half adder:
 
-```rust,edition2018
+```rust
 # #[derive(Clone, Copy, Debug)]
 # enum Bit {
 #     Zero,
@@ -201,7 +201,7 @@ println!("One plus One plus One is {:?}, carry the {:?}", s, c);
 
 Or, at the type level:
 
-```rust,edition2018
+```rust
 # struct Zero;
 # struct One;
 #
@@ -268,7 +268,7 @@ type Natural = Vec<Bit>;
 But there's not really a nice equivalent of `Vec` at the type level.
 Instead, we can think a little more functionally and use a recursive linked list:
 
-```rust,edition2018
+```rust
 # #[derive(Clone, Copy, Debug)]
 # enum Bit {
 #     Zero,
@@ -303,7 +303,7 @@ This is backwards from our usual way of writing numbers, but it makes the implem
 Here's a [ripple-carry adder](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder):
 
 
-```rust,edition2018
+```rust
 # #[derive(Clone, Copy, Debug)]
 # enum Bit {
 #     Zero,
@@ -403,7 +403,7 @@ type RippleSum<A, B, C> = <(A, B, C) as RippleAdder>::Sum;
 
 And translate the `match` arms into `impl`s:
 
-```rust,edition2018
+```rust
 # #[derive(Debug, Default)]
 # struct Zero;
 # #[derive(Debug, Default)]
@@ -513,7 +513,7 @@ println!("It works!");
 
 Multiplication has a nice recursive definition too:
 
-```rust,edition2018
+```rust
 # #[derive(Clone, Copy, Debug)]
 # enum Bit {
 #     Zero,
@@ -612,7 +612,7 @@ println!("{}", forty_two_in_binary_backwards);
 
 I hoped this would translate directly to the type level too:
 
-```rust,edition2018
+```rust
 # #[derive(Debug, Default)]
 # struct Zero;
 # #[derive(Debug, Default)]
@@ -888,7 +888,7 @@ type Product<A, B> = MulReduced<MulMasked<A, MulShifted<MulRepeated<A, B>>>>;
 
 This time, it works!
 
-```rust,edition2018
+```rust
 # #[derive(Debug, Default)]
 # struct Zero;
 # #[derive(Debug, Default)]
@@ -1094,7 +1094,7 @@ println!("It works!");
 
 We can compute some pretty big numbers:
 
-```rust,edition2018
+```rust
 # #[derive(Debug, Default)]
 # struct Zero;
 # #[derive(Debug, Default)]
