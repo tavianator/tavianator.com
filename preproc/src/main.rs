@@ -8,10 +8,8 @@ use mdbook::utils::new_cmark_parser;
 use pulldown_cmark::{CowStr, Event, Tag, LinkType};
 
 use pulldown_cmark_to_cmark::cmark;
-use pulldown_cmark_to_cmark::State as CmarkState;
 
 use std::io;
-use std::iter;
 use std::process;
 
 /// Transducer states.
@@ -23,22 +21,20 @@ enum State {
 
 /// Our cmark --> cmark transducer.
 #[derive(Debug)]
-struct Transducer {
-    content: String,
+struct Transducer<'a> {
     state: State,
-    cstate: Option<CmarkState<'static>>,
+    events: Vec<Event<'a>>,
 }
 
-impl Transducer {
+impl<'a> Transducer<'a> {
     fn new() -> Self {
         Self {
-            content: String::new(),
             state: State::Default,
-            cstate: None,
+            events: Vec::new(),
         }
     }
 
-    fn push(&mut self, mut event: Event) {
+    fn push(&mut self, mut event: Event<'a>) {
         match self.state {
             State::Default => {
                 match event {
@@ -64,7 +60,7 @@ impl Transducer {
             }
         }
 
-        self.cstate = Some(cmark(iter::once(event), &mut self.content, self.cstate.take()).unwrap());
+        self.events.push(event);
     }
 }
 
@@ -86,7 +82,9 @@ impl SiteProc {
                 transducer.push(event);
             }
 
-            chapter.content = transducer.content;
+            let mut content = String::with_capacity(chapter.content.len());
+            cmark(transducer.events.iter(), &mut content, None).unwrap();
+            chapter.content = content;
         }
     }
 }
@@ -146,7 +144,7 @@ fn handle_preprocessing(preproc: &SiteProc) -> Result<(), Error> {
     Ok(())
 }
 
-fn handle_supports(preproc: &SiteProc, sub_args: &ArgMatches) -> ! {
+fn handle_supports(preproc: &SiteProc, sub_args: &ArgMatches<'_>) -> ! {
     let renderer = sub_args.value_of("renderer").expect("Required argument");
 
     if preproc.supports_renderer(&renderer) {
