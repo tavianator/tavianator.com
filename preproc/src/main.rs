@@ -5,7 +5,7 @@ use mdbook::errors::Error;
 use mdbook::preprocess::{CmdPreprocessor, Preprocessor, PreprocessorContext};
 use mdbook::utils::new_cmark_parser;
 
-use pulldown_cmark::{CowStr, Event, Tag, LinkType};
+use pulldown_cmark::{CowStr, Event, LinkType, Tag};
 
 use pulldown_cmark_to_cmark::cmark;
 
@@ -39,8 +39,8 @@ impl<'a> Transducer<'a> {
             State::Default => {
                 match event {
                     Event::Start(Tag::Link(LinkType::Autolink, ref dest, _)) => {
-                        if dest.starts_with("fa:") {
-                            let html = format!("<i class=\"fa fa-{}\" aria-hidden=\"true\"></i>", &dest[3..]);
+                        if let Some(icon) = dest.strip_prefix("fa:") {
+                            let html = format!("<i class=\"fa fa-{}\" aria-hidden=\"true\"></i>", icon);
                             event = Event::Html(CowStr::from(html));
                             self.state = State::SkipToEnd;
                         }
@@ -147,7 +147,7 @@ fn handle_preprocessing(preproc: &SiteProc) -> Result<(), Error> {
 fn handle_supports(preproc: &SiteProc, sub_args: &ArgMatches<'_>) -> ! {
     let renderer = sub_args.value_of("renderer").expect("Required argument");
 
-    if preproc.supports_renderer(&renderer) {
+    if preproc.supports_renderer(renderer) {
         process::exit(0);
     } else {
         process::exit(1);
