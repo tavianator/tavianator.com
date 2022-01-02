@@ -7,6 +7,9 @@
   - [acap](projects/acap.md)
   - [bistring](projects/bistring.md)
 
+- [2022]()
+  - [Long division](2022/long_division.md)
+
 - [2020]()
   - [Proving that 1 + 1 = 10 in Rust](2020/one_plus_one.md)
   - [OOMify](2020/oomify.md)
