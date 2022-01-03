@@ -38,13 +38,33 @@ impl<'a> Transducer<'a> {
         match self.state {
             State::Default => {
                 match event {
-                    Event::Start(Tag::Link(LinkType::Autolink, ref dest, _)) => {
-                        if let Some(icon) = dest.strip_prefix("fa:") {
-                            let html = format!("<i class=\"fa fa-{}\" aria-hidden=\"true\"></i>", icon);
+                    // Implement shorthand for FontAwesome icons
+                    Event::Start(Tag::Link(LinkType::Autolink, ref url, _)) => {
+                        if let Some(icon) = url.strip_prefix("fa:") {
+                            let html = format!(r#"<i class="fa fa-{}" aria-hidden="true"></i>"#, icon);
                             event = Event::Html(CowStr::from(html));
                             self.state = State::SkipToEnd;
                         }
                     }
+
+                    // Work around pulldown-cmark-to-cmark issues with link reference definitions, e.g.
+                    // https://github.com/Byron/pulldown-cmark-to-cmark/issues/39
+                    // https://github.com/Byron/pulldown-cmark-to-cmark/issues/40
+                    Event::Start(Tag::Link(
+                        LinkType::Reference | LinkType::Collapsed | LinkType::Shortcut,
+                        url,
+                        title,
+                    )) => {
+                        event = Event::Start(Tag::Link(LinkType::Inline, url, title));
+                    }
+                    Event::End(Tag::Link(
+                        LinkType::Reference | LinkType::Collapsed | LinkType::Shortcut,
+                        url,
+                        title,
+                    )) => {
+                        event = Event::End(Tag::Link(LinkType::Inline, url, title));
+                    }
+
                     _ => {}
                 }
             }
