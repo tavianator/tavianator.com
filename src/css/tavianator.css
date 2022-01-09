@@ -92,6 +92,7 @@ html {
     line-height: 0;
 }
 
+nav.nav-wrapper,
 nav.nav-wide-wrapper {
     display: none;
 }
