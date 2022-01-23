@@ -1,4 +1,4 @@
-use clap::{App, Arg, ArgMatches, SubCommand};
+use clap::{App, Arg, ArgMatches};
 
 use mdbook::book::{Book, BookItem};
 use mdbook::errors::Error;
@@ -131,9 +131,9 @@ fn main() {
     let matches = App::new("nop-preprocessor")
         .about("A mdbook preprocessor which does precisely nothing")
         .subcommand(
-            SubCommand::with_name("supports")
-                .arg(Arg::with_name("renderer").required(true))
-                .about("Check whether a renderer is supported by this preprocessor"),
+            App::new("supports")
+                .about("Check whether a renderer is supported by this preprocessor")
+                .arg(Arg::new("renderer").required(true)),
         )
         .get_matches();
 
@@ -164,7 +164,7 @@ fn handle_preprocessing(preproc: &SiteProc) -> Result<(), Error> {
     Ok(())
 }
 
-fn handle_supports(preproc: &SiteProc, sub_args: &ArgMatches<'_>) -> ! {
+fn handle_supports(preproc: &SiteProc, sub_args: &ArgMatches) -> ! {
     let renderer = sub_args.value_of("renderer").expect("Required argument");
 
     if preproc.supports_renderer(renderer) {
