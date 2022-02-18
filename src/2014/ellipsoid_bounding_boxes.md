@@ -176,9 +176,9 @@ z & = \mathbf{M}_{3,4} \pm \sqrt{\mathbf{M}_{3,1}^2 + \mathbf{M}_{3,2}^2 + \math
 ```
 
 This makes at least some intuitive sense, since the fourth column of `$\mathbf{M}$` determines the sphere's translation.
-See [here] for an implementation in my ray tracer [Dimension].
+See [here][impl] for an implementation in my ray tracer [Dimension].
 
-[here]: /cgit/dimension.git/tree/libdimension/sphere.c?id=df36a146277eaa442f09520da8d40b95107803d7#n62
+[impl]: /cgit/dimension.git/tree/libdimension/sphere.c?id=df36a146277eaa442f09520da8d40b95107803d7#n62
 [Dimension]: /dimension
 
 ---
