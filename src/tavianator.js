@@ -22,4 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (prev) {
         prev.remove();
     }
+
+    let searchbar = document.querySelector("input#searchbar");
+    if (searchbar) {
+        searchbar.placeholder = "Search this site ...";
+    }
 });
