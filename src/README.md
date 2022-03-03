@@ -29,5 +29,3 @@ I'm probably @tavianator on your favourite website:
 [<fa:instagram> Instagram](https://www.instagram.com/tavianator)
 
 </div>
-
----

@@ -51,6 +51,8 @@ html {
 .content .elsewhere p {
     display: flex;
     flex-wrap: wrap;
+    border-bottom: 1px solid var(--icons);
+    margin-top: -8px;
 }
 
 .content .elsewhere a,
@@ -59,6 +61,7 @@ html {
     flex: 1;
     text-align: center;
     text-decoration: none;
+    padding: 12px 0;
 }
 
 .content h1 {
