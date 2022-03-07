@@ -96,6 +96,7 @@ html {
 }
 
 nav.nav-wrapper,
+.sidebar-visible nav.nav-wrapper,
 nav.nav-wide-wrapper {
     display: none;
 }
