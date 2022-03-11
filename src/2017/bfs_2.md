@@ -180,7 +180,7 @@ Here's an example implementation of a technique that handles left-recursive rule
 ```c
 static struct expr *parse_clause(struct parser_state *state, struct expr *lhs) {
 	// Parse with the right-recursive rules
-	   // CLAUSE : TERM
+	// CLAUSE : TERM
 	//        | TERM -o CLAUSE
 	struct expr *expr = parse_term(state);
 
@@ -322,7 +322,7 @@ struct table_entry {
 };
 
 static const struct table_entry parse_table[] = {
-        ...
+	...
 	{"follow", false, parse_follow, BFTW_LOGICAL | BFTW_DETECT_CYCLES, true},
 	...
 	{"print", false, parse_print},
