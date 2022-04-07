@@ -1,4 +1,4 @@
-use clap::{App, Arg, ArgMatches};
+use clap::{Arg, ArgMatches, Command};
 
 use mdbook::book::{Book, BookItem};
 use mdbook::errors::Error;
@@ -103,7 +103,7 @@ impl SiteProc {
             }
 
             let mut content = String::with_capacity(chapter.content.len());
-            cmark(transducer.events.iter(), &mut content, None).unwrap();
+            cmark(transducer.events.iter(), &mut content).unwrap();
             chapter.content = content;
         }
     }
@@ -128,10 +128,10 @@ impl Preprocessor for SiteProc {
 fn main() {
     let preproc = SiteProc::new();
 
-    let matches = App::new("nop-preprocessor")
+    let matches = Command::new("nop-preprocessor")
         .about("A mdbook preprocessor which does precisely nothing")
         .subcommand(
-            App::new("supports")
+            Command::new("supports")
                 .about("Check whether a renderer is supported by this preprocessor")
                 .arg(Arg::new("renderer").required(true)),
         )
