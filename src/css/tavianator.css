@@ -34,6 +34,12 @@ html {
     margin-left: 0;
 }
 
+.content main :not(pre) > .hljs {
+    background-color: transparent;
+    color: var(--fg);
+    padding: 0;
+}
+
 .content main a:link,
 .content main a:link .hljs,
 .content main a:visited,
@@ -43,7 +49,13 @@ html {
     transition: background-color 0.5s;
 }
 
-.content main a:hover {
+.content main details summary {
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.content main a:hover,
+.content main details summary:hover {
     background-color: var(--theme-hover);
     transition: background-color 0.15s;
 }
