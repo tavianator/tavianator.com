@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2022]()
+  - [Parallelizing graph search with Rayon](2022/parallel_graph_search.md)
   - [Long division](2022/long_division.md)
 
 - [2020]()
