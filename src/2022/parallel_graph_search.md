@@ -4,6 +4,7 @@
 
 <fa:clock-o> 2022-04-08
 <fa:user> Tavian Barnes
+[<fa:reddit> Reddit](https://www.reddit.com/r/rust/comments/tz4lcy/parallelizing_graph_search_with_rayon/)
 [<fa:github> GitHub](https://github.com/tavianator/spliter)
 [<fa:cubes> crates.io](https://crates.io/crates/spliter)
 [<fa:book> Docs](https://docs.rs/spliter)
