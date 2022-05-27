@@ -12,7 +12,7 @@ I used to work at [Microsoft Research Montreal], and before that at a startup ca
 
 Check out some of the [projects](projects/index.html) I'm working on, or read some of the highlights from my blog (the full archive is in the sidebar):
 
-- [Parallelizing graph search with Rayon](2022/parallel_graph_search.md) (latest post)
+- [Remote reboots with encrypted disks](2022/remote_reboots.md) (latest post)
 - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
 - [Exact Bounding Boxes for Spheres/Ellipsoids](2014/ellipsoid_bounding_boxes.md)
 - [Ray/Triangle Intersections](2014/ray_triangle.md), [Ray/Mesh Intersections](2014/ray_mesh.md)

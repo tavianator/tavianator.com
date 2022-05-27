@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2022]()
+  - [Remote reboots with encrypted disks](2022/remote_reboots.md)
   - [Parallelizing graph search with Rayon](2022/parallel_graph_search.md)
   - [Long division](2022/long_division.md)
 
