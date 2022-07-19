@@ -60,16 +60,19 @@ html {
     transition: background-color 0.15s;
 }
 
-.content .elsewhere p {
+.content .linkbar p {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid var(--icons);
-    margin-top: -8px;
+    margin: -8px 0;
 }
 
-.content .elsewhere a,
-.content .elsewhere a:link,
-.content .elsewhere a:visited {
+.content .linkbar:last-child p {
+    border-bottom: 1px solid var(--icons);
+}
+
+.content .linkbar a,
+.content .linkbar a:link,
+.content .linkbar a:visited {
     flex: 1;
     text-align: center;
     text-decoration: none;
@@ -105,6 +108,10 @@ html {
 
 .content sup {
     line-height: 0;
+}
+
+.content hr {
+    border: 1px solid var(--icons);
 }
 
 nav.nav-wrapper,

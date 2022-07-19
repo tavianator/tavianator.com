@@ -20,7 +20,7 @@ Check out some of the [projects](projects/index.html) I'm working on, or read so
 
 I'm probably @tavianator on your favourite website:
 
-<div class="elsewhere">
+<div class="linkbar">
 
 [<fa:twitter> Twitter](https://twitter.com/tavianator)
 [<fa:github> GitHub](https://github.com/tavianator)
