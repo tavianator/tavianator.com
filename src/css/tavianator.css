@@ -114,6 +114,11 @@ html {
     border: 1px solid var(--icons);
 }
 
+.content ins {
+    text-decoration: none;
+    background: var(--quote-bg);
+}
+
 nav.nav-wrapper,
 .sidebar-visible nav.nav-wrapper,
 nav.nav-wide-wrapper {
