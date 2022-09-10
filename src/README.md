@@ -14,7 +14,7 @@ Check out some of the [projects](projects/index.html) I'm working on, or read so
 
 - [Ray/Bounding Box Intersections](2011/ray_box.md)
   - [Part 2: NaNs](2015/ray_box_nan.md)
-  - [Part 3: Boundaries](2022/ray_box_boundary.md)&emsp;&larr; latest post
+  - [Part 3: Boundaries](2022/ray_box_boundary.md)&emsp;**&larr; new post**
 - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
 - [Exact Bounding Boxes for Spheres/Ellipsoids](2014/ellipsoid_bounding_boxes.md)
 - [Ray/Triangle Intersections](2014/ray_triangle.md), [Ray/Mesh Intersections](2014/ray_mesh.md)

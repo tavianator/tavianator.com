@@ -38,10 +38,16 @@ impl<'a> Transducer<'a> {
         match self.state {
             State::Default => {
                 match event {
-                    // Implement shorthand for FontAwesome icons
+                    // Markdown autolinks are used for custom shorthands, e.g. `<fa:user>`
                     Event::Start(Tag::Link(LinkType::Autolink, ref url, _)) => {
                         if let Some(icon) = url.strip_prefix("fa:") {
-                            let html = format!(r#"<i class="fa fa-{}" aria-hidden="true"></i>"#, icon);
+                            // Shorthand for FontAwesome icons
+                            let html = format!(r#"<i class="fa fa-{icon}" aria-hidden="true"></i>"#);
+                            event = Event::Html(CowStr::from(html));
+                            self.state = State::SkipToEnd;
+                        } else if let Some(time) = url.strip_prefix("time:") {
+                            // Shorthand for <time> elements
+                            let html = format!(r#"<time datetime="{time}">{time}</time>"#);
                             event = Event::Html(CowStr::from(html));
                             self.state = State::SkipToEnd;
                         }
