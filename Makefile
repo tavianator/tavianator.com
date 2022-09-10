@@ -24,7 +24,7 @@ pod-build: \
     pod-build-cgit
 
 pod-build-%:
-	podman build --pull -t $(IMAGE)-$* -f infra/$* .
+	podman build --pull -t $(IMAGE)-$* -f infra/$*/Dockerfile .
 
 pod-push: \
     pod-push-blog \
