@@ -683,47 +683,49 @@ The benchmark tested intersections between a ray and a complete [octree](https:/
 Approximately 10 billion intersection tests were performed for each configuration.
 The observed throughput (intersection tests per second) is reported in this table:
 
-<table style="width: 100%;">
-  <thead>
-    <tr>
-      <th>Height</th>
-      <th>4</th>
-      <th>5</th>
-      <th>8</th>
-      <th>10</th>
-    </tr>
-    <tr>
-      <th>Size</th>
-      <th>14 KiB<br>&lt; 32 KiB L1</th>
-      <th>110 KiB<br>&lt; 512 KiB L2</th>
-      <th>55 MiB<br>&lt; 64 MiB L3</th>
-      <th>3.5 GiB</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Baseline</strong></td>
-      <td><strong>753</strong> M/s</td>
-      <td><strong>757</strong> M/s</td>
-      <td>477 M/s</td>
-      <td><strong>475</strong> M/s</td>
-    </tr>
-    <tr>
-      <td><strong>Exclusive</strong></td>
-      <td>689 M/s</td>
-      <td>691 M/s</td>
-      <td>457 M/s</td>
-      <td>457 M/s</td>
-    </tr>
-    <tr>
-      <td><strong>Inclusive</strong></td>
-      <td>692 M/s</td>
-      <td>694 M/s</td>
-      <td><strong>486</strong> M/s</td>
-      <td>458 M/s</td>
-    </tr>
-  </tbody>
-</table>
+<div style="width: 100%; overflow-x: auto;">
+  <table style="min-width: 100%;">
+    <thead>
+      <tr>
+        <th>Height</th>
+        <th>4</th>
+        <th>5</th>
+        <th>8</th>
+        <th>10</th>
+      </tr>
+      <tr>
+        <th>Size</th>
+        <th>14&nbsp;KiB<br>&lt;&nbsp;32&nbsp;KiB&nbsp;L1</th>
+        <th>110&nbsp;KiB<br>&lt;&nbsp;512&nbsp;KiB&nbsp;L2</th>
+        <th>55&nbsp;MiB<br>&lt;&nbsp;64&nbsp;MiB&nbsp;L3</th>
+        <th>3.5&nbsp;GiB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Baseline</strong></td>
+        <td><strong>753</strong>&nbsp;M/s</td>
+        <td><strong>757</strong>&nbsp;M/s</td>
+        <td>477&nbsp;M/s</td>
+        <td><strong>475</strong>&nbsp;M/s</td>
+      </tr>
+      <tr>
+        <td><strong>Exclusive</strong></td>
+        <td>689&nbsp;M/s</td>
+        <td>691&nbsp;M/s</td>
+        <td>457&nbsp;M/s</td>
+        <td>457&nbsp;M/s</td>
+      </tr>
+      <tr>
+        <td><strong>Inclusive</strong></td>
+        <td>692&nbsp;M/s</td>
+        <td>694&nbsp;M/s</td>
+        <td><strong>486</strong>&nbsp;M/s</td>
+        <td>458&nbsp;M/s</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 The baseline algorithm is fastest in all but one configuration, where surprisingly enough the inclusive algorithm comes out on top.
 There is a sharp decline in throughput as the working set exceeds the L2 cache size, but even then every algorithm can handle at least **450 million** intersections/s.

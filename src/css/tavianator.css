@@ -142,7 +142,7 @@ nav.nav-wide-wrapper {
 figure {
     margin: 0;
     max-width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
     text-align: center;
 }
 
@@ -184,6 +184,7 @@ figure {
 .tabs > .tab {
     display: none;
     flex-basis: 100%;
+    overflow-x: auto;
 }
 
 .tabs > input[type="radio"]:checked:nth-of-type(1) ~ div:nth-of-type(1),
