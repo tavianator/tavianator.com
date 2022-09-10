@@ -524,11 +524,11 @@ struct object *object = NULL;
 float t = INFINITY;
 
 for (int i = 0; i < nobjects; ++i) {
-  if (intersection(ray, objects[i]->bounding_box)) {
-    if (objects[i]->intersection(ray, &t)) {
-      object = objects[i];
+    if (intersection(ray, objects[i]->bounding_box)) {
+        if (objects[i]->intersection(ray, &t)) {
+            object = objects[i];
+        }
     }
-  }
 }
 ```
 
@@ -543,9 +543,9 @@ We should pass it in to avoid looking inside bounding boxes that are too far awa
 +    float tmin = 0.0;
  ...
  for (int i = 0; i < nobjects; ++i) {
--  if (intersection(ray, objects[i]->bounding_box)) {
-+  if (intersection(ray, objects[i]->bounding_box, t)) {
-     if (objects[i]->intersection(ray, &t)) {
+-    if (intersection(ray, objects[i]->bounding_box)) {
++    if (intersection(ray, objects[i]->bounding_box, t)) {
+         if (objects[i]->intersection(ray, &t)) {
 ```
 
 Another problem is that we just spent all this effort coming up with a fast, branchless intersection test, and then immediately branched on the result.
@@ -585,11 +585,11 @@ float ts[nobjects] = {INFINITY, INFINITY, ...};
 intersections(ray, nobjects, bounding_boxes, ts);
 
 for (size_t i = 0; i < nobjects; ++i) {
-  if (ts[i] < t) {
-    if (objects[i]->intersection(ray, &t)) {
-      object = objects[i];
+    if (ts[i] < t) {
+        if (objects[i]->intersection(ray, &t)) {
+            object = objects[i];
+        }
     }
-  }
 }
 ```
 
