@@ -401,7 +401,7 @@ bool intersection(const struct ray *ray, const struct box *box) {
 ## Boundaries
 
 You may have noticed that all the inequalities above are strict (`$<$`, not `$\le$`).
-That means rays which just touch a corneray, edge, or face of the bounding box will be considered non-intersecting.
+That means rays which just touch a corner, edge, or face of the bounding box will be considered non-intersecting.
 
 <figure>
   <svg width="550" height="340" viewBox="-80 40 550 340">
@@ -606,7 +606,7 @@ Finally, the "inclusive" implementation (from this post) includes the boundary a
 Measurements were taken on an 3.80 GHz AMD Ryzen Threadripper 3960X with 64 GiB of RAM, running Arch Linux.
 CPU frequency scaling was disabled, as was [Turbo Core](https://en.wikipedia.org/wiki/AMD_Turbo_Core) (AMD's version of [Turbo Boost](https://en.wikipedia.org/wiki/Intel_Turbo_Boost)), so the clock speed was constant throughout the expirement.
 The code was compiled by Clang 14.0.6 with the flags `-O3 -flto -march=native`.
-I also tried GCC 12.2.0, but it did not consistently eliminate branches or vectorize the loop, making it much slower.
+I also tried GCC 12.2.0, but it did not consistently [eliminate branches](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=106952) or vectorize the loop, making it much slower.
 The hot loop of each configuration looks like:
 
 <div class="tabs">
