@@ -715,7 +715,7 @@ typedef __m256 vfloat;
 #define max(x, y) _mm256_max_ps(x, y)
 
 /// A vectorized ray, holding 8 rays at once.
-struct ray {
+struct vray {
     vfloat origin[3];
     vfloat dir_inv[3];
 };
