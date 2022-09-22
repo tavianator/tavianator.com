@@ -286,7 +286,7 @@ My implementation of this in my ray-tracer [Dimension] can be seen [here].
 > > <fa:user> [**Tavian Barnes**](/)
 > > <fa:clock-o> 2015-05-16
 > >
-> > `$t = t_{\min}$`, unless `$t_{\min} < 0$`, in which case you're inside the box and `$t = t_{\max}$`.
+> > `$t = t_{\min{}}$`, unless `$t_{\min{}} < 0$`, in which case you're inside the box and `$t = t_{\max{}}$`.
 
 > [**Cody Bloemhard**](http://ocdy1001.blogspot.nl/)
 > <fa:clock-o> 2015-05-29

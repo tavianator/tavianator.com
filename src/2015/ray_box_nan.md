@@ -61,11 +61,11 @@ Are the two algorithms really equivalent?
 We've eliminated the `$\mathtt{r.dir}_i \ne 0$` checks by relying on [IEEE 754] floating point behaviour.
 When `$\mathtt{r.dir}_i = \pm 0$`, `$\mathtt{r.dir\_inv}_i = \pm \infty$`.
 If the ray origin's `$i$` coordinate is inside the box, meaning `$\mathtt{b.min}_i < \mathtt{r.origin}_i < \mathtt{b.max}_i$`, we'll have `$t_1 = -t_2 = \pm \infty$`.
-Since `$\max(n, -\infty) = \min(n, +\infty) = n$` for all `$n$`, `$t_{\min}$` and `$t_{\max}$` will remain unchanged.
+Since `$\max(n, -\infty) = \min(n, +\infty) = n$` for all `$n$`, `$t_{\min{}}$` and `$t_{\max{}}$` will remain unchanged.
 
 [IEEE 754]: https://en.wikipedia.org/wiki/IEEE_floating_point
 
-On the other hand, if the `$i$` coordinate is outside the box (`$\mathtt{r.origin}_i < \mathtt{b.min}_i$` or `$\mathtt{r.origin}_i > \mathtt{b.max}_i$`), we'll have `$t_1 = t_2 = \pm \infty$`, and therefore either `$t_{\min} = +\infty$` or `$t_{\max} = -\infty$`.
+On the other hand, if the `$i$` coordinate is outside the box (`$\mathtt{r.origin}_i < \mathtt{b.min}_i$` or `$\mathtt{r.origin}_i > \mathtt{b.max}_i$`), we'll have `$t_1 = t_2 = \pm \infty$`, and therefore either `$t_{\min{}} = +\infty$` or `$t_{\max{}} = -\infty$`.
 One of those values will stick around through the rest of the algorithm, causing us to return `false`.
 
 Unfortunately the above analysis has a caveat: if the ray lies exactly on a slab (`$\mathtt{r.origin}_i = \mathtt{b.min}_i$` or `$\mathtt{r.origin}_i = \mathtt{b.max}_i$`), we'll have (say)
@@ -178,7 +178,7 @@ bool intersection(box b, ray r) {
 }
 ```
 
-It's a little harder to see why this version is correct: any NaNs from the `$x$` coordinate will propagate through to the end, while NaNs from other coordinates will result in `$t_{\min} \ge t_{\max}$`; in both cases, `false` is returned.
+It's a little harder to see why this version is correct: any NaNs from the `$x$` coordinate will propagate through to the end, while NaNs from other coordinates will result in `$t_{\min{}} \ge t_{\max{}}$`; in both cases, `false` is returned.
 
 With GCC 4.9.2 at `-O3` this implementation handles just over 93 million rays per second, meaning the runtime is around 30 clock cycles, even without vectorization!
 

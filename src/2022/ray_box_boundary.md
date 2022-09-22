@@ -35,11 +35,11 @@ An axis-aligned bounding box `$\square$` can be specified by the coordinates of 
     <rect x="80" y="80" width="240" height="240" stroke="var(--fg)" fill="url(#hatch)" />
     <circle cx="80" cy="320" r="4" fill="var(--fg)" />
     <foreignObject x="-70" y="300" width="140" height="80">
-      <code>$\square_{\min} = \begin{pmatrix} x_{\min} \\ y_{\min} \\ z_{\min} \end{pmatrix}$</code>
+      <code>$\square_{\min{}} = \begin{pmatrix} x_{\min{}} \\ y_{\min{}} \\ z_{\min{}} \end{pmatrix}$</code>
     </foreignObject>
     <circle cx="320" cy="80" r="4" fill="var(--fg)" />
     <foreignObject x="330" y="40" width="140" height="80">
-      <code>$\square_{\max} = \begin{pmatrix} x_{\max} \\ y_{\max} \\ z_{\max} \end{pmatrix}$</code>
+      <code>$\square_{\max{}} = \begin{pmatrix} x_{\max{}} \\ y_{\max{}} \\ z_{\max{}} \end{pmatrix}$</code>
     </foreignObject>
   </svg>
 </figure>
@@ -48,9 +48,9 @@ A point `$(x, y, z)$` is inside the box if and only if
 
 ```math
 \begin{alignedat}{3}
-& x_{\min} && < x && < x_{\max} \\
-& y_{\min} && < y && < y_{\max} \\
-& z_{\min} && < z && < z_{\max}. \\
+& x_{\min{}} && < x && < x_{\max{}} \\
+& y_{\min{}} && < y && < y_{\max{}} \\
+& z_{\min{}} && < z && < z_{\max{}}. \\
 \end{alignedat}
 ```
 
@@ -60,7 +60,7 @@ Equivalently, the interior of the box is the intersection of many [half-spaces](
   <svg width="550" height="400" viewBox="-80 0 550 400">
     <g visibility="hidden">
       <foreignObject x="160" y="185" width="80" height="25">
-        <code>$x &gt; x_{\min}$</code>
+        <code>$x &gt; x_{\min{}}$</code>
       </foreignObject>
       <set id="reset" attributeName="visibility" to="hidden" begin="0s; edges.end" dur="4s" />
       <set id="xmin" attributeName="visibility" to="visible" begin="reset.end" dur="2s" />
@@ -69,21 +69,21 @@ Equivalently, the interior of the box is the intersection of many [half-spaces](
     </g>
     <g visibility="hidden">
       <foreignObject x="160" y="185" width="80" height="25">
-        <code>$x &lt; x_{\max}$</code>
+        <code>$x &lt; x_{\max{}}$</code>
       </foreignObject>
       <set id="xmax" attributeName="visibility" to="visible" begin="xmin.end" dur="2s" />
       <set attributeName="visibility" to="hidden" begin="xmax.end" end="xmax.begin" />
     </g>
     <g visibility="hidden">
       <foreignObject x="160" y="185" width="80" height="25">
-        <code>$y &gt; y_{\min}$</code>
+        <code>$y &gt; y_{\min{}}$</code>
       </foreignObject>
       <set id="ymin" attributeName="visibility" to="visible" begin="xmax.end" dur="2s" />
       <set attributeName="visibility" to="hidden" begin="ymin.end" end="ymin.begin" />
     </g>
     <g visibility="hidden">
       <foreignObject x="160" y="185" width="80" height="25">
-        <code>$y &lt; y_{\max}$</code>
+        <code>$y &lt; y_{\max{}}$</code>
       </foreignObject>
       <set id="ymax" attributeName="visibility" to="visible" begin="ymin.end" dur="2s" />
       <set attributeName="visibility" to="hidden" begin="ymax.end" end="ymax.begin" />
@@ -296,32 +296,32 @@ The segment of the ray that intersects the `$x$` planes of the bounding box is t
     <rect x="80" y="80" width="240" height="240" stroke="var(--fg)" fill="url(#hatch)" />
     <circle cx="80" cy="131.428571" r="4" fill="var(--fg)" />
     <foreignObject x="-50" y="100" width="125" height="45">
-      <code>$\displaystyle t_1 = \frac{x_{\min} - x_0}{x_d}$</code>
+      <code>$\displaystyle t_1 = \frac{x_{\min{}} - x_0}{x_d}$</code>
     </foreignObject>
     <circle cx="320" cy="28.571428" r="4" fill="var(--fg)" />
     <foreignObject x="330" y="30" width="125" height="45">
-      <code>$\displaystyle t_2 = \frac{x_{\max} - x_0}{x_d}$</code>
+      <code>$\displaystyle t_2 = \frac{x_{\max{}} - x_0}{x_d}$</code>
     </foreignObject>
   </svg>
 </figure>
 
 ```math
 \begin{aligned}
-t_{\min} & = \min \{ t_1, t_2 \} \\
-t_{\max} & = \max \{ t_1, t_2 \}. \\
+t_{\min{}} & = \min \{ t_1, t_2 \} \\
+t_{\max{}} & = \max \{ t_1, t_2 \}. \\
 \end{aligned}
 ```
 
-The intersection of two segments `$(u_{\min}, u_{\max})$` and `$(v_{\min}, v_{\max})$` is just
+The intersection of two segments `$(u_{\min{}}, u_{\max{}})$` and `$(v_{\min{}}, v_{\max{}})$` is just
 
 ```math
 \begin{aligned}
-t_{\min} & = \max \{ u_{\min}, v_{\min} \} \\
-t_{\max} & = \min \{ u_{\max}, v_{\max} \}. \\
+t_{\min{}} & = \max \{ u_{\min{}}, v_{\min{}} \} \\
+t_{\max{}} & = \min \{ u_{\max{}}, v_{\max{}} \}. \\
 \end{aligned}
 ```
 
-If we end up with `$t_{\min} > t_{\max}$`, the intersection is empty.
+If we end up with `$t_{\min{}} > t_{\max{}}$`, the intersection is empty.
 
 Putting all this together leads to a naturally branch-free ray/AABB intersection test (assuming `min()` and `max()` are branch-free and loops are unrolled):
 
