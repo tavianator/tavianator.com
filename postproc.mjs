@@ -10,6 +10,23 @@ glob("site/**/*.html", async (er, files) => {
         const dom = await JSDOM.fromFile(file);
         const document = dom.window.document;
 
+        let links = [...document.getElementsByTagName("a")];
+        for (const link of links) {
+            if (link.protocol === "fa:") {
+                const icon = link.href.substring(3);
+                const i = document.createElement("i");
+                i.classList.add("fa", "fa-" + icon);
+                i.ariaHidden = "true";
+                link.parentNode.replaceChild(i, link);
+            } else if (link.protocol === "time:") {
+                const dateTime = link.href.substring(5);
+                const time = document.createElement("time");
+                time.dateTime = dateTime;
+                time.textContent = dateTime;
+                link.parentNode.replaceChild(time, link);
+            }
+        }
+
         let codes = [...document.getElementsByTagName("code")];
         for (const code of codes) {
             if (code.classList.contains("language-math")) {

@@ -1,13 +1,11 @@
 default:
 	npm install
-	cargo build
 	cargo install mdbook --version=0.4.20
 	mdbook build
 	./postproc.mjs
 
 clean:
 	mdbook clean
-	cargo clean
 
 POD := tavianator.com
 IMAGE := docker.io/tavianator/tavianator.com

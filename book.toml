@@ -20,7 +20,3 @@ copyable = false
 
 [output.html.print]
 enable = false
-
-[preprocessor.site]
-command = "./target/debug/preproc"
-renderer = ["html"]
