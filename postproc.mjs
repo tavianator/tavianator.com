@@ -7,54 +7,92 @@ import katex from "katex";
 
 glob("site/**/*.html", async (er, files) => {
     for (const file of files) {
-        const dom = await JSDOM.fromFile(file);
-        const document = dom.window.document;
+        const source = await fs.promises.readFile(file, { encoding: "utf-8" });
+        const dom = new JSDOM(source, {
+            includeNodeLocations: true,
+        });
 
-        let links = [...document.getElementsByTagName("a")];
+        const { document, Node } = dom.window;
+
+        // HTML 5 doesn't allow nested <a> tags, so detect them and fix them up
+        const links = [...document.getElementsByTagName("a")];
         for (const link of links) {
-            if (link.protocol === "fa:") {
-                const icon = link.href.substring(3);
-                const i = document.createElement("i");
-                i.classList.add("fa", "fa-" + icon);
-                i.ariaHidden = "true";
-                link.parentNode.replaceChild(i, link);
-            } else if (link.protocol === "time:") {
-                const dateTime = link.href.substring(5);
-                const time = document.createElement("time");
-                time.dateTime = dateTime;
-                time.textContent = dateTime;
-                link.parentNode.replaceChild(time, link);
+            const loc = dom.nodeLocation(link);
+            if (loc && !loc.endTag) {
+                let end = loc.endOffset;
+
+                let sibling = link.nextSibling;
+                while (sibling) {
+                    const next = sibling.nextSibling;
+
+                    const sibLoc = dom.nodeLocation(sibling);
+                    if (sibLoc) {
+                        const skipped = source.slice(end, sibLoc.startOffset);
+                        if (skipped.includes("</a>")) {
+                            break;
+                        }
+
+                        end = sibLoc.endOffset;
+
+                        if (sibling.nodeType === Node.TEXT_NODE) {
+                            const parsed = source.slice(sibLoc.startOffset, sibLoc.endOffset);
+                            const index = parsed.indexOf("</a>");
+                            if (index >= 0) {
+                                const before = JSDOM.fragment(parsed.slice(0, index));
+                                link.appendChild(before);
+
+                                const after = JSDOM.fragment(parsed.slice(index + 4));
+                                sibling.replaceWith(after);
+                                break;
+                            }
+                        }
+                    }
+
+                    link.appendChild(sibling);
+                    sibling = next;
+                }
             }
         }
 
-        let codes = [...document.getElementsByTagName("code")];
+        for (const link of links) {
+            let node;
+
+            if (link.protocol === "fa:") {
+                const icon = link.href.substring(3);
+                node = document.createElement("i");
+                node.classList.add("fa", "fa-" + icon);
+                node.ariaHidden = "true";
+            } else if (link.protocol === "time:") {
+                const dateTime = link.href.substring(5);
+                node = document.createElement("time");
+                node.dateTime = dateTime;
+                node.textContent = dateTime;
+            } else {
+                continue;
+            }
+
+            link.replaceWith(node);
+        }
+
+        const codes = [...document.getElementsByTagName("code")];
         for (const code of codes) {
             if (code.classList.contains("language-math")) {
                 const p = document.createElement("p");
                 p.innerHTML = katex.renderToString(code.textContent, { displayMode: true });
-                let pre = code.parentNode;
-                pre.parentNode.replaceChild(p, pre);
+                const pre = code.parentNode;
+                pre.replaceWith(p);
             } else if (/^\$.*\$$/.test(code.textContent)) {
-                let span = document.createElement("span");
+                const span = document.createElement("span");
                 span.innerHTML = katex.renderToString(code.textContent.slice(1, -1));
-                code.parentNode.replaceChild(span, code);
+                code.replaceWith(span);
             }
         }
 
-        let next = document.querySelector(".nav-chapters.next");
-        if (next) {
-            next.remove();
-        }
+        document.querySelectorAll("nav.nav-wrapper, nav.nav-wide-wrapper")
+            .forEach(nav => nav.remove());
 
-        let prev = document.querySelector(".nav-chapters.previous");
-        if (prev) {
-            prev.remove();
-        }
-
-        let searchbar = document.querySelector("input#searchbar");
-        if (searchbar) {
-            searchbar.placeholder = "Search this site ...";
-        }
+        const searchbar = document.querySelector("input#searchbar");
+        searchbar.placeholder = "Search this site ...";
 
         await fs.promises.writeFile(file, dom.serialize());
     }
