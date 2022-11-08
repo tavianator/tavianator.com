@@ -146,6 +146,10 @@ figure {
     text-align: center;
 }
 
+figure .fig-scale {
+    max-width: 100%;
+}
+
 .tabs {
     display: flex; /* To get rid of whitespace between tab labels */
     flex-wrap: wrap;

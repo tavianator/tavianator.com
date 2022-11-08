@@ -22,7 +22,7 @@ Feel free to skip to the [next section](#boundaries) if you're already familiar 
 An axis-aligned bounding box `$\square$` can be specified by the coordinates of two of its corners:
 
 <figure>
-  <svg width="550" height="340" viewBox="-80 40 550 340">
+  <svg class="fig-scale" width="550" viewBox="-80 40 550 340">
     <defs>
       <pattern id="hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
         <line x1="0" y1="0" x2="0" y2="8" stroke="var(--icons)" stroke-width="1" />
@@ -57,7 +57,7 @@ A point `$(x, y, z)$` is inside the box if and only if
 Equivalently, the interior of the box is the intersection of many [half-spaces](https://en.wikipedia.org/wiki/Half-space_(geometry)):
 
 <figure>
-  <svg width="550" height="400" viewBox="-80 0 550 400">
+  <svg class="fig-scale" width="550" viewBox="-80 0 550 400">
     <g visibility="hidden">
       <foreignObject x="160" y="185" width="80" height="25">
         <code>$x &gt; x_{\min{}}$</code>
@@ -147,7 +147,7 @@ The slab method tests for an intersection between a ray and an AABB (axis-aligne
 In the end, what's left of the ray is the segment that intersects the box, if any.
 
 <figure>
-  <svg width="550" height="400" viewBox="-80 0 550 400">
+  <svg class="fig-scale" width="550" viewBox="-80 0 550 400">
     <line x1="-81" y1="0" x2="-81" y2="400" stroke="var(--fg)">
       <animate attributeName="x1" to="80" begin="xmin.begin" dur="0.5s" fill="freeze" />
       <animate attributeName="x2" to="80" begin="xmin.begin" dur="0.5s" fill="freeze" />
@@ -288,7 +288,7 @@ t = \frac{x - x_0}{x_d}.
 The segment of the ray that intersects the `$x$` planes of the bounding box is then
 
 <figure>
-  <svg width="550" height="200" viewBox="-80 0 550 200">
+  <svg class="fig-scale" width="550" viewBox="-80 0 550 200">
     <line x1="80" y1="0" x2="80" y2="400" stroke="var(--fg)" />
     <line x1="320" y1="0" x2="320" y2="400" stroke="var(--fg)" />
     <line x1="-80" y1="200" x2="386.666666" y2="0" stroke="var(--icons)" stroke-dasharray="1" />
@@ -404,7 +404,7 @@ You may have noticed that all the inequalities above are strict (`$<$`, not `$\l
 That means rays which just touch a corner, edge, or face of the bounding box will be considered non-intersecting.
 
 <figure>
-  <svg width="550" height="340" viewBox="-80 40 550 340">
+  <svg class="fig-scale" width="550" viewBox="-80 40 550 340">
     <rect x="80" y="80" width="240" height="240" stroke="var(--fg)" fill="url(#hatch)" />
     <line x1="-80" y1="80" x2="120" y2="380" stroke="red" stroke-width="2" />
     <line x1="-80" y1="80" x2="470" y2="80" stroke="red" stroke-width="2" />
@@ -423,7 +423,7 @@ Sadly, relaxing the inequalities fixes the corner case, but not the edge case, s
 ```
 
 <figure>
-  <svg width="550" height="340" viewBox="-80 40 550 340">
+  <svg class="fig-scale" width="550" viewBox="-80 40 550 340">
     <rect x="80" y="80" width="240" height="240" stroke="var(--fg)" fill="url(#hatch)" />
     <line x1="-80" y1="80" x2="120" y2="380" stroke="green" stroke-width="2" />
     <line x1="-80" y1="80" x2="470" y2="80" stroke="red" stroke-width="2" />
@@ -507,7 +507,7 @@ bool intersection(const struct ray *ray, const struct box *box) {
 </div>
 
 <figure>
-  <svg width="550" height="340" viewBox="-80 40 550 340">
+  <svg class="fig-scale" width="550" viewBox="-80 40 550 340">
     <rect x="80" y="80" width="240" height="240" stroke="var(--fg)" fill="url(#hatch)" />
     <line x1="-80" y1="80" x2="120" y2="380" stroke="green" stroke-width="2" />
     <line x1="-80" y1="80" x2="470" y2="80" stroke="green" stroke-width="2" />
