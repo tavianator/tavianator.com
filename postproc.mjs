@@ -10,9 +10,11 @@ glob("site/**/*.html", async (er, files) => {
         const source = await fs.promises.readFile(file, { encoding: "utf-8" });
         const dom = new JSDOM(source, {
             includeNodeLocations: true,
+            runScripts: "outside-only",
         });
 
-        const { document, Node } = dom.window;
+        const window = dom.window;
+        const { document, Node } = window;
 
         // HTML 5 doesn't allow nested <a> tags, so detect them and fix them up
         const links = [...document.getElementsByTagName("a")];
@@ -87,6 +89,12 @@ glob("site/**/*.html", async (er, files) => {
                 code.replaceWith(span);
             }
         }
+
+        document.querySelectorAll("script[type=postproc]")
+            .forEach(script => {
+                window.eval(script.text);
+                script.remove();
+            });
 
         document.querySelectorAll("nav.nav-wrapper, nav.nav-wide-wrapper")
             .forEach(nav => nav.remove());
