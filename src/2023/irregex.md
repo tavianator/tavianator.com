@@ -134,6 +134,7 @@ trait Matcher {
 <style>
 .h-commit {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     margin: 36px 0 20px 0;
 }
@@ -142,6 +143,7 @@ trait Matcher {
 }
 .h-commit h2 {
     flex: 1;
+    white-space: nowrap;
 }
 .h-commit a {
     text-decoration: none !important;
@@ -714,37 +716,37 @@ The matcher for alternations joins both patterns together with `$\varepsilon$`-t
 
 <figure>
   <svg width="340" viewBox="-30 -120 340 240">
-    <line x1="-20" y1="0" x2="10" y2="0" stroke="var(--fg)" />
-    <polygon points="10,0 0,-4, 0,4" fill="var(--fg)" />
-    <circle cx="30" cy="0" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
+    <line class="a a-1" x1="-20" y1="0" x2="10" y2="0" stroke="var(--fg)" stroke-dasharray="30" />
+    <polygon class="a a-1" points="10,0 0,-4, 0,4" fill="var(--fg)" />
+    <circle class="a a-2 a-3 a-4" cx="30" cy="0" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
     <ellipse cx="150" cy="-60" rx="90" ry="50" stroke="var(--fg)" stroke-width="2" fill="var(--theme-hover)" />
-    <line x1="44.1421" y1="-14.1421" x2="85.858" y2="-45.858" stroke="var(--fg)" />
-    <polygon points="0,0 -10,-5, -10,5" transform="translate(85.858 -45.858) rotate(-40)" fill="var(--fg)" />
-    <text x="45" y="-35" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">ε</text>
-    <text x="150" y="-85" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">A</text>
-    <circle cx="100" cy="-60" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
-    <line x1="120" y1="-60" x2="180" y2="-60" stroke="var(--fg)" stroke-dasharray="5" />
-    <polygon points="180,-60 170,-64, 170,-56" fill="var(--fg)" />
-    <circle cx="200" cy="-60" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
-    <circle cx="200" cy="-60" r="16" stroke="var(--fg)" stroke-width="2" stroke-dasharray="2" fill="none" />
-    <circle cx="270" cy="0" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
-    <circle cx="270" cy="0" r="16" stroke="var(--fg)" stroke-width="2" fill="none" />
-    <line x1="214.1421" y1="-45.858" x2="255.858" y2="-14.142" stroke="var(--fg)" />
-    <polygon points="0,0 -10,-5, -10,5" transform="translate(255.858 -14.142) rotate(40)" fill="var(--fg)" />
-    <text x="250" y="-35" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">ε</text>
+    <line class="a a-3" x1="44.1421" y1="-14.1421" x2="85.858" y2="-45.858" stroke="var(--fg)" stroke-dasharray="52.403385162353516" />
+    <polygon class="a a-3" points="0,0 -10,-5, -10,5" transform="translate(85.858 -45.858) rotate(-40)" fill="var(--fg)" />
+    <text class="a a-3" x="45" y="-35" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">ε</text>
+    <text class="a a-5 a-6" x="150" y="-85" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">A</text>
+    <circle class="a a-4" cx="100" cy="-60" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
+    <line class="a a-5 a-6" x1="120" y1="-60" x2="180" y2="-60" stroke="var(--fg)" stroke-dasharray="5" />
+    <polygon class="a a-5 a-6" points="180,-60 170,-64, 170,-56" fill="var(--fg)" />
+    <circle class="a a-7" cx="200" cy="-60" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
+    <circle class="a a-7" cx="200" cy="-60" r="16" stroke="var(--fg)" stroke-width="2" stroke-dasharray="2" fill="none" />
+    <circle class="a a-9 a-10 a-11 a-12" cx="270" cy="0" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
+    <circle class="a a-9 a-10 a-11 a-12" cx="270" cy="0" r="16" stroke="var(--fg)" stroke-width="2" fill="none" />
+    <line class="a a-8" x1="214.1421" y1="-45.858" x2="255.858" y2="-14.142" stroke="var(--fg)" stroke-dasharray="52.403385162353516" />
+    <polygon class="a a-8" points="0,0 -10,-5, -10,5" transform="translate(255.858 -14.142) rotate(40)" fill="var(--fg)" />
+    <text class="a a-8" x="250" y="-35" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">ε</text>
     <ellipse cx="150" cy="60" rx="90" ry="50" stroke="var(--fg)" stroke-width="2" fill="var(--theme-hover)" />
-    <line x1="44.1421" y1="14.1421" x2="85.858" y2="45.858" stroke="var(--fg)" />
-    <polygon points="0,0 -10,-5, -10,5" transform="translate(85.858 45.858) rotate(40)" fill="var(--fg)" />
-    <text x="45" y="40" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">ε</text>
-    <circle cx="100" cy="60" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
-    <text x="150" y="35" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">B</text>
-    <line x1="120" y1="60" x2="180" y2="60" stroke="var(--fg)" stroke-dasharray="5" />
-    <polygon points="180,60 170,56, 170,64" fill="var(--fg)" />
-    <line x1="214.1421" y1="45.858" x2="255.858" y2="14.142" stroke="var(--fg)" />
-    <polygon points="0,0 -10,-5, -10,5" transform="translate(255.858 14.142) rotate(-40)" fill="var(--fg)" />
-    <text x="250" y="40" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">ε</text>
-    <circle cx="200" cy="60" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
-    <circle cx="200" cy="60" r="16" stroke="var(--fg)" stroke-width="2" stroke-dasharray="2" fill="none" />
+    <line class="a a-3" x1="44.1421" y1="14.1421" x2="85.858" y2="45.858" stroke="var(--fg)" stroke-dasharray="52.403385162353516" />
+    <polygon class="a a-3" points="0,0 -10,-5, -10,5" transform="translate(85.858 45.858) rotate(40)" fill="var(--fg)" />
+    <text class="a a-3" x="45" y="40" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">ε</text>
+    <circle class="a a-4" cx="100" cy="60" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
+    <text class="a a-5 a-6 a-7 a-8" x="150" y="35" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">B</text>
+    <line class="a a-5 a-6 a-7 a-8" x1="120" y1="60" x2="180" y2="60" stroke="var(--fg)" stroke-dasharray="5" />
+    <polygon class="a a-5 a-6 a-7 a-8" points="180,60 170,56, 170,64" fill="var(--fg)" />
+    <line class="a a-10" x1="214.1421" y1="45.858" x2="255.858" y2="14.142" stroke="var(--fg)" stroke-dasharray="52.403385162353516" />
+    <polygon class="a a-10" points="0,0 -10,-5, -10,5" transform="translate(255.858 14.142) rotate(-40)" fill="var(--fg)" />
+    <text class="a a-10" x="250" y="40" text-anchor="middle" fill="var(--fg)" font-family="var(--mono-font)">ε</text>
+    <circle class="a a-9" cx="200" cy="60" r="20" stroke="var(--fg)" stroke-width="2" fill="none" />
+    <circle class="a a-9" cx="200" cy="60" r="16" stroke="var(--fg)" stroke-width="2" stroke-dasharray="2" fill="none" />
   </svg>
 </figure>
 
