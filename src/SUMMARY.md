@@ -7,6 +7,9 @@
   - [acap](projects/acap.md)
   - [bistring](projects/bistring.md)
 
+- [2023]()
+  - [Irregular expressions](2023/irregex.md)
+
 - [2022]()
   - [Fast, Branchless Ray/Bounding Box Intersections, Part 3: Boundaries](2022/ray_box_boundary.md)
   - [Remote reboots with encrypted disks](2022/remote_reboots.md)
