@@ -96,6 +96,7 @@ html {
 .content p {
     text-align: justify;
     hyphens: auto;
+    -webkit-hyphens: auto;    
     word-wrap: break-word;
 }
 
