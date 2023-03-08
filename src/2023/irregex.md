@@ -20,7 +20,8 @@ Sadly, many implementations ignore the theory in order to offer [additional feat
 [additional features]: https://en.wikipedia.org/wiki/Regular_expression#Patterns_for_non-regular_languages
 [exp]: https://swtch.com/~rsc/regexp/regexp1.html
 
-It is possible, however, to implement some of those additional features, and still operate in worst-case linear time.
+~~It is possible, however, to implement some of those additional features, and still operate in worst-case linear time.~~
+<ins>It was pointed out to me by [Geoff Langdale](https://twitter.com/geofflangdale/status/1633304188234104834) and [Evgeny Kapun](https://github.com/tavianator/irregex/issues/1) that my implementation of those additional features is incorrect.  I've hidden the wrong implementations for now.</ins>
 The implementation (~400 lines of Rust) even fits in a single blog post!
 The full code is on [GitHub](https://github.com/tavianator/irregex/blob/main/src/lib.rs), and the [commit history](https://github.com/tavianator/irregex/commits/main) lines up with the blog post if you want to follow along.
 
@@ -98,7 +99,6 @@ for (const e of document.querySelectorAll("svg .a")) {
         animate(e, "stroke-width", frames, [2, 3]);
     } else if (e.tagName == "text" || e.tagName == "tspan") {
         animate(e, "fill", frames, ["var(--fg)", "var(--sidebar-active)"]);
-        animate(e, "font-weight", frames, [400, 900]);
     }
 }
 </script>
@@ -894,6 +894,11 @@ We're also missing character classes like `[a-z]`, but this post is already long
 They could be handled like `Regex::Literal` but with a list of ranges instead of a single `char`.
 
 
+---
+
+<details>
+<summary>Everything below this point is actually incorrect.  Click to show it anyway.</summary>
+
 <div class="h-commit">
 
 ## Not doing the work
@@ -1118,3 +1123,5 @@ The two major worst-case linear regex engines that I'm aware of, [RE2](https://g
 
 But as this post shows, it is certainly possible to support lookaround (not backreferences!) in linear time.
 There are some unanswered questions (what about capture groups?), but I'm curious if this implementation strategy would be workable in a production-quality regex engine.
+
+</details>
