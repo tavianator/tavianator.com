@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2023]()
+  - [You could have invented futexes](2023/futex.md)
   - [Irregular expressions](2023/irregex.md)
 
 - [2022]()
