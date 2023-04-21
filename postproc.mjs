@@ -76,16 +76,27 @@ glob("site/**/*.html", async (er, files) => {
             link.replaceWith(node);
         }
 
+        const options = {
+            strict(errorCode, errorMsg, token) {
+                switch (errorCode) {
+                    case "unknownSymbol":
+                        return "ignore";
+                    default:
+                        return "warn";
+                }
+            },
+        };
+
         const codes = [...document.getElementsByTagName("code")];
         for (const code of codes) {
             if (code.classList.contains("language-math")) {
                 const p = document.createElement("p");
-                p.innerHTML = katex.renderToString(code.textContent, { displayMode: true });
+                p.innerHTML = katex.renderToString(code.textContent, { displayMode: true, ...options });
                 const pre = code.parentNode;
                 pre.replaceWith(p);
             } else if (/^\$.*\$$/.test(code.textContent)) {
                 const span = document.createElement("span");
-                span.innerHTML = katex.renderToString(code.textContent.slice(1, -1));
+                span.innerHTML = katex.renderToString(code.textContent.slice(1, -1), options);
                 code.replaceWith(span);
             }
         }
