@@ -28,7 +28,7 @@ typedef atomic_flag spinlock_t;
 #define SPINLOCK_INITIALIZER ATOMIC_FLAG_INIT
 
 void spin_lock(spinlock_t *lock) {
-    while (atomic_flag_test_and_set_explicit(lock, memoy_order_acquire)) {
+    while (atomic_flag_test_and_set_explicit(lock, memory_order_acquire)) {
         // spin...
     }
 }
