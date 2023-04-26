@@ -407,7 +407,7 @@ void futex_wait(atomic_int *futex, int value) {
     sigaddset(&mask, SIGCONT);
     pthread_sigmask(SIG_BLOCK, &mask, &old_mask);
 
-    while (atomic_load_explicit(futex, memory_order_relaxed) == value) {
+    if (atomic_load_explicit(futex, memory_order_relaxed) == value) {
         // Unlock the wait queue before we sleep
         spin_unlock(&waitq.lock);
         // Sleep until we receive SIGCONT
@@ -453,7 +453,7 @@ But in fact, because we blocked `SIGCONT` first, it will remain pending, and `si
 
 ```c
 // futex_wait()
-while (load(futex, relaxed) == value) {
+if (load(futex, relaxed) == value) {
     spin_unlock(&waitq.lock);
     int sig;
     sigwait(&mask, &sig);
@@ -506,8 +506,8 @@ spin_unlock(&waitq.lock);
     animation: 10s infinite c-10;
 }
 @keyframes c-1 {
-    0%, 20%, 70%, 90% { background: none; color: unset; }
-    10%, 80% { background: highlight; color: highlighttext; }
+    0%, 20% { background: none; color: unset; }
+    10% { background: highlight; color: highlighttext; }
 }
 @keyframes c-2 {
     10%, 30% { background: none; color: unset; }
@@ -542,8 +542,8 @@ spin_unlock(&waitq.lock);
     70% { background: highlight; color: highlighttext; }
 }
 @keyframes c-10 {
-    80%, 100% { background: none; color: unset; }
-    90% { background: highlight; color: highlighttext; }
+    70%, 90% { background: none; color: unset; }
+    80% { background: highlight; color: highlighttext; }
 }
 </style>
 
