@@ -76,6 +76,7 @@ html {
     flex: 1;
     text-align: center;
     text-decoration: none;
+    white-space: nowrap;
     padding: 12px;
 }
 
