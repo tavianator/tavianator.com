@@ -5,6 +5,7 @@ RUN apt-get update \
         cgit \
         fcgiwrap \
         python3-pygments \
+        spawn-fcgi \
     && rm -rf /var/lib/apt/lists/*
 
 COPY infra/cgit/cgitrc /etc/cgitrc
