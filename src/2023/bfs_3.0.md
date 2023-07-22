@@ -242,26 +242,26 @@ This makes it great for interactive use with things like [fzf](https://github.co
 I measured its advantage for this use case using a command line that quits as soon as a match is found.
 My whole home directory contains only one file with this name, at depth 3.
 
-<pre class="results"><code>Benchmark 1: fd -u1 'kd-forest\.mkv' ~
-  Time (<span class="green">mean</span> ± <span class="green">σ</span>):      <span class="green">3.727 s</span> ±  <span class="green">1.292 s</span>    [User: 14.810 s, System: 153.457 s]
-  Range (<span class="cyan">min</span> … <span class="magenta">max</span>):    <span class="cyan">0.810 s</span> …  <span class="magenta">5.149 s</span>    10 runs
+<pre class="results"><code>Benchmark 1: fd -usg1 kd-forest.mkv ~
+  Time (<span class="green">mean</span> ± <span class="green">σ</span>):      <span class="green">2.783 s</span> ±  <span class="green">1.761 s</span>    [User: 10.441 s, System: 113.302 s]
+  Range (<span class="cyan">min</span> … <span class="magenta">max</span>):    <span class="cyan">0.847 s</span> …  <span class="magenta">5.316 s</span>    10 runs
 
 Benchmark 2: find ~ -name kd-forest.mkv -quit
-  Time (<span class="green">mean</span> ± <span class="green">σ</span>):      <span class="green">4.675 s</span> ±  <span class="green">0.018 s</span>    [User: 1.428 s, System: 3.197 s]
-  Range (<span class="cyan">min</span> … <span class="magenta">max</span>):    <span class="cyan">4.638 s</span> …  <span class="magenta">4.695 s</span>    10 runs
+  Time (<span class="green">mean</span> ± <span class="green">σ</span>):      <span class="green">4.786 s</span> ±  <span class="green">0.023 s</span>    [User: 1.476 s, System: 3.245 s]
+  Range (<span class="cyan">min</span> … <span class="magenta">max</span>):    <span class="cyan">4.757 s</span> …  <span class="magenta">4.829 s</span>    10 runs
 
 Benchmark 3: bfs-2.6.3 ~ -name kd-forest.mkv -quit
-  Time (<span class="green">mean</span> ± <span class="green">σ</span>):      <span class="green">14.0 ms</span> ±   <span class="green">2.7 ms</span>    [User: 6.5 ms, System: 7.5 ms]
-  Range (<span class="cyan">min</span> … <span class="magenta">max</span>):     <span class="cyan">6.5 ms</span> …  <span class="magenta">17.5 ms</span>    166 runs
+  Time (<span class="green">mean</span> ± <span class="green">σ</span>):      <span class="green">15.9 ms</span> ±   <span class="green">1.1 ms</span>    [User: 6.9 ms, System: 8.8 ms]
+  Range (<span class="cyan">min</span> … <span class="magenta">max</span>):     <span class="cyan">6.7 ms</span> …  <span class="magenta">24.4 ms</span>    168 runs
 
 Benchmark 4: bfs-3.0.1 ~ -name kd-forest.mkv -quit
-  Time (<span class="green">mean</span> ± <span class="green">σ</span>):      <span class="green">10.4 ms</span> ±   <span class="green">1.2 ms</span>    [User: 5.8 ms, System: 33.4 ms]
-  Range (<span class="cyan">min</span> … <span class="magenta">max</span>):     <span class="cyan">5.0 ms</span> …  <span class="magenta">12.6 ms</span>    352 runs
+  Time (<span class="green">mean</span> ± <span class="green">σ</span>):      <span class="green">11.2 ms</span> ±   <span class="green">1.1 ms</span>    [User: 5.2 ms, System: 37.4 ms]
+  Range (<span class="cyan">min</span> … <span class="magenta">max</span>):     <span class="cyan">6.0 ms</span> …  <span class="magenta">14.8 ms</span>    219 runs
 
 Summary
   <span class="cyan">bfs-3.0.1 ~ -name kd-forest.mkv -quit</span> ran
-    <span class="green">1.34</span> ± <span class="green">0.31</span>   times faster than <span class="magenta">bfs-2.6.3 ~ -name kd-forest.mkv -quit</span>
-  <span class="green">358.65</span> ± <span class="green">131.44</span> times faster than <span class="magenta">fd -u1 'kd-forest\.mkv' ~</span>
-  <span class="green">449.88</span> ± <span class="green">53.65</span>  times faster than <span class="magenta">find ~ -name kd-forest.mkv -quit</span></code></pre>
+    <span class="green">1.42</span> ± <span class="green">0.17</span>   times faster than <span class="magenta">bfs-2.6.3 ~ -name kd-forest.mkv -quit</span>
+  <span class="green">248.68</span> ± <span class="green">159.28</span> times faster than <span class="magenta">fd -usg1 kd-forest.mkv ~</span>
+  <span class="green">427.64</span> ± <span class="green">42.68</span>  times faster than <span class="magenta">find ~ -name kd-forest.mkv -quit</span></code></pre>
 
-This is the main use case I care about (basically recursive tab completion), and `bfs` is 450&times; faster than GNU find.
+This is the main use case I care about (basically recursive tab completion), and `bfs` is 430&times; faster than GNU find.
