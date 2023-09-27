@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2020-10-18
-<fa:user> Tavian Barnes
-[<fa:reddit> Reddit](https://www.reddit.com/r/rust/comments/je1ajy/proving_that_1_1_10_in_rust/)
+*fa-clock-o* *time-2020-10-18*
+*fa-user* Tavian Barnes
+[*fa-reddit* Reddit](https://www.reddit.com/r/rust/comments/je1ajy/proving_that_1_1_10_in_rust/)
 
 </div>
 

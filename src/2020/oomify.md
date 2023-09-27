@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2020-09-07
-<fa:user> Tavian Barnes
-[<fa:github> GitHub](https://github.com/tavianator/oomify)
+*fa-clock-o* *time-2020-09-07*
+*fa-user* Tavian Barnes
+[*fa-github* GitHub](https://github.com/tavianator/oomify)
 
 </div>
 
@@ -248,4 +248,4 @@ I reported it [here], and it's also already [fixed].
 
 Funnily enough, after all this effort I didn't find any more bugs in my own code, only in others'.
 But I'm happy to have found and fixed a few issues in some other open source software, and maybe other people will find OOMify useful.
-You can find it on [<fa:github> GitHub](https://github.com/tavianator/oomify) if you want to try it out.
+You can find it on [*fa-github* GitHub](https://github.com/tavianator/oomify) if you want to try it out.

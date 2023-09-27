@@ -9,71 +9,26 @@ const files = new Glob("site/**/*.html", {});
 for await (const file of files) {
     const source = await fs.promises.readFile(file, { encoding: "utf-8" });
     const dom = new JSDOM(source, {
-        includeNodeLocations: true,
         runScripts: "outside-only",
     });
 
     const window = dom.window;
     const { document, Node } = window;
 
-    // HTML 5 doesn't allow nested <a> tags, so detect them and fix them up
-    const links = [...document.getElementsByTagName("a")];
-    for (const link of links) {
-        const loc = dom.nodeLocation(link);
-        if (loc && !loc.endTag) {
-            let end = loc.endOffset;
-
-            let sibling = link.nextSibling;
-            while (sibling) {
-                const next = sibling.nextSibling;
-
-                const sibLoc = dom.nodeLocation(sibling);
-                if (sibLoc) {
-                    const skipped = source.slice(end, sibLoc.startOffset);
-                    if (skipped.includes("</a>")) {
-                        break;
-                    }
-
-                    end = sibLoc.endOffset;
-
-                    if (sibling.nodeType === Node.TEXT_NODE) {
-                        const parsed = source.slice(sibLoc.startOffset, sibLoc.endOffset);
-                        const index = parsed.indexOf("</a>");
-                        if (index >= 0) {
-                            const before = JSDOM.fragment(parsed.slice(0, index));
-                            link.appendChild(before);
-
-                            const after = JSDOM.fragment(parsed.slice(index + 4));
-                            sibling.replaceWith(after);
-                            break;
-                        }
-                    }
-                }
-
-                link.appendChild(sibling);
-                sibling = next;
-            }
+    const ems = [...document.getElementsByTagName("em")];
+    for (const em of ems) {
+        if (/^fa-/.test(em.textContent)) {
+            const icon = document.createElement("i");
+            icon.classList.add("fa", em.textContent);
+            icon.ariaHidden = "true";
+            em.replaceWith(icon);
+        } else if (/^time-/.test(em.textContent)) {
+            const value = em.textContent.substring(5);
+            const time = document.createElement("time");
+            time.dateTime = value;
+            time.textContent = value;
+            em.replaceWith(time);
         }
-    }
-
-    for (const link of links) {
-        let node;
-
-        if (link.protocol === "fa:") {
-            const icon = link.href.substring(3);
-            node = document.createElement("i");
-            node.classList.add("fa", "fa-" + icon);
-            node.ariaHidden = "true";
-        } else if (link.protocol === "time:") {
-            const dateTime = link.href.substring(5);
-            node = document.createElement("time");
-            node.dateTime = dateTime;
-            node.textContent = dateTime;
-        } else {
-            continue;
-        }
-
-        link.replaceWith(node);
     }
 
     const options = {

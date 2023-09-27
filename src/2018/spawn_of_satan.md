@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2018-09-21
-<fa:user> Tavian Barnes
-[<fa:reddit> Reddit](https://www.reddit.com/r/programming/comments/9hrxig/spawn_of_satan/)
+*fa-clock-o* *time-2018-09-21*
+*fa-user* Tavian Barnes
+[*fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/9hrxig/spawn_of_satan/)
 
 </div>
 

@@ -22,10 +22,10 @@ I'm probably @tavianator on your favourite website:
 
 <div class="linkbar">
 
-[<fa:twitter> Twitter](https://twitter.com/tavianator)
-[<fa:github> GitHub](https://github.com/tavianator)
-[<fa:reddit> Reddit](https://www.reddit.com/user/tavianator)
-[<fa:stack-overflow> StackOverflow](https://stackoverflow.com/users/502399/tavian-barnes)
-[<fa:instagram> Instagram](https://www.instagram.com/tavianator)
+[*fa-twitter* Twitter](https://twitter.com/tavianator)
+[*fa-github* GitHub](https://github.com/tavianator)
+[*fa-reddit* Reddit](https://www.reddit.com/user/tavianator)
+[*fa-stack-overflow* StackOverflow](https://stackoverflow.com/users/502399/tavian-barnes)
+[*fa-instagram* Instagram](https://www.instagram.com/tavianator)
 
 </div>

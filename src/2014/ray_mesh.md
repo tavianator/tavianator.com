@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2014-05-30
-<fa:user> Tavian Barnes
-[<fa:comments> Comments](#comments)
+*fa-clock-o* *time-2014-05-30*
+*fa-user* Tavian Barnes
+[*fa-comments* Comments](#comments)
 
 </div>
 
@@ -88,7 +88,7 @@ The implementation of this algorithm in my ray tracer [Dimension] is available [
 ## Comments
 
 > [**Mo**](http://thecodeboss.com/)
-> <fa:clock-o> 2014-05-30
+> *fa-clock-o* *time-2014-05-30*
 >
 > Pretty cool, I wonder if this can be extended to triangle strips as well.
 > That one might be a lot more challenging though.
@@ -97,12 +97,12 @@ The implementation of this algorithm in my ray tracer [Dimension] is available [
 > I imagine it's more intelligent than that.
 >
 > > [**Mo**](http://thecodeboss.com/)
-> > <fa:clock-o> 2014-05-30
+> > *fa-clock-o* *time-2014-05-30*
 > >
 > > Nope. :)
 >
-> > <fa:user> [**Tavian Barnes**](/)
-> > <fa:clock-o> 2014-05-30
+> > *fa-user* [**Tavian Barnes**](/)
+> > *fa-clock-o* *time-2014-05-30*
 > >
 > > Haha yeah the MathJax is all done with a WordPress plugin, I write [latex]m^at_h[/latex] and it prettifies it.
 > > I'm hoping it doesn't scan the page and replace $m^at_h$ with MathJax.

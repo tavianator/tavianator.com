@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2016-03-15
-<fa:user> Tavian Barnes
-[<fa:reddit> Reddit](https://www.reddit.com/r/programming/comments/4ao6no/the_approximating_and_eliminating_search_algorithm/)
+*fa-clock-o* *time-2016-03-15*
+*fa-user* Tavian Barnes
+[*fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/4ao6no/the_approximating_and_eliminating_search_algorithm/)
 
 </div>
 

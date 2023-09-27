@@ -2,7 +2,7 @@
 
 <div class="infobar">
 
-[<fa:github> GitHub](https://github.com/tavianator/bfs)
+[*fa-github* GitHub](https://github.com/tavianator/bfs)
 
 </div>
 

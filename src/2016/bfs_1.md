@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2016-09-10
-<fa:user> Tavian Barnes
-[<fa:github> GitHub](https://github.com/tavianator/bfs)
+*fa-clock-o* *time-2016-09-10*
+*fa-user* Tavian Barnes
+[*fa-github* GitHub](https://github.com/tavianator/bfs)
 
 </div>
 

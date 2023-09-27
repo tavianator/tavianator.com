@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> <time:2023-04-21>
-<fa:user> Tavian Barnes
-[<fa:github> GitHub](https://github.com/tavianator/futex)
+*fa-clock-o* *time-2023-04-21*
+*fa-user* Tavian Barnes
+[*fa-github* GitHub](https://github.com/tavianator/futex)
 
 </div>
 

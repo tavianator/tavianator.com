@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2011-01-10
-<fa:user> Tavian Barnes
-[<fa:comments> Comments](#comments)
+*fa-clock-o* *time-2011-01-10*
+*fa-user* Tavian Barnes
+[*fa-comments* Comments](#comments)
 
 </div>
 
@@ -97,12 +97,12 @@ Apparently plenty of people did that very same thing, so Facebook later decided 
 ## Comments
 
 > [**Luis Argote**](http://argote.mx/)
-> <fa:clock-o> 2011-01-10
+> *fa-clock-o* *time-2011-01-10*
 >
 > Hello, nice answer, I went for something much more straightforward but did the same thing with the time...
 > BTW, what are you using to display your source code in a box?
 >
-> > <fa:user> [**Tavian Barnes**](/)
-> > <fa:clock-o> 2011-01-10
+> > *fa-user* [**Tavian Barnes**](/)
+> > *fa-clock-o* *time-2011-01-10*
 > >
 > > The plugin's called WP-Syntax.

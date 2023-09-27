@@ -2,15 +2,15 @@
 
 <div class="infobar">
 
-<fa:clock-o> <time:2022-07-27>
-<fa:user> Tavian Barnes
-[<fa:github> GitHub](https://github.com/tavianator/ray_box)
+*fa-clock-o* *time-2022-07-27*
+*fa-user* Tavian Barnes
+[*fa-github* GitHub](https://github.com/tavianator/ray_box)
 
 </div>
 
 <ins>This post is the third in a series of posts I've written about ray/bounding box intersection tests.
 However, it supersedes the previous two, and should be self contained, so don't feel like you have to read the others unless you're interested in the historical context.
-On <time:2022-09-10>, <time:2022-09-14>, and <time:2023-02-18>, I substantially revised this post, improving the implementation and adding a much more thorough performance analysis.</ins>
+On *time-2022-09-10*, *time-2022-09-14*, and *time-2023-02-18*, I substantially revised this post, improving the implementation and adding a much more thorough performance analysis.</ins>
 
 [Last time I wrote about ray/box intersections](../2015/ray_box_nan.md), we left off with a simple and fast implementation of the slab method that handles all the corner cases.
 To save you the trouble of (re-)reading the last two posts, I'll start with a quick recap.

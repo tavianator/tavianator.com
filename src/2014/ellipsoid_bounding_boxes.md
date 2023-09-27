@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2014-06-08
-<fa:user> Tavian Barnes
-[<fa:comments> Comments](#comments)
+*fa-clock-o* *time-2014-06-08*
+*fa-user* Tavian Barnes
+[*fa-comments* Comments](#comments)
 
 </div>
 
@@ -187,7 +187,7 @@ See [here][impl] for an implementation in my ray tracer [Dimension].
 ## Comments
 
 > **Michael Doube**
-> <fa:clock-o> 2015-03-24
+> *fa-clock-o* *time-2015-03-24*
 >
 > Hello,
 >
@@ -207,8 +207,8 @@ See [here][impl] for an implementation in my ray tracer [Dimension].
 >
 > Michael
 >
-> > <fa:user> [**Tavian Barnes**](/)
-> > <fa:clock-o> 2015-03-25
+> > *fa-user* [**Tavian Barnes**](/)
+> > *fa-clock-o* *time-2015-03-25*
 > >
 > > If I'm not mistaken, you have `$\mathbf{A} = \mathbf{V} \, \mathbf{U} \, \mathbf{V}^\mathrm{T}$` (with `$\mathbf{U} = \mathrm{diag}(r_x^{-2}, r_y^{-2}, r_z^{-2})$`) such that your ellipsoid is determined by `$(\vec{x} - \vec{v})^\mathrm{T} \, \mathbf{A} \, (\vec{x} - \vec{v}) = 1$`.
 > > In this case, `$\mathbf{A}$` takes the place of `$\mathbf{Q}$` above, but the expressions are in terms of `$\mathbf{R} = \mathbf{Q}^{-1}$`.
@@ -228,7 +228,7 @@ See [here][impl] for an implementation in my ray tracer [Dimension].
 > > ```
 > >
 > > > **Michael Doube**
-> > > <fa:clock-o> 2015-03-25
+> > > *fa-clock-o* *time-2015-03-25*
 > > >
 > > > Hi Tavian,
 > > >
@@ -272,15 +272,15 @@ See [here][impl] for an implementation in my ray tracer [Dimension].
 > > > }
 > > > ```
 > > >
-> > > > <fa:user> [**Tavian Barnes**](/)
-> > > > <fa:clock-o> 2015-03-25
+> > > > *fa-user* [**Tavian Barnes**](/)
+> > > > *fa-clock-o* *time-2015-03-25*
 > > > >
 > > > > Yep, I forgot how to multiply matrices apparently.
 > > > > Fixed!
 > > > > Glad you found this post useful.
 
 > **William H Walker**
-> <fa:clock-o> 2019-12-01
+> *fa-clock-o* *time-2019-12-01*
 >
 > I've been trying to understand the practical application of SVD to a simple data set, and have constructed an ellipsoid analogous to what is shown in: \
 > <http://www.aprendtech.com/blog/P42svd/P42svd.html>

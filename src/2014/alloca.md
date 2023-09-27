@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-<fa:clock-o> 2014-07-31
-<fa:user> Tavian Barnes
-[<fa:reddit> Reddit](https://www.reddit.com/r/C_Programming/comments/2cdpmd/standardscompliant_alloca/)
+*fa-clock-o* *time-2014-07-31*
+*fa-user* Tavian Barnes
+[*fa-reddit* Reddit](https://www.reddit.com/r/C_Programming/comments/2cdpmd/standardscompliant_alloca/)
 
 </div>
 
