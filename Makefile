@@ -1,6 +1,6 @@
 default:
 	npm install
-	cargo install mdbook --version=0.4.32
+	cargo install mdbook --version=0.4.34
 	mdbook build
 	./postproc.mjs
 
