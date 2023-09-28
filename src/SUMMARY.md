@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2023]()
+  - [Translucent typedefs in C](2023/translucent.md)
   - [bfs 3.0: the fastest find yet!](2023/bfs_3.0.md)
   - [You could have invented futexes](2023/futex.md)
   - [Irregular expressions](2023/irregex.md)
