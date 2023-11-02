@@ -549,7 +549,7 @@ spin_unlock(&waitq.lock);
 
 ## Scaling
 
-The above implementation works, but the single wait could cause a lot of unnecessary contention if many threads are waiting on different futexes.
+The above implementation works, but the single wait queue could cause a lot of unnecessary contention if many threads are waiting on different futexes.
 We could reduce that contention by having multiple wait queues, and using a hash function to assign each futex to a (hopefully) different wait queue.
 
 ```c
