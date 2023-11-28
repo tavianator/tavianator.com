@@ -531,8 +531,8 @@ If we use that sign to select which box coordinates to use:
 
 ```math
 \begin{aligned}
-(b_{\min{}}, x_{\max{}}) & = (x_{\min{}}, x_{\max{}}) && \text{if $x_d > 0$,} \\
-(b_{\min{}}, x_{\max{}}) & = (x_{\max{}}, x_{\min{}}) && \text{otherwise,} \\
+(b_{\min{}}, b_{\max{}}) & = (x_{\min{}}, x_{\max{}}) && \text{if $x_d > 0$,} \\
+(b_{\min{}}, b_{\max{}}) & = (x_{\max{}}, x_{\min{}}) && \text{otherwise,} \\
 \end{aligned}
 ```
 
