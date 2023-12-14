@@ -20,3 +20,6 @@ copyable = false
 
 [output.html.print]
 enable = false
+
+[output.postproc]
+command = "./postproc.mjs"

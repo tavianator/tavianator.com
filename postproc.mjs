@@ -5,7 +5,14 @@ import { Glob } from "glob";
 import { JSDOM } from "jsdom";
 import katex from "katex";
 
-const files = new Glob("site/**/*.html", {});
+while (true) {
+    const str = await fs.promises.readFile("/dev/stdin", { encoding: "utf-8" });
+    if (str.length == 0) {
+        break;
+    }
+}
+
+const files = new Glob("../html/**/*.html", {});
 for await (const file of files) {
     const source = await fs.promises.readFile(file, { encoding: "utf-8" });
     const dom = new JSDOM(source, {
