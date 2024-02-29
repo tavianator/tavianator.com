@@ -16,8 +16,8 @@ while (true) {
 const feed = new Feed({
     title: "tavianator.com",
     description: "tavianator.com",
-    id: "https://tavianator.com",
-    link: "https://tavianator.com",
+    id: "https://tavianator.com/",
+    link: "https://tavianator.com/",
     image: "https://tavianator.com/favicon.png",
     favicon: "https://tavianator.com/favicon.png",
     copyright: "Copyright © 2010-2024 Tavian Barnes",
@@ -29,7 +29,7 @@ const feed = new Feed({
     author: {
         name: "Tavian Barnes",
         email: "tavianator@tavianator.com",
-        link: "https://tavianator.com",
+        link: "https://tavianator.com/",
     },
 });
 
@@ -110,7 +110,7 @@ for await (const file of files) {
                 {
                     name: "Tavian Barnes",
                     email: "tavianator@tavianator.com",
-                    link: "https://tavianator.com",
+                    link: "https://tavianator.com/",
                 },
             ],
         });
