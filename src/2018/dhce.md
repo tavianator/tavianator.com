@@ -2,7 +2,7 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2018-09-21*
+*fa-clock-o* *time-2018-01-17*
 *fa-user* Tavian Barnes
 [*fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/7r1vc2/cracking_dhce_diffiehellman_color_exchange/)
 
