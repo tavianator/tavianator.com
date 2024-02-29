@@ -2,21 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-#menu-bar,
-#menu-bar a,
-#menu-bar a:link,
-#menu-bar a:visited,
-#menu-bar a i.fa {
-    color: var(--icons);
-    transition: color 0.5s;
-}
-
-#menu-bar a:hover,
-#menu-bar a:hover i.fa {
-    color: var(--icons-hover);
-    transition: color 0.15s;
-}
-
 #menu-bar a.sponsor:hover i.fa {
     color: #db61a2;
 }

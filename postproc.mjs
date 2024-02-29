@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { Feed } from "feed";
 import fs from "fs";
 import { Glob } from "glob";
 import { JSDOM } from "jsdom";
@@ -11,6 +12,26 @@ while (true) {
         break;
     }
 }
+
+const feed = new Feed({
+    title: "tavianator.com",
+    description: "tavianator.com",
+    id: "https://tavianator.com",
+    link: "https://tavianator.com",
+    image: "https://tavianator.com/favicon.png",
+    favicon: "https://tavianator.com/favicon.png",
+    copyright: "Copyright © 2010-2024 Tavian Barnes",
+    feedLinks: {
+        atom: "https://tavianator.com/feed.atom",
+        json: "https://tavianator.com/feed.json",
+        rss: "https://tavianator.com/feed.rss",
+    },
+    author: {
+        name: "Tavian Barnes",
+        email: "tavianator@tavianator.com",
+        link: "https://tavianator.com",
+    },
+});
 
 const files = new Glob("../html/**/*.html", {});
 for await (const file of files) {
@@ -75,15 +96,50 @@ for await (const file of files) {
     const searchbar = document.querySelector("input#searchbar");
     searchbar.placeholder = "Search this site ...";
 
-    const sponsor = document.createElement("a");
-    sponsor.classList.add("sponsor");
-    sponsor.href = "https://github.com/sponsors/tavianator";
-    const sponsorIcon = document.createElement("i");
-    sponsorIcon.classList.add("fa", "fa-heart-o");
-    sponsorIcon.ariaHidden = "true";
-    sponsor.append(sponsorIcon, " Sponsor");
+    const path = file.substring(8);
+    if (/^\d{4}\//.test(path)) {
+        const infobar = document.querySelector(".infobar");
+        const url = "https://tavianator.com/" + path;
+        const date = new Date(infobar.querySelector("time").dateTime);
+        feed.addItem({
+            title: document.title,
+            id: url,
+            link: url,
+            date,
+            author: [
+                {
+                    name: "Tavian Barnes",
+                    email: "tavianator@tavianator.com",
+                    link: "https://tavianator.com",
+                },
+            ],
+        });
+    }
+
     const rightButtons = document.querySelector("#menu-bar .right-buttons");
-    rightButtons.prepend(sponsor);
+
+    const feedButton = document.createElement("a");
+    feedButton.href = "/feed.atom";
+    feedButton.title = "Atom feed";
+    const feedIcon = document.createElement("i");
+    feedIcon.classList.add("fa", "fa-rss");
+    feedIcon.ariaHidden = "true";
+    feedButton.append(feedIcon);
+    rightButtons.prepend(feedButton);
+
+    const sponsorButton = document.createElement("a");
+    sponsorButton.classList.add("sponsor");
+    sponsorButton.href = "https://github.com/sponsors/tavianator";
+    sponsorButton.title = "Sponsor";
+    const sponsorIcon = document.createElement("i");
+    sponsorIcon.classList.add("fa", "fa-heart");
+    sponsorIcon.ariaHidden = "true";
+    sponsorButton.append(sponsorIcon);
+    rightButtons.prepend(sponsorButton);
 
     await fs.promises.writeFile(file, dom.serialize());
 }
+
+await fs.promises.writeFile("../html/feed.atom", feed.atom1());
+await fs.promises.writeFile("../html/feed.json", feed.json1());
+await fs.promises.writeFile("../html/feed.rss", feed.rss2());
