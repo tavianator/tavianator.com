@@ -75,5 +75,15 @@ for await (const file of files) {
     const searchbar = document.querySelector("input#searchbar");
     searchbar.placeholder = "Search this site ...";
 
+    const sponsor = document.createElement("a");
+    sponsor.classList.add("sponsor");
+    sponsor.href = "https://github.com/sponsors/tavianator";
+    const sponsorIcon = document.createElement("i");
+    sponsorIcon.classList.add("fa", "fa-heart-o");
+    sponsorIcon.ariaHidden = "true";
+    sponsor.append(sponsorIcon, " Sponsor");
+    const rightButtons = document.querySelector("#menu-bar .right-buttons");
+    rightButtons.prepend(sponsor);
+
     await fs.promises.writeFile(file, dom.serialize());
 }

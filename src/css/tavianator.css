@@ -2,6 +2,25 @@ html {
     scroll-behavior: smooth;
 }
 
+#menu-bar,
+#menu-bar a,
+#menu-bar a:link,
+#menu-bar a:visited,
+#menu-bar a i.fa {
+    color: var(--icons);
+    transition: color 0.5s;
+}
+
+#menu-bar a:hover,
+#menu-bar a:hover i.fa {
+    color: var(--icons-hover);
+    transition: color 0.15s;
+}
+
+#menu-bar a.sponsor:hover i.fa {
+    color: #db61a2;
+}
+
 .content .infobar {
     color: var(--icons);
     border-bottom: 1px solid var(--icons);
@@ -97,7 +116,7 @@ html {
 .content p {
     text-align: justify;
     hyphens: auto;
-    -webkit-hyphens: auto;    
+    -webkit-hyphens: auto;
     word-wrap: break-word;
 }
 
