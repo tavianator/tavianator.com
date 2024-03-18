@@ -7,6 +7,9 @@
   - [acap](projects/acap.md)
   - [bistring](projects/bistring.md)
 
+- [2024]()
+  - [Bug hunting in Btrfs](2024/btrfs_bug.md)
+
 - [2023]()
   - [Translucent typedefs in C](2023/translucent.md)
   - [bfs 3.0: the fastest find yet!](2023/bfs_3.0.md)

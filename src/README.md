@@ -12,7 +12,7 @@ I used to work at [Microsoft Research Montreal], and before that at a startup ca
 
 Check out some of the [projects](projects/index.html) I'm working on, or read some of the highlights from my blog (the full archive is in the sidebar):
 
-- [Translucent typedefs in C](2023/translucent.md)&emsp;**&larr; new post**
+- [Bug hunting in Btrfs](2024/btrfs_bug.md)&emsp;**&larr; new post**
 - [Ray/Bounding Box Intersections](2022/ray_box_boundary.md)
 - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
 - [Exact Bounding Boxes for Spheres/Ellipsoids](2014/ellipsoid_bounding_boxes.md)
