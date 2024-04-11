@@ -13,3 +13,29 @@
   gtag('js', new Date());
   gtag('config', 'G-EBDQXGZ6R1');
 </script>
+
+<script>
+window.addEventListener("load", e => {
+    document.querySelectorAll(".feed-link").forEach(node => {
+        let debounce = false;
+        node.addEventListener("click", e => {
+            if (!debounce) {
+                debounce = true;
+                navigator.clipboard
+                    .writeText(node.href)
+                    .then(() => {
+                        const i = node.firstChild;
+                        const prevClass = i.className;
+                        i.className = "fa fa-clipboard";
+                        i.title = "Copied!";
+                        setTimeout(() => {
+                            i.className = prevClass;
+                            debounce = false;
+                        }, 1000);
+                    });
+            }
+            e.preventDefault();
+        });
+    });
+});
+</script>

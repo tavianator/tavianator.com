@@ -119,8 +119,10 @@ for await (const file of files) {
     const rightButtons = document.querySelector("#menu-bar .right-buttons");
 
     const feedButton = document.createElement("a");
+    feedButton.classList.add("feed-link");
     feedButton.href = "/feed.atom";
     feedButton.title = "Atom feed";
+    feedButton.onclick = "foo";
     const feedIcon = document.createElement("i");
     feedIcon.classList.add("fa", "fa-rss");
     feedIcon.ariaHidden = "true";
