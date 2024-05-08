@@ -9,7 +9,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY infra/cgit/cgitrc /etc/cgitrc
-RUN chmod +r /etc/cgitrc
+RUN chmod +r /etc/cgitrc \
+    && chown nginx:nginx /var/cache/cgit
 
 COPY infra/cgit/nginx.conf /etc/nginx/nginx.conf
 
