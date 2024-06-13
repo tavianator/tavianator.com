@@ -1,6 +1,6 @@
 default:
 	npm install
-	cargo install mdbook --version=0.4.37
+	cargo install mdbook --version=0.4.40
 	mdbook build
 
 watch: default
