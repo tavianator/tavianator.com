@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2024]()
+  - [Rounding percentages](2024/percent.md)
   - [Bug hunting in Btrfs](2024/btrfs_bug.md)
 
 - [2023]()
