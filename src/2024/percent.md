@@ -10,7 +10,7 @@
 Let's say you're downloading a file and you see this:
 
 <p>
-<div style="background: linear-gradient(90deg, var(--sidebar-active) 1%, var(--sidebar-bg) 1%); text-align: center; font-weight: bold;">
+<div style="background: linear-gradient(90deg, var(--sidebar-active) 1%, var(--sidebar-bg) 1%); color: var(--sidebar-fg); text-align: center; font-weight: bold;">
 0%
 </div>
 </p>
@@ -19,7 +19,7 @@ How do you know the download actually started?
 Similarly, if you see this:
 
 <p>
-<div style="background: linear-gradient(90deg, var(--sidebar-active) 100%, var(--sidebar-bg) 100%); text-align: center; font-weight: bold;">
+<div style="background: linear-gradient(90deg, var(--sidebar-active) 100%, var(--sidebar-bg) 100%); color: var(--sidebar-bg); text-align: center; font-weight: bold;">
 100%
 </div>
 </p>
