@@ -1,0 +1,8 @@
+[Unit]
+Description=tavianator.com-cgit
+
+[Container]
+Image=docker.io/tavianator/tavianator.com-cgit
+AutoUpdate=registry
+Pod=tavianator.com.pod
+Volume=/srv/git:/srv/git:ro

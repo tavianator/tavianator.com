@@ -1,0 +1,7 @@
+[Unit]
+Description=tavianator.com-blog
+
+[Container]
+Image=docker.io/tavianator/tavianator.com-blog
+AutoUpdate=registry
+Pod=tavianator.com.pod
