@@ -1,10 +1,15 @@
-default:
-	npm install
-	cargo install mdbook --version=0.4.40
+default: deps
 	mdbook build
+
+deps:
+	npm install
+	cargo install mdbook --version=0.4.42
 
 watch: default
 	mdbook watch
+
+serve: deps
+	mdbook serve
 
 clean:
 	mdbook clean
@@ -28,4 +33,4 @@ pod-push-%:
 install:
 	install -Dm644 -t /etc/containers/systemd infra/quadlet/*
 
-.PHONY: default watch clean pod pod-build pod-push install
+.PHONY: default deps watch serve clean pod pod-build pod-push install

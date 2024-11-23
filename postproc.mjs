@@ -35,6 +35,10 @@ const feed = new Feed({
 
 const files = new Glob("../html/**/*.html", {});
 for await (const file of files) {
+    if (file.endsWith("toc.html")) {
+        continue;
+    }
+
     const source = await fs.promises.readFile(file, { encoding: "utf-8" });
     const dom = new JSDOM(source, {
         runScripts: "outside-only",
