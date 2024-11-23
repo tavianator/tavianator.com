@@ -27,9 +27,11 @@ window.addEventListener("load", e => {
                         const i = node.firstChild;
                         const prevClass = i.className;
                         i.className = "fa fa-clipboard";
-                        i.title = "Copied!";
+                        const prevTitle = node.title;
+                        node.title = "Copied!";
                         setTimeout(() => {
                             i.className = prevClass;
+                            node.title = prevTitle;
                             debounce = false;
                         }, 1000);
                     });
