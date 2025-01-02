@@ -7,6 +7,9 @@
   - [acap](projects/acap.md)
   - [bistring](projects/bistring.md)
 
+- [2025]()
+  - [The Alder Lake SHLX anomaly](2025/shlx.md)
+
 - [2024]()
   - [Rounding percentages](2024/percent.md)
   - [Bug hunting in Btrfs](2024/btrfs_bug.md)
