@@ -8,7 +8,8 @@
   - [bistring](projects/bistring.md)
 
 - [2025]()
-  - [The Alder Lake SHLX anomaly](2025/shlx.md)
+  - [The Alder Lake anomaly, explained](2025/shlxplained.md)
+  - [The Alder Lake `shlx` anomaly](2025/shlx.md)
 
 - [2024]()
   - [Rounding percentages](2024/percent.md)
