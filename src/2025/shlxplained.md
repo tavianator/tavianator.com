@@ -100,36 +100,40 @@ For some reason, if the shift count register for any dynamic shift is renamed to
 **This includes all the normal shift instructions ([`shl`/`shr`/`sar`](https://www.felixcloutier.com/x86/sal:sar:shl:shr)) and rotate instructions ([`rol`/`ror`/`rcl`/`rcr`](https://www.felixcloutier.com/x86/rcl:rcr:rol:ror))**, as well as the BMI2 ones ([`shlx`/`shrx`/`sarx`](https://www.felixcloutier.com/x86/sarx:shlx:shrx)).
 We just noticed the BMI2 ones first because [uops.info](https://uops.info/html-instr/SHLX_R64_R64_R64.html#ADL-P) happened to trigger this anomaly when measuring them.
 
-For the normal shift instructions, only the shift count is affected, meaning this is slow:
+**All input operands** of every shift instruction are affected by this anomaly.
+(An earlier version of this post claimed otherwise, but that was a mistake in my benchmarking code.)
+This is true for both dynamic and static shift counts:
 
 ```x86asm
-        mov rax, 1  ; rax -> (pr0 + 1)
-        mov rcx, 1  ; rcx -> (pr0 + 1)
-        shl rax, cl ; 3 cycles
-```
+        mov  eax, 1
+        shl  rax    ; 1 cycle
+        mov  rax, 1
+        shl  rax    ; 3 cycles
 
-but this is fast:
+        mov  eax, 1
+        shl  rax, 2 ; 1 cycle
+        mov  rax, 1
+        shl  rax, 2 ; 3 cycles
 
-```x86asm
-        mov rax, 1  ; rax -> (pr0 + 1)
-        mov ecx, 1
-        shl rax, cl ; 1 cycle
-```
-
-For the BMI2 shifts, **both operands** are affected!
-
-```x86asm
-        mov  rbx, 1        ; rbx -> (p0 + 1)
+        mov  eax, 1
         mov  ecx, 1
-        shlx rax, rbx, rcx ; 3 cycles
+        shl  rax, cl ; 1 cycle
+        mov  rax, 1
+        mov  ecx, 1
+        shl  rax, cl ; 3 cycles
+        mov  eax, 1
+        mov  rcx, 1
+        shl  rax, cl ; 3 cycles
 
         mov  ebx, 1
-        mov  rcx, 1        ; rcx -> (p0 + 1)
-        shlx rax, rbx, rcx ; 3 cycles
-
-        mov ebx, 1
-        mov ecx, 1
+        mov  ecx, 1
         shlx rax, rbx, rcx ; 1 cycle
+        mov  rbx, 1
+        mov  ecx, 1
+        shlx rax, rbx, rcx ; 3 cycles
+        mov  ebx, 1
+        mov  rcx, 1
+        shlx rax, rbx, rcx ; 3 cycles
 ```
 
 As for why this happens, your guess is as good as mine.
