@@ -36,7 +36,7 @@ In a sense, `mov` is "free": it has zero latency since no µop is even issued fo
 
 In 2021, Andreas Abel (creator of [uops.info](https://uops.info)) [noticed](https://x.com/uops_info/status/1473807584490672130) that the Alder Lake renamer is even more powerful than this.
 It can also eliminate the `add rax, 1` instruction!
-You can observe this my measuring the throughput of repeated `add`s:
+You can observe this by measuring the throughput of repeated `add`s:
 
 ```x86asm
         add rax, 1
