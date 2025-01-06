@@ -11,6 +11,25 @@ html {
     text-align: right;
 }
 
+.fa-bluesky,
+.fa-lobsters,
+.fa-mastodon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -.125em;
+    background: currentColor;
+}
+
+.fa-bluesky {
+    mask-image: url(../icons/bluesky.svg);
+}
+.fa-lobsters {
+    mask-image: url(../icons/lobsters.svg);
+}
+.fa-mastodon {
+    mask-image: url(../icons/mastodon.svg);
+}
+
 .content .infobar {
     color: var(--icons);
     border-bottom: 1px solid var(--icons);
