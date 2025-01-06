@@ -20,7 +20,7 @@ const feed = new Feed({
     link: "https://tavianator.com/",
     image: "https://tavianator.com/favicon.png",
     favicon: "https://tavianator.com/favicon.png",
-    copyright: "Copyright © 2010-2024 Tavian Barnes",
+    copyright: "Copyright © 2010-2025 Tavian Barnes",
     feedLinks: {
         atom: "https://tavianator.com/feed.atom",
         json: "https://tavianator.com/feed.json",
@@ -63,7 +63,25 @@ for await (const file of files) {
         }
     }
 
-    const options = {
+    document.querySelectorAll(".content .infobar > p")
+        .forEach(p => p.replaceWith(...p.childNodes));
+
+    document.querySelectorAll(".content .infobar > i")
+        .forEach(i => {
+            const nodes = [i.cloneNode(true)];
+            for (let j = i.nextSibling; j && j.tagName != "I" && j.tagName != "A"; j = j.nextSibling) {
+                nodes.push(j);
+            }
+            nodes.slice(1).forEach(j => j.remove());
+            const span = document.createElement("span");
+            span.append(...nodes);
+            i.replaceWith(span);
+        });
+
+    document.querySelectorAll(".content .infobar > a > i.fa-chevron-circle-right")
+        .forEach(i => i.parentNode.classList.add("next"));
+
+    const katexOptions = {
         strict(errorCode, errorMsg, token) {
             switch (errorCode) {
                 case "unknownSymbol":
@@ -73,17 +91,16 @@ for await (const file of files) {
             }
         },
     };
-
     const codes = [...document.getElementsByTagName("code")];
     for (const code of codes) {
         if (code.classList.contains("language-math")) {
             const p = document.createElement("p");
-            p.innerHTML = katex.renderToString(code.textContent, { displayMode: true, ...options });
+            p.innerHTML = katex.renderToString(code.textContent, { displayMode: true, ...katexOptions });
             const pre = code.parentNode;
             pre.replaceWith(p);
         } else if (/^\$.*\$$/.test(code.textContent)) {
             const span = document.createElement("span");
-            span.innerHTML = katex.renderToString(code.textContent.slice(1, -1), options);
+            span.innerHTML = katex.renderToString(code.textContent.slice(1, -1), katexOptions);
             code.replaceWith(span);
         }
     }

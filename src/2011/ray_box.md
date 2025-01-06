@@ -5,11 +5,9 @@
 *fa-clock-o* *time-2011-05-02*
 *fa-user* Tavian Barnes
 [*fa-comments* Comments](#comments)
+[Part 2 *fa-chevron-circle-right*](../2015/ray_box_nan.md)
 
 </div>
-
-
-<ins>(Update: [part 2](../2015/ray_box_nan.md), [part 3](../2022/ray_box_boundary.md))</ins>
 
 Axis-aligned bounding boxes (AABBs) are universally used to bound finite objects in ray-tracing.
 Ray/AABB intersections are usually faster to calculate than exact ray/object intersections, and allow the construction of bounding volume hierarchies (BVHs) which reduce the number of objects that need to be considered for each ray.

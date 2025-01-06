@@ -2,6 +2,7 @@
 
 <div class="infobar">
 
+[*fa-chevron-circle-left* Part 2](../2015/ray_box_nan.md)
 *fa-clock-o* *time-2022-07-27*
 *fa-user* Tavian Barnes
 [*fa-github* GitHub](https://github.com/tavianator/ray_box)

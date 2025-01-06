@@ -2,15 +2,14 @@
 
 <div class="infobar">
 
+[*fa-chevron-circle-left* Part 1](../2011/ray_box.md)
 *fa-clock-o* *time-2015-03-23*
 *fa-user* Tavian Barnes
 [*fa-comments* Comments](#comments)
 [*fa-reddit* Reddit](https://reddit.com/r/GraphicsProgramming/comments/338n9k/fast_branchless_raybounding_box_intersections/)
+[Part 3 *fa-chevron-circle-right*](../2022/ray_box_boundary.md)
 
 </div>
-
-
-<ins>(Update: [part 3](../2022/ray_box_boundary.md))</ins>
 
 In [part 1], I outlined an algorithm for computing intersections between rays and axis-aligned bounding boxes.
 The idea to eliminate branches by relying on IEEE 754 floating point properties goes back to Brian Smits in [^smits], and the implementation was fleshed out by Amy Williams. et al. in [^williams].

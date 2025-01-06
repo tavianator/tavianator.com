@@ -33,10 +33,9 @@ html {
 .content .infobar {
     color: var(--icons);
     border-bottom: 1px solid var(--icons);
-}
-
-.content .infobar p {
-    margin: 1px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
 }
 
 .content .infobar a,
@@ -53,13 +52,8 @@ html {
     transition: color 0.15s;
 }
 
-.content .infobar i {
-    margin-left: 0.5em;
-}
-
-.content .infobar p > i:first-child,
-.content .infobar p > a:first-child i {
-    margin-left: 0;
+.content .infobar a.next {
+    margin-left: auto;
 }
 
 .content main :not(pre) > .hljs {

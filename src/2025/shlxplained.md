@@ -2,8 +2,10 @@
 
 <div class="infobar">
 
+[*fa-chevron-circle-left* Part 1](shlx.md)
 *fa-clock-o* *time-2025-01-04*
 *fa-user* Tavian Barnes
+[*fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/1hufghd/the_alder_lake_anomaly_explained/)
 
 </div>
 
