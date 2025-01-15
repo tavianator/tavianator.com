@@ -16,7 +16,7 @@ It is otherwise compatible with many versions of `find`, including
 
 <div class="linkbar">
 
-[**POSIX**](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html)
+[**POSIX**](http://pubs.opengroup.org/onlinepubs/9799919799/utilities/find.html)
 [**GNU**](https://www.gnu.org/software/findutils/)
 [**FreeBSD**](https://www.freebsd.org/cgi/man.cgi?find(1))
 [**OpenBSD**](https://man.openbsd.org/find.1)

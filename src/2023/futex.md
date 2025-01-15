@@ -383,7 +383,7 @@ struct waitq waitq = {
 };
 ```
 
-`futex_wait()` adds the calling thread to the wait queue and sleeps until a signal arrives with [`sigwait()`](https://pubs.opengroup.org/onlinepubs/9699919799/functions/sigwait.html).
+`futex_wait()` adds the calling thread to the wait queue and sleeps until a signal arrives with [`sigwait()`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/sigwait.html).
 
 ```c
 void futex_wait(atomic_int *futex, int value) {

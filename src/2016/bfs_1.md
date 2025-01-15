@@ -35,7 +35,7 @@ The actual file traversal is implemented by a function called [`bftw()`], which 
 It walks a directory tree in breadth-first order, invoking the callback `fn` for each file it encounters.
 
 [`bftw()`]: /cgit/bfs.git/tree/bftw.h?id=94a804972d9e2099bb38461161e82277e5ab1747#n127
-[`nftw()`]: https://pubs.opengroup.org/onlinepubs/9699919799/functions/nftw.html
+[`nftw()`]: https://pubs.opengroup.org/onlinepubs/9799919799/functions/nftw.html
 
 ```c
 /**
@@ -170,7 +170,7 @@ When a system call like [`open("a/b/c")`] is made, the kernel has to resolve `a`
 Modern Unices provide a set of syscalls ending in `at()` that allow applications to avoid redundant traversals if they keep a file descriptor to the relevant directory open.
 For example, if `int fd` is an open file descriptor to `a/b`, `openat(fd, "c")` is equivalent to `open("a/b/c")`, without having to re-resolve `a/b`.
 
-[`open("a/b/c")`]: https://pubs.opengroup.org/onlinepubs/9699919799/functions/open.html
+[`open("a/b/c")`]: https://pubs.opengroup.org/onlinepubs/9799919799/functions/open.html
 
 The `dircache` is primarily used to hold these open file descriptors so that future directories can be opened efficiently with `openat()`.
 [`struct dircache_entry`] looks like this:
@@ -317,7 +317,7 @@ Since the number of file descriptors an application may have open at any given t
 `struct dircache` holds a size-limited priority queue of open entries.
 As a heuristic, the entries with the highest reference counts are kept open, because those have the greatest number of unexplored descendants.
 
-[limited]: https://pubs.opengroup.org/onlinepubs/9699919799/functions/getrlimit.html
+[limited]: https://pubs.opengroup.org/onlinepubs/9799919799/functions/getrlimit.html
 
 ```c
 /**
@@ -350,11 +350,11 @@ But since there's no standard `opendirat()` function, the [`dircache_entry_open(
 Some [extra logic] handles `EMFILE` (too many open files) by shrinking the cache and retrying.
 Since `DIR` takes up quite a bit of memory, it's closed as soon as possible, hanging onto the file descriptor only with [`dup()`] (actually `F_DUPFD_CLOEXEC`).
 
-[`readdir()`]: https://pubs.opengroup.org/onlinepubs/9699919799/functions/readdir.html
+[`readdir()`]: https://pubs.opengroup.org/onlinepubs/9799919799/functions/readdir.html
 [`dircache_entry_open()`]: /cgit/bfs.git/tree/bftw.c?id=94a804972d9e2099bb38461161e82277e5ab1747#n317a
-[`fdopendir()`]: https://pubs.opengroup.org/onlinepubs/9699919799/functions/fdopendir.html
+[`fdopendir()`]: https://pubs.opengroup.org/onlinepubs/9799919799/functions/fdopendir.html
 [extra logic]: /cgit/bfs.git/tree/bftw.h?id=94a804972d9e2099bb38461161e82277e5ab1747#n293
-[`dup()`]: https://pubs.opengroup.org/onlinepubs/9699919799/functions/dup.html
+[`dup()`]: https://pubs.opengroup.org/onlinepubs/9799919799/functions/dup.html
 
 For each directory entry we read, we need to know its type (file, directory, symbolic link, etc.), to tell if we need to descend into it, and to pass to the callback function.
 Normally one would use `stat()` to determine this, but `stat()`ing each file we encounter is slow, due to extra I/O and syscalls.
@@ -362,7 +362,7 @@ Luckily, many Unices provide this information as an extension in their `struct d
 When available, `bftw()` [uses] this information to avoid a `stat()` call entirely.
 The effect is noticeable:
 
-[`stat()`]: https://pubs.opengroup.org/onlinepubs/9699919799/functions/fstatat.html
+[`stat()`]: https://pubs.opengroup.org/onlinepubs/9799919799/functions/fstatat.html
 [uses]: /cgit/bfs.git/tree/bftw.c?id=94a804972d9e2099bb38461161e82277e5ab1747#n465
 
 <pre style="padding: 0.5em; background: black; color: lightgray;">
