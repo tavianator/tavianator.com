@@ -39,14 +39,14 @@
 #contact ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
     list-style-type: none;
     align-content: baseline;
     margin: 0;
     padding: 0;
 }
-#contact li:not(:last-child):after {
-    content: ' •';
+#contact li:not(:last-child)::after {
+    content: '•';
+    padding: 0 5px;
 }
 </style>
 <div id="contact">
@@ -139,17 +139,17 @@ Software developer and PhD candidate with an interest in low-level, high-perform
 #skills ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    list-style-position: inside;
+    list-style-type: none;
     align-content: baseline;
     justify-content: end;
-    padding-left: calc(var(--pad) - 10px);
+    padding-left: calc(var(--pad) - 16px);
 }
 #skills ul:first-of-type {
     margin-top: 0;
 }
-#skills li::marker {
-    content: '• ';
+#skills li::before {
+    content: '•';
+    padding: 0 5px;
 }
 @media (max-width: 540px) {
     #skills {
