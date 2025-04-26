@@ -183,7 +183,7 @@ checking whether the preprocessor supports include_next... yes
 checking whether source code line length is unlimited... yes
 checking for wint_t... yes
 checking whether wint_t is large enough... yes
-checking whether <wchar.h> uses 'inline' correctly... yes
+checking whether &lt;wchar.h&gt; uses 'inline' correctly... yes
 checking for nl_langinfo and CODESET... yes
 checking for a traditional french locale... none
 checking whether char8_t is correctly defined... yes
@@ -273,9 +273,9 @@ checking whether the compiler produces multi-arch binaries... no
 checking whether stdint.h conforms to C99... yes
 checking whether stdint.h works without ISO C predefines... yes
 checking whether stdint.h has UINTMAX_WIDTH etc.... yes
-checking whether INT32_MAX < INTMAX_MAX... yes
+checking whether INT32_MAX &lt; INTMAX_MAX... yes
 checking whether INT64_MAX == LONG_MAX... yes
-checking whether UINT32_MAX < UINTMAX_MAX... yes
+checking whether UINT32_MAX &lt; UINTMAX_MAX... yes
 checking whether UINT64_MAX == ULONG_MAX... yes
 checking where to find the exponent in a 'long double'... word 2 bit 0
 checking whether long double and double are the same... no
@@ -294,7 +294,7 @@ checking whether langinfo.h defines YESEXPR... yes
 checking for good max_align_t... yes
 checking whether NULL can be used in arbitrary expressions... yes
 checking for unreachable... no
-checking whether nullptr_t needs <stddef.h>... no
+checking whether nullptr_t needs &lt;stddef.h&gt;... no
 checking for clean definition of __STDC_VERSION_STDDEF_H__... yes
 checking whether locale.h defines locale_t... yes
 checking whether locale.h conforms to POSIX:2001... yes
@@ -315,8 +315,8 @@ checking for mmap... yes
 checking for MAP_ANONYMOUS... yes
 checking whether memchr works... yes
 checking whether memrchr is declared... yes
-checking whether <limits.h> defines MIN and MAX... no
-checking whether <sys/param.h> defines MIN and MAX... yes
+checking whether &lt;limits.h&gt; defines MIN and MAX... no
+checking whether &lt;sys/param.h&gt; defines MIN and MAX... yes
 checking whether time_t is signed... yes
 checking for working mktime... yes
 checking whether trunc is declared... yes
@@ -358,15 +358,15 @@ checking whether strndup is declared... yes
 checking whether strnlen is declared... yes
 checking whether strstr works... yes
 checking whether strtoumax is declared... yes
-checking whether <sys/socket.h> is self-contained... yes
+checking whether &lt;sys/socket.h&gt; is self-contained... yes
 checking for shutdown... (cached) yes
-checking whether <sys/socket.h> defines the SHUT_* macros... yes
+checking whether &lt;sys/socket.h&gt; defines the SHUT_* macros... yes
 checking for struct sockaddr_storage... yes
 checking for sa_family_t... yes
 checking for struct sockaddr_storage.ss_family... yes
 checking for struct utsname... yes
-checking for struct timespec in <time.h>... yes
-checking for TIME_UTC in <time.h>... yes
+checking for struct timespec in &lt;time.h&gt;... yes
+checking for TIME_UTC in &lt;time.h&gt;... yes
 checking whether execvpe is declared... yes
 checking whether clearerr_unlocked is declared... yes
 checking whether feof_unlocked is declared... yes
@@ -401,19 +401,19 @@ checking for off_t... yes
 checking for CFPreferencesCopyAppValue... no
 checking for CFLocaleCopyPreferredLanguages... no
 checking for library needed for semaphore functions... none
-checking whether <sys/select.h> is self-contained... yes
+checking whether &lt;sys/select.h&gt; is self-contained... yes
 checking for sigset_t... yes
 checking whether initstate is declared... yes
 checking whether setstate is declared... yes
 checking for volatile sig_atomic_t... yes
 checking for sighandler_t... yes
 checking whether ldexp() can be used without linking with libm... yes
-checking whether <sys/ioctl.h> declares ioctl... yes
+checking whether &lt;sys/ioctl.h&gt; declares ioctl... yes
 checking whether access honors trailing slash... yes
-checking for alignas and alignof... yes, <stdalign.h> macros
+checking for alignas and alignof... yes, &lt;stdalign.h&gt; macros
 checking for alloca as a compiler built-in... yes
 checking whether to enable assertions... yes
-checking for static_assert... yes, an <assert.h> macro
+checking for static_assert... yes, an &lt;assert.h&gt; macro
 checking for bool, true, false... no
 checking whether btowc(0) is correct... yes
 checking whether btowc(EOF) is correct... guessing yes
@@ -469,7 +469,7 @@ checking for struct statfs.f_type... yes
 checking for __fsword_t... yes
 checking for fts_open... yes
 checking whether getcwd handles long file names properly... yes
-checking whether getcwd succeeds when 4k < cwd_length < 16k... yes
+checking whether getcwd succeeds when 4k &lt; cwd_length &lt; 16k... yes
 checking for getdelim... yes
 checking for working getdelim function... yes
 checking whether getdtablesize works... yes
@@ -520,7 +520,7 @@ checking whether mbrtowc works on empty input... yes
 checking whether the C locale is free of encoding errors... no
 checking whether mbsrtowcs works... yes
 checking whether the C locale is free of encoding errors... (cached) no
-checking whether mbswidth is declared in <wchar.h>... no
+checking whether mbswidth is declared in &lt;wchar.h&gt;... no
 checking for mbstate_t... (cached) yes
 checking for mbtowc... yes
 checking for mempcpy... (cached) yes
@@ -648,7 +648,7 @@ checking whether mkdir handles trailing slash... yes
 checking whether mkdir handles trailing dot... yes
 checking for library containing nanosleep... none required
 checking for working nanosleep... no (mishandles large arguments)
-checking whether <netinet/in.h> is self-contained... yes
+checking whether &lt;netinet/in.h&gt; is self-contained... yes
 checking for uselocale... (cached) yes
 checking whether uselocale works... (cached) yes
 checking for getppriv... no
@@ -1101,7 +1101,7 @@ make[2]: Leaving directory '/home/tavianator/code/gnu/findutils/xargs'
 Making all in locate
 make[2]: Entering directory '/home/tavianator/code/gnu/findutils/locate'
 echo '@set LOCATE_DB /usr/local/var/locatedb' > dblocation.texi.tmp
-if test -f dblocation.texi && cmp dblocation.texi.tmp dblocation.texi >/dev/null ; then \
+if test -f dblocation.texi &amp;&amp; cmp dblocation.texi.tmp dblocation.texi >/dev/null ; then \
     rm dblocation.texi.tmp ; \
 else \
     mv dblocation.texi.tmp dblocation.texi ; \
@@ -1223,7 +1223,7 @@ The purpose of a `./configure` script is basically to run the compiler a bunch o
 In this way it can test whether particular headers, functions, struct fields, etc. exist, which lets people write portable software.
 This is an [embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) problem, but [Autoconf can't parallelize it](https://lists.gnu.org/archive/html/autoconf/2021-01/msg00112.html), and [neither can CMake](https://stackoverflow.com/a/75161236/502399), [neither can Meson](https://github.com/mesonbuild/meson/issues/3635), etc., etc.
 
-The problem is that most build configurations scripts pretty much look like this:
+The problem is that most build configuration scripts pretty much look like this:
 
 ```sh
 CFLAGS="-g"
