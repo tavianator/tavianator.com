@@ -155,7 +155,7 @@ We need to shrink our search space even more, so lets look at the result space.
 The square roots of the "fair and square" numbers look like this: 1, 2, 3, 11, 22, 101, 111, 121, 202, 212, 1001, 1111, 2002, etc.
 
 Notice how all the numbers are composed of only the digits 0, 1, and 2 (except for the number 3 itself).
-If this result always holds, then we've reduced our search space to `$3^{25} \approx 2^40$`, which is just barely feasible.
+If this result always holds, then we've reduced our search space to `$3^{25} \approx 2^{40}$`, which is just barely feasible.
 
 
 ## Can we prove it?
@@ -201,7 +201,7 @@ If we continue to carry out this logic, we are eventually forced to have a carry
 Thus, we know that the sum `$a^2 + b^2 + c^2 + \cdots + c^2 + b^2 + a^2$` must not produce a carry, so it must be less than 10.
 Since `$1^2 + 3^2 = 10$`, it is impossible for n to contain any digits greater than 2, except in the case that `$n = 3$`.
 
-We could stop now, implement the `$3^{25} \approx 2^40$` complexity search, maybe multi-thread it, and be done.
+We could stop now, implement the `$3^{25} \approx 2^{40}$` complexity search, maybe multi-thread it, and be done.
 But we can do better!
 
 
