@@ -1221,7 +1221,7 @@ As a result, this random project takes about 13.5&times; longer to *configure* t
 
 The purpose of a `./configure` script is basically to run the compiler a bunch of times and check which runs succeeded.
 In this way it can test whether particular headers, functions, struct fields, etc. exist, which lets people write portable software.
-This is an [embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) problem, but [Autoconf can't parallelize it](https://lists.gnu.org/archive/html/autoconf/2021-01/msg00112.html), and [neither can CMake](https://stackoverflow.com/a/75161236/502399), [neither can Meson](https://github.com/mesonbuild/meson/issues/3635), etc., etc.
+This is an [embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) problem, but [Autoconf can't parallelize it](https://lists.gnu.org/archive/html/autoconf/2021-01/msg00112.html), and [neither can CMake](https://gitlab.kitware.com/cmake/cmake/-/issues/18929), [neither can Meson](https://github.com/mesonbuild/meson/issues/3635), etc., etc.
 
 The problem is that most build configuration scripts pretty much look like this:
 
