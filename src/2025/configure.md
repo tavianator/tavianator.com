@@ -5,6 +5,9 @@
 *fa-clock-o* *time-2025-04-25*
 *fa-user* Tavian Barnes
 [*fa-github* GitHub](https://github.com/tavianator/parconf)
+[*fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=43799396)
+[*fa-lobsters* Lobsters](https://lobste.rs/s/1vzqe2/parallel_configure)
+[*fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/1k8hzcc/parallel_configure/)
 
 </div>
 

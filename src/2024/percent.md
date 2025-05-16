@@ -4,6 +4,7 @@
 
 *fa-clock-o* *time-2024-06-21*
 *fa-user* Tavian Barnes
+[*fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=40815086)
 
 </div>
 

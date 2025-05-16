@@ -5,6 +5,7 @@
 *fa-clock-o* *time-2023-03-07*
 *fa-user* Tavian Barnes
 [*fa-github* GitHub](https://github.com/tavianator/irregex)
+[*fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=35503089)
 
 </div>
 

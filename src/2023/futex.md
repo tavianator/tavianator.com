@@ -5,6 +5,8 @@
 *fa-clock-o* *time-2023-04-21*
 *fa-user* Tavian Barnes
 [*fa-github* GitHub](https://github.com/tavianator/futex)
+[*fa-reddit Reddit](https://www.reddit.com/r/C_Programming/comments/12uk9hi/you_could_have_invented_futexes/)
+[*fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=35708331)
 
 </div>
 
