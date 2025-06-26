@@ -1,10 +1,9 @@
 # Welcome
 
-I'm Tavian, a PhD student in the [Reliable Computer Systems] lab at the [David R. Cheriton School of Computer Science], [University of Waterloo].
-I used to work at [Microsoft Research Montreal], and before that at a startup called [Maluuba], and at the [University of Calgary].
+I'm Tavian, a software developer interested in low-level, high-performance software across many domains.
+Currently a Staff Engineer at [Shopify], I've previously worked at the [University of Waterloo], [Microsoft Research Montreal], a startup called [Maluuba], and the [University of Calgary].
 
-[Reliable Computer Systems]: https://rcs.uwaterloo.ca/
-[David R. Cheriton School of Computer Science]: https://cs.uwaterloo.ca/
+[Shopify]: https://www.shopify.com/
 [University of Waterloo]: https://uwaterloo.ca/
 [Microsoft Research Montreal]: https://www.microsoft.com/en-us/research/lab/microsoft-research-montreal/
 [Maluuba]: https://en.wikipedia.org/wiki/Maluuba

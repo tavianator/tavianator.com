@@ -1,7 +1,10 @@
 <style>
 @media only print {
-    #menu-bar, #menu-bar-hover-placeholder, #sidebar {
+    #mdbook-menu-bar, #mdbook-menu-bar-hover-placeholder, #mdbook-sidebar {
         display: none;
+    }
+    #mdbook-sidebar-toggle-anchor:checked ~ .page-wrapper {
+        transform: none;
     }
     .page {
         margin: 0;
@@ -13,7 +16,7 @@
         font-size: smaller;
     }
     @page {
-        margin: 0.5in 0.25in 0.25in 0.25in;
+        margin: 0.5in;
     }
 }
 </style>
@@ -22,7 +25,25 @@
 # Tavian Barnes
 
 <style>
+#bio {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 3em;
+    margin-bottom: 1em;
+    p {
+        flex: 1;
+        margin: 0;
+        align-self: center;
+    }
+    @media (width < 540px) {
+        display: block;
+        p {
+            margin: 1em 0 1em 0;
+        }
+    }
+}
 #contact {
+    align-self: start;
     display: grid;
     grid-template-columns: min-content 1fr;
     place-items: baseline start;
@@ -49,6 +70,7 @@
     }
 }
 </style>
+<div id="bio">
 <div id="contact">
 
 *fa-solid fa-envelope* <tavianator@tavianator.com>
@@ -58,14 +80,12 @@
 *fa-solid fa-earth-americas*
 
 - Kitchener&ndash;Waterloo
-- Toronto Area
-- Remote
-- Hybrid
 
 </div>
 
-Software developer and PhD candidate with an interest in low-level, high-performance software across many domains, including operating systems, computer graphics, numerical computation, and machine learning.
+Software developer interested in low-level, high-performance software across many domains, including operating systems, computer graphics, numerical computation, and machine learning/artificial intelligence.
 
+</div>
 
 <style>
 :root {
@@ -88,6 +108,9 @@ Software developer and PhD candidate with an interest in low-level, high-perform
 }
 .tli:last-child {
     margin-bottom: 1em;
+    @media only print {
+        margin-bottom: 0;
+    }
 }
 .tli p {
     margin-top: 0;
@@ -166,7 +189,7 @@ Software developer and PhD candidate with an interest in low-level, high-perform
     }
     @media only print {
         ul {
-            padding-left: 6em;
+            padding-left: 4em;
         }
     }
 }
@@ -235,6 +258,7 @@ for (const time of document.querySelectorAll(".tl time")) {
 - C++
 - Rust
 - Python
+- Ruby
 - Java
 - C&sharp;
 - JavaScript
@@ -261,21 +285,54 @@ for (const time of document.querySelectorAll(".tl time")) {
     margin-left: var(--pad);
     mask: center/contain no-repeat luminance;
     background: currentColor;
+    --shop-logo: url(./resume/shop.svg);
+    --uw-logo: url(./resume/uw.png);
+    --msft-logo: url(./resume/msft.svg);
+    --maluuba-logo: url(./resume/maluuba.png);
+    --uofc-logo: url(./resume/uofc.webp);
+}
+html.light, html.rust {
+    .tli .logo {
+        --shop-logo: url(./resume/shop-light.svg);
+        --uw-logo: url(./resume/uw-light.png);
+        --msft-logo: url(./resume/msft-light.svg);
+        --maluuba-logo: url(./resume/maluuba-light.png);
+        --uofc-logo: url(./resume/uofc-light.webp);
+    }
+}
+#shop-logo {
+    mask-image: var(--shop-logo);
 }
 #uw-logo {
-    mask-image: url(./resume/uw.png);
+    mask-image: var(--uw-logo);
 }
 #msft-logo {
-    mask-image: url(./resume/msft.svg);
+    mask-image: var(--msft-logo);
 }
 #maluuba-logo {
-    mask-image: url(./resume/maluuba.png);
+    mask-image: var(--maluuba-logo);
 }
 #uofc-logo {
-    mask-image: url(./resume/uofc.webp);
+    mask-image: var(--uofc-logo);
 }
 </style>
 <div class="tl">
+<div class="tli">
+
+<div class="logo" id="shop-logo"></div>
+
+<div class="tlh">
+
+**Staff Engineer**  
+[Shopify](https://www.shopify.com/)  
+<time>*2025&ndash;Present*</time>
+
+</div>
+
+Core contributor to Shopify's AI agent platform that powers [Sidekick](https://www.shopify.com/ca/magic) (Shopify's AI assistant for merchants) and other agentic experiences at Shopify.
+I'm focused on improving the performance, quality, and capabilities of the platform, working at every layer from the language runtime itself to the web server, load balancer, and fine-tuned models, as well as collaborating directly with major LLM vendors.
+
+</div>
 <div class="tli">
 
 <div class="logo" id="uw-logo"></div>
@@ -347,40 +404,45 @@ UNITIS powered the campus-wide staff directory, as well as many department webpa
 
 ## Publications
 
-<style>
-#pubs .tli:first-child {
-    padding-top: 0.5em;
-}
-</style>
-<div id="pubs" class="tl">
+<div class="tl">
 <div class="tli">
 
-<time></time>
-Emil Tsalapatis, Ryan Hancock, Tavian Barnes, Ali José Mashtizadeh.
-2021.
-[**The Aurora Single Level Store Operating System**](https://dl.acm.org/doi/10.1145/3477132.3483563).
+[**The Aurora Single Level Store Operating System**](https://dl.acm.org/doi/10.1145/3477132.3483563)  
+Emil Tsalapatis, Ryan Hancock, Tavian Barnes, Ali José Mashtizadeh  
+<time>*2021*</time>.
 In *Proceedings of the ACM SIGOPS 28th Symposium on Operating Systems Principles*.
 Association for Computing Machinery, New York, NY, USA, 788–803.
 
 </div>
 <div class="tli">
 
-<time></time>
-Marc-Alexandre Côté, Ákos Kádár, Xingdi Yuan, Ben Kybartas, Tavian Barnes, Emery Fine, Jasmine Moore, Ruo Yu Tao, Matthew Hausknecht, Layla El Asri, Mahmoud Adada, Wendy Tay, Adam Trischler.
-2018.
-[**TextWorld: A Learning Environment for Text-based Games**](https://arxiv.org/abs/1806.11532).
+[**TextWorld: A Learning Environment for Text-based Games**](https://arxiv.org/abs/1806.11532)  
+Marc-Alexandre Côté, Ákos Kádár, Xingdi Yuan, Ben Kybartas, Tavian Barnes, Emery Fine, Jasmine Moore, Ruo Yu Tao, Matthew Hausknecht, Layla El Asri, Mahmoud Adada, Wendy Tay, Adam Trischler  
+<time>*2018*</time>.
 In *Computer Games, 7th Workshop, CGW 2018, Held in Conjunction with the 27th International Conference on Artificial Intelligence, IJCAI 2018, Stockholm, Sweden, July 13, 2018, Revised Selected Papers*.
 Springer Nature Switzerland, Cham, Switzerland, 41-75.
 
 </div>
 <div class="tli">
 
-<time></time>
-Harm van Seijen, Mehdi Fatemi, Joshua Romoff, Romain Laroche, Tavian Barnes, Jeffrey Tsang.
-2017.
-[**Hybrid Reward Architecture for Reinforcement Learning**](https://dl.acm.org/doi/10.5555/3295222.3295291)
+[**Hybrid Reward Architecture for Reinforcement Learning**](https://dl.acm.org/doi/10.5555/3295222.3295291)  
+Harm van Seijen, Mehdi Fatemi, Joshua Romoff, Romain Laroche, Tavian Barnes, Jeffrey Tsang  
+<time>*2017*</time>.
 In *Proceedings of the 31st International Conference on Neural Information Processing Systems*.
 Curran Associates Inc., Red Hook, NY, USA, 5398–5408.
+
+</div>
+</div>
+
+
+## Patents
+
+<div class="tl">
+<div class="tli">
+
+[**Method and system for classifying queries**](https://patents.google.com/patent/US10467259B2/) (US10467259B2)  
+Kaheer Suleman, Jing He, Tavian Barnes  
+<time>*2015*</time>
 
 </div>
 </div>
