@@ -107,7 +107,7 @@ If you're clever, you might figure out this contortion:
 #define println(...) \
 	println_(__VA_ARGS__, )
 
-#define println_(format, ...)
+#define println_(format, ...) \
 	printf(format "%s", __VA_ARGS__ "\n")
 
 println("Hello world!");
@@ -206,7 +206,7 @@ We can use this in `ASSERT` like this:
 ```c
 #define ASSERT(expr, ...) \
 	((expr) ? (void)0 : IF(__VA_ARGS__) \
-		(ABORTF(__VA_ARGS__))
+		(ABORTF(__VA_ARGS__)) \
 		(ABORTF("assertion failed: `%s`", #expr)))
 
 #define ABORTF(format, ...) \
