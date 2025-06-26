@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2025]()
+  - [Taking the C preprocessor to Church](2025/cpp_church.md)
   - [Parallel ./configure](2025/configure.md)
   - [The Alder Lake anomaly, explained](2025/shlxplained.md)
   - [The Alder Lake `shlx` anomaly](2025/shlx.md)
