@@ -157,7 +157,7 @@ println("Hello %s!", "world");
 
 The year is 2024.
 Taylor swift turns 35.
-The C standard committee publishes the 2023 [sic] version of the C language standard, which copies `__VA_OPT__` from C++.
+ISO publishes the 2023 [sic] version of the C language standard, which copies `__VA_OPT__` from C++.
 At long last, we can write variadic macros in standard C that don't make our eyes bleed.
 
 ---
