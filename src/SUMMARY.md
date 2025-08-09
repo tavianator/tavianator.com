@@ -8,6 +8,7 @@
   - [bistring](projects/bistring.md)
 
 - [2025]()
+  - [Sneaky git commits](2025/sneaky.md)
   - [Taking the C preprocessor to Church](2025/cpp_church.md)
   - [Parallel ./configure](2025/configure.md)
   - [The Alder Lake anomaly, explained](2025/shlxplained.md)

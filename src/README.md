@@ -12,7 +12,7 @@ I used to work at [Microsoft Research Montreal], and before that at a startup ca
 
 Check out some of the [projects](projects/index.html) I'm working on, or read some of the highlights from my blog (the full archive is in the sidebar):
 
-- [Taking the C preprocessor to Church](2025/cpp_church.md)&emsp;**&larr; new post**
+- [Sneaky git commits](2025/sneaky.md)&emsp;**&larr; new post**
 - [Ray/Bounding Box Intersections](2022/ray_box_boundary.md)
 - [A quick trick for faster naïve matrix multiplication](2016/matrix_multiply.md)
 - [Exact Bounding Boxes for Spheres/Ellipsoids](2014/ellipsoid_bounding_boxes.md)
