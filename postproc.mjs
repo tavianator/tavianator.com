@@ -3,7 +3,7 @@
 import { Feed } from "feed";
 import fs from "fs";
 import { Glob } from "glob";
-import { JSDOM } from "jsdom";
+import { JSDOM, VirtualConsole } from "jsdom";
 import katex from "katex";
 
 while (true) {
@@ -40,8 +40,14 @@ for await (const file of files) {
     }
 
     const source = await fs.promises.readFile(file, { encoding: "utf-8" });
+
+    // JSDOM doesn't support e.g. nested CSS blocks, so suppress errors
+    const virtualConsole = new VirtualConsole();
+    virtualConsole.sendTo(console, { omitJSDOMErrors: true });
+
     const dom = new JSDOM(source, {
         runScripts: "outside-only",
+        virtualConsole,
     });
 
     const window = dom.window;
