@@ -33,34 +33,34 @@ pre.terminal {
     color: #b2b2b2;
     padding: 0.5em;
     white-space: pre-wrap;
-}
-pre.terminal .white {
-    color: white;
-    font-weight: bold;
-}
-pre.terminal .red {
-    color: #ff5454;
-    font-weight: bold;
-}
-pre.terminal .green {
-    color: #54ff54;
-    font-weight: bold;
-}
-pre.terminal .blue {
-    color: #5454ff;
-    font-weight: bold;
-}
-pre.terminal .magenta {
-    color: #ff54ff;
-    font-weight: bold;
-}
-pre.terminal .yellow {
-    color: #ffff54;
-    font-weight: bold;
-}
-pre.terminal .cyan {
-    color: #54ffff;
-    font-weight: bold;
+    .white {
+        color: white;
+        font-weight: bold;
+    }
+    .red {
+        color: #ff5454;
+        font-weight: bold;
+    }
+    .green {
+        color: #54ff54;
+        font-weight: bold;
+    }
+    .blue {
+        color: #5454ff;
+        font-weight: bold;
+    }
+    .magenta {
+        color: #ff54ff;
+        font-weight: bold;
+    }
+    .yellow {
+        color: #ffff54;
+        font-weight: bold;
+    }
+    .cyan {
+        color: #54ffff;
+        font-weight: bold;
+    }
 }
 </style>
 

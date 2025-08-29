@@ -2,13 +2,15 @@ html {
     scroll-behavior: smooth;
 }
 
-#menu-bar a.sponsor:hover i.fa {
-    color: #db61a2;
-}
+#menu-bar {
+    a.sponsor:hover i.fa {
+        color: #db61a2;
+    }
 
-#menu-bar a.feed-link i.fa {
-    min-width: 16px;
-    text-align: right;
+    a.feed-link i.fa {
+        min-width: 16px;
+        text-align: right;
+    }
 }
 
 .fa-bluesky,
@@ -36,133 +38,140 @@ html {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5em;
+
+    a, a:link, a:visited {
+        background-color: transparent;
+        color: var(--icons);
+        text-decoration: none;
+        transition: color 0.5s;
+
+        &:hover {
+            color: var(--icons-hover);
+            transition: color 0.15s;
+        }
+
+        &.next {
+            margin-left: auto;
+        }
+    }
 }
 
-.content .infobar a,
-.content .infobar a:link,
-.content .infobar a:visited {
-    background-color: transparent;
-    color: var(--icons);
-    text-decoration: none;
-    transition: color 0.5s;
+.content main {
+    :not(pre) > .hljs {
+        background-color: transparent;
+        color: var(--fg);
+        padding: 0;
+    }
+
+    a:link, a:link .hljs,
+    a:visited, a:visited .hljs {
+        color: var(--fg);
+        text-decoration: dotted underline;
+        transition: background-color 0.5s;
+    }
+
+    details summary {
+        cursor: pointer;
+        transition: background-color 0.5s;
+    }
+
+    a:hover,
+    details summary:hover {
+        background-color: var(--theme-hover);
+        transition: background-color 0.15s;
+    }
 }
 
-.content .infobar a:hover {
-    color: var(--icons-hover);
-    transition: color 0.15s;
+.content .linkbar {
+    p {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -8px 0;
+    }
+
+    &:last-child p {
+        border-bottom: 1px solid var(--icons);
+    }
+
+    a, a:link, a:visited {
+        flex: 1;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        padding: 12px;
+    }
 }
 
-.content .infobar a.next {
-    margin-left: auto;
-}
+.content {
+    h1 {
+        margin-bottom: 0.25em;
+    }
+    h2, h3 {
+        margin-top: 1.5em;
+    }
+    h4, h5 {
+        margin-top: 1em;
+    }
 
-.content main :not(pre) > .hljs {
-    background-color: transparent;
-    color: var(--fg);
-    padding: 0;
-}
+    p {
+        text-align: justify;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        word-wrap: break-word;
+    }
 
-.content main a:link,
-.content main a:link .hljs,
-.content main a:visited,
-.content main a:visited .hljs {
-    color: var(--fg);
-    text-decoration: dotted underline;
-    transition: background-color 0.5s;
-}
+    blockquote {
+        p {
+            text-align: left;
+        }
+        i.fa {
+            margin-left: 0.5em;
+        }
+        i.fa:first-child {
+            margin-left: 0;
+        }
+    }
 
-.content main details summary {
-    cursor: pointer;
-    transition: background-color 0.5s;
-}
+    a:target, .footnote-definition:target {
+        scroll-margin-top: var(--menu-bar-height);
+    }
 
-.content main a:hover,
-.content main details summary:hover {
-    background-color: var(--theme-hover);
-    transition: background-color 0.15s;
-}
+    sup {
+        line-height: 0;
+    }
 
-.content .linkbar p {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -8px 0;
-}
+    hr {
+        border: 1px solid var(--icons);
+    }
 
-.content .linkbar:last-child p {
-    border-bottom: 1px solid var(--icons);
-}
+    /* Use a fleuron for top-level <hr>s */
+    main > hr {
+        border: none;
+        color: var(--fg);
+        font-size: x-large;
+        text-align: center;
 
-.content .linkbar a,
-.content .linkbar a:link,
-.content .linkbar a:visited {
-    flex: 1;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    padding: 12px;
-}
+        &:after {
+            content: "❧";
+        }
+    }
 
-.content h1 {
-    margin-bottom: 0.25em;
-}
+    .content ins {
+        text-decoration: none;
+        background: var(--quote-bg);
+    }
 
-.content h2,
-.content h3 {
-    margin-top: 1.5em;
-}
+    /* Filenames attached to code blocks. */
+    h4:has(+ pre) {
+        padding: 0 1rem;
+        margin-bottom: 0;
+        line-height: 2;
+        background-color: var(--quote-bg);
+    }
 
-.content h4,
-.content h5 {
-    margin-top: 1em;
-}
-
-.content p {
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    word-wrap: break-word;
-}
-
-.content blockquote p {
-    text-align: left;
-}
-
-.content blockquote i.fa {
-    margin-left: 0.5em;
-}
-
-.content blockquote i.fa:first-child {
-    margin-left: 0;
-}
-
-.content a:target,
-.content .footnote-definition:target {
-    scroll-margin-top: var(--menu-bar-height);
-}
-
-.content sup {
-    line-height: 0;
-}
-
-.content hr {
-    border: 1px solid var(--icons);
-}
-
-/* Use a fleuron for top-level <hr>s */
-.content main > hr {
-    border: none;
-    color: var(--fg);
-    font-size: x-large;
-    text-align: center;
-}
-
-.content main > hr:after {
-    content: "❧";
-}
-
-.content ins {
-    text-decoration: none;
-    background: var(--quote-bg);
+    h4 + pre {
+        margin-top: 0;
+    }
 }
 
 nav.nav-wrapper,
@@ -180,22 +189,10 @@ figure {
     max-width: 100%;
     overflow-x: auto;
     text-align: center;
-}
 
-figure .fig-scale {
-    max-width: 100%;
-}
-
-/* Filenames attached to code blocks. */
-.content h4:has(+ pre) {
-    padding: 0 1rem;
-    margin-bottom: 0;
-    line-height: 2;
-    background-color: var(--quote-bg);
-}
-
-.content h4 + pre {
-    margin-top: 0;
+    .fig-scale {
+        max-width: 100%;
+    }
 }
 
 .tabs {
@@ -204,53 +201,41 @@ figure .fig-scale {
     margin: 20px 0;
     background-color: var(--quote-bg);
     border-top: .1em solid var(--quote-border);
-}
 
-.tabs > input[type="radio"] {
-    display: none;
-}
+    & > input[type="radio"] {
+        display: none;
+    }
 
-.tabs > label {
-    display: inline-block;
-    padding: 12px;
-    cursor: pointer;
-    transition: background-color 0.5s;
-}
+    & > label {
+        display: inline-block;
+        padding: 12px;
+        cursor: pointer;
+        transition: background-color 0.5s;
 
-.tabs > label:hover {
-    background-color: var(--theme-hover);
-    transition: background-color 0.15s;
-}
+        &:hover {
+            background-color: var(--theme-hover);
+            transition: background-color 0.15s;
+        }
+    }
 
-.tabs > input[type="radio"]:checked + label {
-    background-color: var(--table-header-bg);
-}
+    & > input[type="radio"]:checked + label {
+        background-color: var(--table-header-bg);
+    }
 
-.tabs > hr {
-    flex-basis: 100%;
-    margin: 0;
-    border: none;
-    border-top: .1em solid var(--quote-border);
-}
+    & > .tab {
+        display: none;
+        flex-basis: 100%;
+        overflow-x: auto;
+    }
 
-.tabs > .tab {
-    display: none;
-    flex-basis: 100%;
-    overflow-x: auto;
-}
+    & > input[type="radio"]:checked:nth-of-type(1) ~ div:nth-of-type(1),
+    & > input[type="radio"]:checked:nth-of-type(2) ~ div:nth-of-type(2),
+    & > input[type="radio"]:checked:nth-of-type(3) ~ div:nth-of-type(3),
+    & > input[type="radio"]:checked:nth-of-type(4) ~ div:nth-of-type(4) {
+        display: block;
+    }
 
-.tabs > input[type="radio"]:checked:nth-of-type(1) ~ div:nth-of-type(1),
-.tabs > input[type="radio"]:checked:nth-of-type(2) ~ div:nth-of-type(2),
-.tabs > input[type="radio"]:checked:nth-of-type(3) ~ div:nth-of-type(3),
-.tabs > input[type="radio"]:checked:nth-of-type(4) ~ div:nth-of-type(4) {
-    display: block;
-}
-
-.tab pre {
-    margin: 0;
-}
-
-.tab p {
-    margin-left: 20px;
-    margin-right: 20px;
+    .tab pre {
+        margin: 0;
+    }
 }

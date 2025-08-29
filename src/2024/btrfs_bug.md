@@ -172,17 +172,17 @@ The logic is intended to work like this:
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
-}
-.code-cols > pre {
-    flex: 1;
-    margin: 0;
-}
-.code-cols > pre > code {
-    box-sizing: border-box;
-    min-height: 100%;
-}
-.code-cols > pre:nth-child(even) > code {
-    background-color: var(--quote-bg);
+    & > pre {
+        flex: 1;
+        margin: 0;
+        & > code {
+            box-sizing: border-box;
+            min-height: 100%;
+        }
+    }
+    & > pre:nth-child(even) > code {
+        background-color: var(--quote-bg);
+    }
 }
 </style>
 <div id="race-1" class="code-cols">
@@ -704,14 +704,14 @@ metadata metadata metadata metadata metadata metadata metadata metadata metadata
 .overwrite {
     position: relative;
     overflow: clip;
-}
-.overwrite > pre > code {
-    overflow: hidden;
-}
-.overwrite > pre:nth-child(n + 2) {
-    position: absolute;
-    top: 0;
-    margin: 0;
+    & > pre > code {
+        overflow: hidden;
+    }
+    & > pre:nth-child(n + 2) {
+        position: absolute;
+        top: 0;
+        margin: 0;
+    }
 }
 #overwrite-1 > pre:nth-child(2) > code {
     color: green;

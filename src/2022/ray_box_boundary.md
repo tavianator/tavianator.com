@@ -747,19 +747,22 @@ This API also allows the implementation to be easily vectorized, parallelized, o
     float: right;
     font-size: smaller;
     margin: 0 0 20px 20px;
-}
-#specs .table-wrapper {
-    //max-height: 180px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-#specs .header {
-    position: sticky;
-    top: 0;
-    background: var(--table-header-bg);
-}
-#specs .collapsed tr:not(:first-child) {
-    visibility: collapse;
+    .table-wrapper {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .header {
+        position: sticky;
+        top: 0;
+        background: var(--table-header-bg);
+    }
+    .collapsed tr:not(:first-child) {
+        visibility: collapse;
+    }
+    @media (width < 666px) {
+        float: none;
+        margin: 0;
+    }
 }
 </style>
 <script type="postproc">

@@ -116,14 +116,14 @@ This condition is known as a *lost wakeup*, and left untreated, would cause a de
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
-}
-.code-cols > pre {
-    flex: 1;
-    margin: 0;
-}
-.code-cols > pre > code {
-    box-sizing: border-box;
-    min-height: 100%;
+    & > pre {
+        flex: 1;
+        margin: 0;
+        & > code {
+            box-sizing: border-box;
+            min-height: 100%;
+        }
+    }
 }
 </style>
 <div id="race-1" class="code-cols">

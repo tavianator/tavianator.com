@@ -90,16 +90,16 @@ On paper it looks like this:
 <style type="text/css">
 table.division {
     width: 100%;
-}
-table.division tbody tr {
-    background: none;
-}
-table.division td {
-    border: none;
-    padding: 0;
-}
-table.division td:nth-child(2) {
-    width: 33%;
+    tbody tr {
+        background: none;
+    }
+    td {
+        border: none;
+        padding: 0;
+    }
+    td:nth-child(2) {
+        width: 33%;
+    }
 }
 </style>
 <table class="division">

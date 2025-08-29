@@ -17,12 +17,12 @@ I'm sorry, but in the year 2025, this is ridiculous:
 pre code .scroll {
     height: 1lh;
     overflow: hidden;
-}
-pre code .scroll .config-output {
-    animation: scroll 38.018s steps(775, jump-none) forwards;
-}
-pre code .scroll .make-output {
-    animation: scroll 2.822s steps(404, jump-none) 38.018s forwards;
+    .config-output {
+        animation: scroll 38.018s steps(775, jump-none) forwards;
+    }
+    .make-output {
+        animation: scroll 2.822s steps(404, jump-none) 38.018s forwards;
+    }
 }
 @keyframes scroll {
     0% {
@@ -1578,11 +1578,13 @@ I've also been using a similar build system in [bfs](/projects/bfs.md) for a whi
 The performance benefit is substantial:
 
 <style>
-pre code .scroll .bfs-config {
-    animation: scroll 0.401s steps(73, jump-none) forwards;
-}
-pre code .scroll .bfs-make {
-    animation: scroll 0.310s steps(30, jump-none) 0.401s forwards;
+pre code .scroll {
+    .bfs-config {
+        animation: scroll 0.401s steps(73, jump-none) forwards;
+    }
+    .bfs-make {
+        animation: scroll 0.310s steps(30, jump-none) 0.401s forwards;
+    }
 }
 </style>
 <pre>

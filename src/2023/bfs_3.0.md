@@ -44,36 +44,38 @@ A timeline of the I/O operations that `bfs` does looks like this:
     padding-bottom: 8px;
     margin-bottom: -8px;
     margin-top: 16px;
-}
-.timeline .block {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: var(--sidebar-fg);
-    background: var(--sidebar-bg);
-    border: 2px solid var(--sidebar-active);
-    border-radius: 8px;
-    padding: 8px;
-}
-.timeline.nogrow .block {
-    flex-grow: unset;
-}
-.timeline > .block > .hljs {
-    color: var(--sidebar-fg);
-}
-.timeline > .block > .block {
-    color: black;
-    background: var(--search-mark-bg);
-    border: none;
-}
-.timeline > .block > .block > .hljs {
-    color: black;
-}
-.timeline > .label {
-    writing-mode: sideways-lr;
-    text-align: center;
+    .block {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: var(--sidebar-fg);
+        background: var(--sidebar-bg);
+        border: 2px solid var(--sidebar-active);
+        border-radius: 8px;
+        padding: 8px;
+    }
+    &.nogrow .block {
+        flex-grow: unset;
+    }
+    & > .block {
+        & > .hljs {
+            color: var(--sidebar-fg);
+        }
+        & > .block {
+            color: black;
+            background: var(--search-mark-bg);
+            border: none;
+            & > .hljs {
+                color: black;
+            }
+        }
+    }
+    & > .label {
+        writing-mode: sideways-lr;
+        text-align: center;
+    }
 }
 </style>
 <div class="timeline">
@@ -189,21 +191,23 @@ For exploring my entire home directory (~7.6 million files), the new `bfs` is 2.
 Surprisingly, [`fd`](https://github.com/sharkdp/fd) was the slowest in this benchmark.
 
 <style>
-pre.results > code {
-    color: #d0d0d0;
-    background: #0f0f0f;
-}
-pre.results .red {
-    color: #de68af;
-}
-pre.results .green {
-    color: #4dde9b;
-}
-pre.results .magenta {
-    color: #c561de;
-}
-pre.results .cyan {
-    color: #4dbcde;
+pre.results {
+    & > code {
+        color: #d0d0d0;
+        background: #0f0f0f;
+    }
+    .red {
+        color: #de68af;
+    }
+    .green {
+        color: #4dde9b;
+    }
+    .magenta {
+        color: #c561de;
+    }
+    .cyan {
+        color: #4dbcde;
+    }
 }
 </style>
 <pre class="results"><code>Benchmark 1: fd -u '^$' ~

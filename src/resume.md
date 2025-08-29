@@ -28,25 +28,25 @@
     place-items: baseline start;
     text-align: left;
     column-gap: 5px;
-}
-#contact p {
-    display: contents;
-}
-#contact .fa {
-    min-width: 16px;
-    text-align: center;
-}
-#contact ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    align-content: baseline;
-    margin: 0;
-    padding: 0;
-}
-#contact li:not(:last-child)::after {
-    content: '•';
-    padding: 0 5px;
+    p {
+        display: contents;
+    }
+    .fa {
+        min-width: 16px;
+        text-align: center;
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        align-content: baseline;
+        margin: 0;
+        padding: 0;
+        li:not(:last-child)::after {
+            content: '•';
+            padding: 0 5px;
+        }
+    }
 }
 </style>
 <div id="contact">
@@ -107,19 +107,17 @@ Software developer and PhD candidate with an interest in low-level, high-perform
     height: 100%;
     z-index: 1;
     overflow: visible;
-}
-.tli time svg {
     left: calc(-1px - var(--pad));
-}
-.tli time svg line {
-    stroke: var(--fg);
-    stroke-width: 2px;
-    stroke-linecap: round;
-}
-.tli time svg circle {
-    stroke: var(--fg);
-    stroke-width: 2px;
-    fill: var(--bg);
+    line {
+        stroke: var(--fg);
+        stroke-width: 2px;
+        stroke-linecap: round;
+    }
+    circle {
+        stroke: var(--fg);
+        stroke-width: 2px;
+        fill: var(--bg);
+    }
 }
 #skills {
     grid-template-columns: 1fr 1fr;
@@ -129,30 +127,28 @@ Software developer and PhD candidate with an interest in low-level, high-perform
         "bmath langs";
     grid-auto-flow: column;
     column-gap: calc(2 * var(--pad));
-}
-#skills .col {
-    display: contents;
-}
-#skills .col:last-child {
-    text-align: right;
-}
-#skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    align-content: baseline;
-    justify-content: end;
-    padding-left: calc(var(--pad) - 16px);
-}
-#skills ul:first-of-type {
-    margin-top: 0;
-}
-#skills li::before {
-    content: '•';
-    padding: 0 5px;
-}
-@media (max-width: 540px) {
-    #skills {
+    .col {
+        display: contents;
+        &:last-child {
+            text-align: right;
+        }
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        align-content: baseline;
+        justify-content: end;
+        padding-left: calc(var(--pad) - 16px);
+        &:first-of-type {
+            margin-top: 0;
+        }
+        li::before {
+            content: '•';
+            padding: 0 5px;
+        }
+    }
+    @media (width < 540px) {
         grid-template-columns: 1fr;
         grid-template-areas:
             "educ"
@@ -161,17 +157,17 @@ Software developer and PhD candidate with an interest in low-level, high-perform
             "prof"
             "skills"
             "langs";
+        .col:last-child {
+            text-align: left;
+        }
+        ul {
+            justify-content: start;
+        }
     }
-    #skills .col:last-child {
-        text-align: left;
-    }
-    #skills ul {
-        justify-content: start;
-    }
-}
-@media only print {
-    #skills ul {
-        padding-left: 6em;
+    @media only print {
+        ul {
+            padding-left: 6em;
+        }
     }
 }
 </style>
