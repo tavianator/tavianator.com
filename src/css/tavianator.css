@@ -174,6 +174,18 @@ figure .fig-scale {
     max-width: 100%;
 }
 
+/* Filenames attached to code blocks. */
+.content h4:has(+ pre) {
+    padding: 0 1rem;
+    margin-bottom: 0;
+    line-height: 2;
+    background-color: var(--quote-bg);
+}
+
+.content h4 + pre {
+    margin-top: 0;
+}
+
 .tabs {
     display: flex; /* To get rid of whitespace between tab labels */
     flex-wrap: wrap;

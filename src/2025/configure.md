@@ -1248,22 +1248,6 @@ This is written in an inherently sequential way, but in principle many of these 
 In fact, we already have an effective tool for parallelizing lots of commands (`make`), so let's use it.
 We'll have a configuration makefile that generates our `Makefile` and `config.h`:
 
-<style>
-.named-code {
-    margin: 16px 0;
-}
-.named-code h4 {
-    padding: 0 1rem;
-    margin: 0;
-    line-height: 2;
-    background-color: var(--quote-bg);
-}
-.named-code pre {
-    margin: 0;
-}
-</style>
-<div class="named-code">
-
 #### `configure.mk`
 
 ```mk
@@ -1273,13 +1257,9 @@ config: Makefile config.h
 	rm Makefile.log config.h.log
 ```
 
-</div>
-
 ---
 
 To start with, we'll save the initial values of variables like `CC` and `CFLAGS` into the `Makefile`:
-
-<div class="named-code">
 
 #### `configure.mk`
 
@@ -1303,8 +1283,6 @@ Makefile:
 	printf 'LDFLAGS := %s\n' "$$_LDFLAGS" >>$@
 ```
 
-</div>
-
 Using `export` like this avoids stripping the necessary backslashes from invocations like
 
 ```console
@@ -1315,8 +1293,6 @@ $ ./configure CPPFLAGS='-DMACRO=\"string\"'
 
 Now let's check which flags our compiler supports.
 We'll use this helper script:
-
-<div class="named-code">
 
 #### `flags.sh`
 
@@ -1334,8 +1310,6 @@ if "$@" $FLAGS; then
 fi
 ```
 
-</div>
-
 When we run
 
 ```
@@ -1350,8 +1324,6 @@ CFLAGS += -Wall
 
 if `cc empty.c -Wall` succeeds (and nothing otherwise).
 We can use this to generate some makefile fragments that enable only the supported flags.
-
-<div class="named-code">
 
 #### `configure.mk`
 
@@ -1376,13 +1348,9 @@ bind-now.mk:
 	./flags.sh LDFLAGS -Wl,-z,now ${TRY_CC}
 ```
 
-</div>
-
 Each of these targets generates a tiny makefile fragment that's responsible for a single flag.
 Importantly, each one can run independently, in parallel.
 Once they're done, we can merge them all into the main `Makefile` and clean up the cruft:
-
-<div class="named-code">
 
 #### `configure.mk`
 
@@ -1401,12 +1369,8 @@ Makefile: ${FLAGS}
 	rm ${FLAGS} ${FLAGS:%=%.log}
 ```
 
-</div>
-
 The last part to add to the `Makefile` is the part that actually builds our application.
 We can write a simple makefile like this:
-
-<div class="named-code">
 
 #### `main.mk`
 
@@ -1422,11 +1386,7 @@ ${OBJS}:
 -include ${OBJS:.o=.d}
 ```
 
-</div>
-
 And append it to the `Makefile` after all the flags:
-
-<div class="named-code">
 
 #### `configure.mk`
 
@@ -1435,8 +1395,6 @@ Makefile: ${FLAGS}
 	...
 	cat main.mk >>$@
 ```
-
-</div>
 
 ---
 
@@ -1506,8 +1464,6 @@ int main(void) {
 </div>
 This helper script:
 
-<div class="named-code">
-
 #### `define.sh`
 
 ```sh
@@ -1525,8 +1481,6 @@ else
 fi
 ```
 
-</div>
-
 will output things like
 
 ```
@@ -1541,8 +1495,6 @@ or
 
 depending on whether the build succeeds.
 We can use it in a makefile like this:
-
-<div class="named-code">
 
 #### `configure.mk`
 
@@ -1575,11 +1527,7 @@ ${HEADERS}:
 	rm -f $@.out $@.d
 ```
 
-</div>
-
 And to join them all together (along with a header guard):
-
-<div class="named-code">
 
 #### `header.mk`
 
@@ -1593,13 +1541,9 @@ config.h: ${HEADERS}
 	rm ${HEADERS} ${HEADERS:%=%.log}
 ```
 
-</div>
-
 ---
 
 The last step is to wrap `configure.mk` in a shell script, so people can run `./configure` like they're used to:
-
-<div class="named-code">
 
 #### `configure`
 
@@ -1626,8 +1570,6 @@ export MAKEFLAGS="${MAKEFLAGS--j$(jobs)}"
 
 $MAKE -r -f configure.mk "$@"
 ```
-
-</div>
 
 I put together a simple proof-of-concept [*fa-github* GitHub repository](https://github.com/tavianator/parconf) that contains the full version of all these files if you want to copy-paste.
 The demo app prints file creation times, if it can figure out how to on your platform.
