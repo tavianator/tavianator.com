@@ -212,22 +212,6 @@ bool intersection(box b, ray r) {
 The program I used to test various `intersection()` implementations is given in [^gist].
 In my next post on this topic, I'll talk about low-level implementation details, including vectorization, to get the most performance possible out of this algorithm.
 
-
----
-
-[^smits]: Brian Smits: [Efficiency Issues for Ray Tracing](http://www.cs.utah.edu/~bes/papers/fastRT/). _Journal of Graphics Tools_ (1998).
-
-[^williams]: Amy Williams. et al.: [An Efficient and Robust Ray-Box Intersection Algorithm](http://www.cs.utah.edu/~awilliam/box/).  _Journal of Graphics Tools_ (2005).
-
-[^llvm]: <https://groups.google.com/forum/#!topic/llvm-dev/-SKl0nOJW_w>
-
-[^haskell]: <https://ghc.haskell.org/trac/ghc/ticket/9251>
-
-[^berger-perrin]: <http://www.flipcode.com/archives/SSE_RayBox_Intersection_Test.shtml>
-
-[^gist]: <https://gist.github.com/tavianator/132d081ed4d410c755fd>
-
-
 ---
 
 ## Comments
@@ -317,3 +301,16 @@ In my next post on this topic, I'll talk about low-level implementation details,
 >
 > It seems to me it is not related at all with software speed up, but it shows how to eliminate false negatives when using floating point.
 > Did you know about this problem?
+
+
+[^smits]: Brian Smits: [Efficiency Issues for Ray Tracing](http://www.cs.utah.edu/~bes/papers/fastRT/). _Journal of Graphics Tools_ (1998).
+
+[^williams]: Amy Williams. et al.: [An Efficient and Robust Ray-Box Intersection Algorithm](http://www.cs.utah.edu/~awilliam/box/).  _Journal of Graphics Tools_ (2005).
+
+[^llvm]: <https://groups.google.com/forum/#!topic/llvm-dev/-SKl0nOJW_w>
+
+[^haskell]: <https://ghc.haskell.org/trac/ghc/ticket/9251>
+
+[^berger-perrin]: <http://www.flipcode.com/archives/SSE_RayBox_Intersection_Test.shtml>
+
+[^gist]: <https://gist.github.com/tavianator/132d081ed4d410c755fd>

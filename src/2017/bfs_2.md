@@ -363,8 +363,6 @@ $ bfs -D tree -follow -type f -print
 ```
 
 
----
-
 [^analogy]: This also plays into a nice analogy between Boolean algebra and "regular" algebra, where "or" is like addition and "and" is like multiplication. Just like we can write `$xy$` instead of `$x \times y$`, we can omit the explicit `-a`.
 
 [^assoc]: Actually, as all of `find`'s binary operators are associative, this doesn't really matter. But it's still a useful technique to know.

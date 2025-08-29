@@ -7,18 +7,6 @@
 
 </div>
 
-<style>
-.content hr {
-    border: none;
-    color: var(--fg);
-    font-size: x-large;
-    text-align: center;
-}
-.content hr:after {
-    content: "❧";
-}
-</style>
-
 Imagine this: the year is 1983.
 C++ has introduced *function prototypes*, bringing type-checking to function calls for the first time.
 

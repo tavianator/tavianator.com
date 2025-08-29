@@ -7,18 +7,6 @@
 
 </div>
 
-<style>
-.content hr {
-    border: none;
-    color: var(--fg);
-    font-size: x-large;
-    text-align: center;
-}
-.content hr:after {
-    content: "❧";
-}
-</style>
-
 Here is the entire history of a small git repository, as printed by `git log -u --pretty=short`:
 
 ```diff

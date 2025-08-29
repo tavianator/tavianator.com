@@ -148,6 +148,18 @@ html {
     border: 1px solid var(--icons);
 }
 
+/* Use a fleuron for top-level <hr>s */
+.content main > hr {
+    border: none;
+    color: var(--fg);
+    font-size: x-large;
+    text-align: center;
+}
+
+.content main > hr:after {
+    content: "❧";
+}
+
 .content ins {
     text-decoration: none;
     background: var(--quote-bg);
