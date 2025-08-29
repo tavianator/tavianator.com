@@ -3,7 +3,7 @@ default: deps
 
 deps:
 	npm install
-	cargo install mdbook --version=0.4.48
+	cargo install mdbook --version=0.4.52
 
 watch: default
 	mdbook watch
