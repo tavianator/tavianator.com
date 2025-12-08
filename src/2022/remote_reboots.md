@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2022-05-27*
-*fa-user* Tavian Barnes
-[*fa-twitter* Twitter](https://twitter.com/tavianator/status/1529986039653322759)
+*fa-regular fa-clock* *time-2022-05-27*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-twitter* Twitter](https://twitter.com/tavianator/status/1529986039653322759)
 
 </div>
 

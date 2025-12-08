@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2024-03-18*
-*fa-user* Tavian Barnes
-[*fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=39765715)
+*fa-regular fa-clock* *time-2024-03-18*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=39765715)
 
 </div>
 

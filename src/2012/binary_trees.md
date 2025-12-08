@@ -2,8 +2,8 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2012-04-19*
-*fa-user* Tavian Barnes
+*fa-regular fa-clock* *time-2012-04-19*
+*fa-solid fa-user* Tavian Barnes
 
 </div>
 

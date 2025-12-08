@@ -2,11 +2,11 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2025-01-02*
-*fa-user* Tavian Barnes
-[*fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=42579969)
-[*fa-lobsters* Lobsters](https://lobste.rs/s/1hbwkk/alder_lake_shlx_anomaly)
-[Part 2 *fa-chevron-circle-right*](shlxplained.md)
+*fa-regular fa-clock* *time-2025-01-02*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=42579969)
+[*fa-brands fa-lobsters* Lobsters](https://lobste.rs/s/1hbwkk/alder_lake_shlx_anomaly)
+[Part 2 *fa-solid fa-circle-chevron-right*](shlxplained.md)
 
 </div>
 

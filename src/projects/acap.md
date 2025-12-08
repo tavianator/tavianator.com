@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-[*fa-github* GitHub](https://github.com/tavianator/acap)
-[*fa-cubes* crates.io](https://crates.io/crates/acap)
-[*fa-book* Docs](https://docs.rs/acap)
+[*fa-brands fa-github* GitHub](https://github.com/tavianator/acap)
+[*fa-solid fa-cubes* crates.io](https://crates.io/crates/acap)
+[*fa-solid fa-book* Docs](https://docs.rs/acap)
 
 </div>
 

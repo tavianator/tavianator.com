@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2014-04-02*
-*fa-user* Tavian Barnes
-[*fa-github* GitHub](https://github.com/tavianator/sangria)
+*fa-regular fa-clock* *time-2014-04-02*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-github* GitHub](https://github.com/tavianator/sangria)
 
 </div>
 

@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2014-06-19*
-*fa-user* Tavian Barnes
-[*fa-comments* Comments](#comments)
+*fa-regular fa-clock* *time-2014-06-19*
+*fa-solid fa-user* Tavian Barnes
+[*fa-solid fa-comment* Comments](#comments)
 
 </div>
 
@@ -92,7 +92,7 @@ Then, when `visit` is invoked, `_visitor_impl` looks up the appropriate implemen
 ## Comments
 
 > **Kenji Noguchi**
-> *fa-clock-o* *time-2015-01-30*
+> *fa-regular fa-clock* *time-2015-01-30*
 >
 > Here is another implementation. \
 > <https://github.com/realistschuckle/pyvisitor>

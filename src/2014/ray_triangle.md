@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2014-05-23*
-*fa-user* Tavian Barnes
-[*fa-comments* Comments](#comments)
+*fa-regular fa-clock* *time-2014-05-23*
+*fa-solid fa-user* Tavian Barnes
+[*fa-solid fa-comment* Comments](#comments)
 
 </div>
 
@@ -112,28 +112,28 @@ An implementation of this method can be seen [here] in my ray tracer [Dimension]
 # Comments
 
 > **Raphael**
-> *fa-clock-o* *time-2014-08-09*
+> *fa-regular fa-clock* *time-2014-08-09*
 >
 > I'm a bit confused about the "cost of 1 division, 2 multiplications, 2 or 3 additions, and some comparisons".
 > Don't you still have to multiply each ray by the matrix P?
 > So even if P is precomputed and stored ahead of time, that's still 16 multiplications and 12 additions, plus the computations of t,u, and v.
 >
-> > *fa-user* [**Tavian Barnes**](/)
-> > *fa-clock-o* *time-2014-08-10*
+> > *fa-solid fa-user* [**Tavian Barnes**](/)
+> > *fa-regular fa-clock* *time-2014-08-10*
 > >
 > > That's in the case that "objects are already associated with a transformation matrix," in which case you have to do a matrix-ray multiplication anyway, so it doesn't count against you.
 > > Also I think you've underestimated the cost of a matrix-ray multiplication, it ought to be 18 multiplications and 15 additions.
 
 > **Vladimir**
-> *fa-clock-o* *time-2017-01-18*
+> *fa-regular fa-clock* *time-2017-01-18*
 >
 > Hi! I wonder what is nw is 0? I watched sources from the dimension repo, that case is not handled at all: \
 > <https://tavianator.com/cgit/dimension.git/tree/libdimension/triangle.c?id=21137f8eaae886c034f62e18e6039cc48f09993e>
 >
 > Could you please explain what to do if nw is 0?
 >
-> > *fa-user* [**Tavian Barnes**](/)
-> > *fa-clock-o* *time-2017-01-31*
+> > *fa-solid fa-user* [**Tavian Barnes**](/)
+> > *fa-regular fa-clock* *time-2017-01-31*
 > >
 > > Geometrically, if `$n_w$` is zero, then the line is exactly parallel to the plane of the triangle.
 > > For this degenerate case, it's easiest to just return "no intersection."

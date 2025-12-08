@@ -2,10 +2,10 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2015-07-11*
-*fa-user* Tavian Barnes
-[*fa-comments* Comments](#comments)
-[*fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/3cxl8s/java_autoboxing_performance/)
+*fa-regular fa-clock* *time-2015-07-11*
+*fa-solid fa-user* Tavian Barnes
+[*fa-solid fa-comment* Comments](#comments)
+[*fa-brands fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/3cxl8s/java_autoboxing_performance/)
 
 </div>
 
@@ -310,7 +310,7 @@ je     0x00007faa8d404792  ;*if_icmpne
 Boxing is still a weak area for HotSpot, and I'd like to see it become better.
 It should take more advantage of the semantics of boxed types to eliminate boxing in more cases, removing the need for these workarounds.
 
-All the code used for these benchmarks is available on *fa-github* [GitHub](https://github.com/tavianator/boxperf).
+All the code used for these benchmarks is available on *fa-brands fa-github* [GitHub](https://github.com/tavianator/boxperf).
 
 ---
 
@@ -318,6 +318,6 @@ All the code used for these benchmarks is available on *fa-github* [GitHub](http
 ## Comments
 
 > **pron**
-> *fa-clock-o* *time-2015-07-11*
+> *fa-regular fa-clock* *time-2015-07-11*
 >
 > There is some ongoing work on improving "box elision": <http://mail.openjdk.java.net/pipermail/valhalla-dev/2014-November/000380.html>

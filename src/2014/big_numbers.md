@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2014-01-08*
-*fa-user* Tavian Barnes
-[*fa-comments* Comments](#comments)
+*fa-regular fa-clock* *time-2014-01-08*
+*fa-solid fa-user* Tavian Barnes
+[*fa-solid fa-comment* Comments](#comments)
 
 </div>
 
@@ -133,6 +133,6 @@ That means `$\mathcal{G}(m)$` grows faster than any function that can be shown t
 ## Comments
 
 > [**Luqman**](http://luqmansahaf.blogspot.com/)
-> *fa-clock-o* *time-2016-03-17*
+> *fa-regular fa-clock* *time-2016-03-17*
 >
 > This is good explanation of ordinals: <http://www.sjsu.edu/faculty/watkins/ordinals.htm>

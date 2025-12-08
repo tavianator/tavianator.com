@@ -29,13 +29,13 @@ I'm probably @tavianator on your favourite website:
 }
 </style>
 
-[*fa-mastodon*](https://mastodon.social/@tavianator "Mastodon")
-[*fa-bluesky*](https://bsky.app/profile/tavianator.com "Bluesky")
-[*fa-twitter*](https://twitter.com/tavianator "Twitter")
-[*fa-github*](https://github.com/tavianator "GitHub")
-[*fa-reddit*](https://www.reddit.com/user/tavianator "Reddit")
-[*fa-lobsters*](https://lobste.rs/~tavianator "Lobsters")
-[*fa-stack-overflow*](https://stackoverflow.com/users/502399/tavian-barnes "StackOverflow")
-[*fa-instagram*](https://www.instagram.com/tavianator "Instagram")
+[*fa-brands fa-mastodon*](https://mastodon.social/@tavianator "Mastodon")
+[*fa-brands fa-bluesky*](https://bsky.app/profile/tavianator.com "Bluesky")
+[*fa-brands fa-twitter*](https://twitter.com/tavianator "Twitter")
+[*fa-brands fa-github*](https://github.com/tavianator "GitHub")
+[*fa-brands fa-reddit*](https://www.reddit.com/user/tavianator "Reddit")
+[*fa-brands fa-lobsters*](https://lobste.rs/~tavianator "Lobsters")
+[*fa-brands fa-stack-overflow*](https://stackoverflow.com/users/502399/tavian-barnes "StackOverflow")
+[*fa-brands fa-instagram*](https://www.instagram.com/tavianator "Instagram")
 
 </div>

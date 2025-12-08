@@ -2,10 +2,10 @@
 
 <div class="infobar">
 
-[*fa-github* GitHub](https://github.com/microsoft/bistring)
-[*fa-cubes* pypi](https://pypi.org/project/bistring/)
-[*fa-cubes* npm](https://www.npmjs.com/package/bistring)
-[*fa-book* Docs](https://bistring.readthedocs.io/en/latest/)
+[*fa-brands fa-github* GitHub](https://github.com/microsoft/bistring)
+[*fa-solid fa-cubes* pypi](https://pypi.org/project/bistring/)
+[*fa-solid fa-cubes* npm](https://www.npmjs.com/package/bistring)
+[*fa-solid fa-book* Docs](https://bistring.readthedocs.io/en/latest/)
 
 </div>
 

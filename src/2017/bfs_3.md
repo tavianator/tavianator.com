@@ -2,11 +2,11 @@
 
 <div class="infobar">
 
-[*fa-chevron-circle-left* Part 2](bfs_2.md)
-*fa-clock-o* *time-2017-10-12*
-*fa-user* Tavian Barnes
-[*fa-reddit* Reddit](https://www.reddit.com/r/C_Programming/comments/75xssz/optimizations_in_my_clone_of_the_unix_find_command/)
-[*fa-github* GitHub](https://github.com/tavianator/bfs)
+[*fa-solid fa-circle-chevron-left* Part 2](bfs_2.md)
+*fa-regular fa-clock* *time-2017-10-12*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-reddit* Reddit](https://www.reddit.com/r/C_Programming/comments/75xssz/optimizations_in_my_clone_of_the_unix_find_command/)
+[*fa-brands fa-github* GitHub](https://github.com/tavianator/bfs)
 
 </div>
 

@@ -51,11 +51,11 @@
 </style>
 <div id="contact">
 
-*fa-envelope* <tavianator@tavianator.com>
-*fa-link* [tavianator.com](https://tavianator.com)
-*fa-linkedin-square* [linkedin.com/in/tavianator](https://www.linkedin.com/in/tavianator)
-*fa-github* [github.com/tavianator](https://github.com/tavianator/)
-*fa-globe*
+*fa-solid fa-envelope* <tavianator@tavianator.com>
+*fa-solid fa-link* [tavianator.com](https://tavianator.com)
+*fa-brands fa-linkedin* [linkedin.com/in/tavianator](https://www.linkedin.com/in/tavianator)
+*fa-brands fa-github* [github.com/tavianator](https://github.com/tavianator/)
+*fa-solid fa-earth-americas*
 
 - Kitchener&ndash;Waterloo
 - Toronto Area

@@ -5,6 +5,20 @@ import fs from "fs";
 import { Glob } from "glob";
 import { JSDOM, VirtualConsole } from "jsdom";
 import katex from "katex";
+import * as fa from '@fortawesome/fontawesome-svg-core';
+import * as fab from "@fortawesome/free-brands-svg-icons";
+import * as far from "@fortawesome/free-regular-svg-icons";
+import * as fas from "@fortawesome/free-solid-svg-icons";
+
+fa.library.add(...Object.values(fab).filter(o => typeof o === "object"));
+fa.library.add(...Object.values(far).filter(o => typeof o === "object"));
+fa.library.add(...Object.values(fas).filter(o => typeof o === "object"));
+
+const rssIcon = fa.icon(fas.faRss);
+const rssIconHtml = `<span class="fa-svg">${rssIcon.html}</span>`;
+
+const sponsorIcon = fa.icon(fas.faHeart);
+const sponsorIconHtml = `<span class="fa-svg">${sponsorIcon.html}</span>`;
 
 while (true) {
     const str = await fs.promises.readFile("/dev/stdin", { encoding: "utf-8" });
@@ -43,7 +57,7 @@ for await (const file of files) {
 
     // JSDOM doesn't support e.g. nested CSS blocks, so suppress errors
     const virtualConsole = new VirtualConsole();
-    virtualConsole.sendTo(console, { omitJSDOMErrors: true });
+    virtualConsole.forwardTo(console, { omitJSDOMErrors: true });
 
     const dom = new JSDOM(source, {
         runScripts: "outside-only",
@@ -55,13 +69,22 @@ for await (const file of files) {
 
     const ems = [...document.getElementsByTagName("em")];
     for (const em of ems) {
-        if (/^fa-/.test(em.textContent)) {
-            const icon = document.createElement("i");
-            icon.classList.add("fa", em.textContent);
-            icon.ariaHidden = "true";
-            em.replaceWith(icon);
-        } else if (/^time-/.test(em.textContent)) {
-            const value = em.textContent.substring(5);
+        const text = em.textContent;
+        if (/^fa-/.test(text)) {
+            const icon = fa.icon(fa.parse.icon(text));
+            if (icon) {
+                const span = document.createElement("span");
+                span.classList.add("fa-svg");
+                span.innerHTML = icon.html;
+                em.replaceWith(span);
+            } else {
+                const i = document.createElement("i");
+                i.className = text;
+                i.ariaHidden = "true";
+                em.replaceWith(i);
+            }
+        } else if (/^time-/.test(text)) {
+            const value = text.substring(5);
             const time = document.createElement("time");
             time.dateTime = value;
             time.textContent = value;
@@ -83,9 +106,6 @@ for await (const file of files) {
             span.append(...nodes);
             i.replaceWith(span);
         });
-
-    document.querySelectorAll(".content .infobar > a > i.fa-chevron-circle-right")
-        .forEach(i => i.parentNode.classList.add("next"));
 
     const katexOptions = {
         strict(errorCode, errorMsg, token) {
@@ -120,7 +140,7 @@ for await (const file of files) {
     document.querySelectorAll("nav.nav-wrapper, nav.nav-wide-wrapper")
         .forEach(nav => nav.remove());
 
-    const searchbar = document.querySelector("input#searchbar");
+    const searchbar = document.querySelector("input#mdbook-searchbar");
     searchbar.placeholder = "Search this site ...";
 
     const path = file.substring(8);
@@ -143,27 +163,40 @@ for await (const file of files) {
         });
     }
 
-    const rightButtons = document.querySelector("#menu-bar .right-buttons");
+    const infobar = document.querySelector(".infobar");
+    if (infobar) {
+        // Add the `next` class for "Part 2 (>)" links
+        const last = infobar.lastElementChild;
+        if (last && last.lastChild.nodeType !== Node.TEXT_NODE) {
+            last.classList.add("next");
+        }
+    }
+
+    const rightButtons = document.querySelector("#mdbook-menu-bar .right-buttons");
+
+    // Remove some whitespace from the GitHub link that adds undesirable padding
+    function removeTextNodes(node) {
+        for (const child of [...node.childNodes]) {
+            if (child.nodeType === Node.TEXT_NODE) {
+                child.remove();
+            }
+        }
+    }
+    removeTextNodes(rightButtons);
+    removeTextNodes(rightButtons.lastChild);
 
     const feedButton = document.createElement("a");
     feedButton.classList.add("feed-link");
     feedButton.href = "/feed.atom";
     feedButton.title = "Atom feed";
-    feedButton.onclick = "foo";
-    const feedIcon = document.createElement("i");
-    feedIcon.classList.add("fa", "fa-rss");
-    feedIcon.ariaHidden = "true";
-    feedButton.append(feedIcon);
+    feedButton.innerHTML = rssIconHtml;
     rightButtons.prepend(feedButton);
 
     const sponsorButton = document.createElement("a");
     sponsorButton.classList.add("sponsor");
     sponsorButton.href = "https://github.com/sponsors/tavianator";
     sponsorButton.title = "Sponsor";
-    const sponsorIcon = document.createElement("i");
-    sponsorIcon.classList.add("fa", "fa-heart");
-    sponsorIcon.ariaHidden = "true";
-    sponsorButton.append(sponsorIcon);
+    sponsorButton.innerHTML = sponsorIconHtml;
     rightButtons.prepend(sponsorButton);
 
     await fs.promises.writeFile(file, dom.serialize());

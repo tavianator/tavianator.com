@@ -2,12 +2,12 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2025-04-25*
-*fa-user* Tavian Barnes
-[*fa-github* GitHub](https://github.com/tavianator/parconf)
-[*fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=43799396)
-[*fa-lobsters* Lobsters](https://lobste.rs/s/1vzqe2/parallel_configure)
-[*fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/1k8hzcc/parallel_configure/)
+*fa-regular fa-clock* *time-2025-04-25*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-github* GitHub](https://github.com/tavianator/parconf)
+[*fa-brands fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=43799396)
+[*fa-brands fa-lobsters* Lobsters](https://lobste.rs/s/1vzqe2/parallel_configure)
+[*fa-brands fa-reddit* Reddit](https://www.reddit.com/r/programming/comments/1k8hzcc/parallel_configure/)
 
 </div>
 
@@ -1571,7 +1571,7 @@ export MAKEFLAGS="${MAKEFLAGS--j$(jobs)}"
 $MAKE -r -f configure.mk "$@"
 ```
 
-I put together a simple proof-of-concept [*fa-github* GitHub repository](https://github.com/tavianator/parconf) that contains the full version of all these files if you want to copy-paste.
+I put together a simple proof-of-concept [*fa-brands fa-github* GitHub repository](https://github.com/tavianator/parconf) that contains the full version of all these files if you want to copy-paste.
 The demo app prints file creation times, if it can figure out how to on your platform.
 
 I've also been using a similar build system in [bfs](/projects/bfs.md) for a while, if you want to see a larger example.

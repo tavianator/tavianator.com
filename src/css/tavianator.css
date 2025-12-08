@@ -2,8 +2,8 @@ html {
     scroll-behavior: smooth;
 }
 
-#menu-bar {
-    a.sponsor:hover i.fa {
+#mdbook-menu-bar {
+    a.sponsor:hover .fa-svg {
         color: #db61a2;
     }
 
@@ -13,23 +13,13 @@ html {
     }
 }
 
-.fa-bluesky,
-.fa-lobsters,
-.fa-mastodon {
+.fa-lobsters {
+    display: inline-block;
     width: 1em;
     height: 1em;
     vertical-align: -.125em;
     background: currentColor;
-}
-
-.fa-bluesky {
-    mask-image: url(../icons/bluesky.svg);
-}
-.fa-lobsters {
     mask-image: url(../icons/lobsters.svg);
-}
-.fa-mastodon {
-    mask-image: url(../icons/mastodon.svg);
 }
 
 .content .infobar {
@@ -61,6 +51,7 @@ html {
         background-color: transparent;
         color: var(--fg);
         padding: 0;
+        white-space: nowrap;
     }
 
     a:link, a:link .hljs,

@@ -2,10 +2,10 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2023-03-07*
-*fa-user* Tavian Barnes
-[*fa-github* GitHub](https://github.com/tavianator/irregex)
-[*fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=35503089)
+*fa-regular fa-clock* *time-2023-03-07*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-github* GitHub](https://github.com/tavianator/irregex)
+[*fa-brands fa-hacker-news* Hacker News](https://news.ycombinator.com/item?id=35503089)
 
 </div>
 
@@ -154,7 +154,7 @@ trait Matcher {
 
 ## Much ado about nothing
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/346711c2777f957805f7b8788c637976b005f831)
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/346711c2777f957805f7b8788c637976b005f831)
 
 </div>
 
@@ -260,7 +260,7 @@ fn regex(pattern: &str) -> IResult<&str, Regex> {
 
 ## Dot dot dot
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/91a5c86122d7abd6584d3ff012a0a58481e2d97f)
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/91a5c86122d7abd6584d3ff012a0a58481e2d97f)
 
 </div>
 
@@ -347,7 +347,7 @@ fn regex(pattern: &str) -> IResult<&str, Regex> {
 
 ## Literally me
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/48604737308076ff7bace3d852b53a480580d891)
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/48604737308076ff7bace3d852b53a480580d891)
 
 </div>
 
@@ -442,7 +442,7 @@ fn regex(pattern: &str) -> IResult<&str, Regex> {
 
 ## A star is born
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/36a2c9fb40b098f67a15d0775e95ed36b1d1c3fc)
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/36a2c9fb40b098f67a15d0775e95ed36b1d1c3fc)
 
 </div>
 
@@ -544,7 +544,7 @@ fn regex(pattern: &str) -> IResult<&str, Regex> {
 
 ## One is the loneliest number
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/590470a431e4d04455e83ce257f97716031e3137)
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/590470a431e4d04455e83ce257f97716031e3137)
 
 </div>
 
@@ -697,7 +697,7 @@ fn regex(pattern: &str) -> IResult<&str, Regex> {
 
 ## This or that
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/40c116469867941ca6ef7f5cfec3c32bda1da0ca)
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/40c116469867941ca6ef7f5cfec3c32bda1da0ca)
 
 </div>
 
@@ -809,7 +809,7 @@ fn regex(pattern: &str) -> IResult<&str, Regex> {
 
 ## Feature-complete
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/5b9f5f8f2f8a18661a5999bc4e8c6610387f5f7e),
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/5b9f5f8f2f8a18661a5999bc4e8c6610387f5f7e),
 [commit](https://github.com/tavianator/irregex/commit/1c97b9459bf633c8f221cd6544bd3c620cd90ee6)
 
 </div>
@@ -904,7 +904,7 @@ They could be handled like `Regex::Literal` but with a list of ranges instead of
 
 ## Not doing the work
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/425b3cf19554dfa451215f6ce82310c4c253a1f0)
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/425b3cf19554dfa451215f6ce82310c4c253a1f0)
 
 </div>
 
@@ -989,7 +989,7 @@ The `!` operator lets us easily match things like "lines that don't contain hell
 
 ## Yes, and
 
-[*fa-github* Commit](https://github.com/tavianator/irregex/commit/d6c6d42fab7482715d279fccd0bf20764ee531f3)
+[*fa-brands fa-github* Commit](https://github.com/tavianator/irregex/commit/d6c6d42fab7482715d279fccd0bf20764ee531f3)
 
 </div>
 

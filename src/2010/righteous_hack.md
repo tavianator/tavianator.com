@@ -2,9 +2,9 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2010-12-13*
-*fa-user* Tavian Barnes
-[*fa-comments* Comments](#comments)
+*fa-regular fa-clock* *time-2010-12-13*
+*fa-solid fa-user* Tavian Barnes
+[*fa-solid fa-comment* Comments](#comments)
 
 </div>
 
@@ -59,17 +59,17 @@ If you do it right, the game will greet you with "Congratulations! You've just s
 ## Comments
 
 > **lloyd**
-> *fa-clock-o* *time-2010-12-15*
+> *fa-regular fa-clock* *time-2010-12-15*
 >
 > i just cant get the 8-byte key
 >
-> > *fa-user* [**Tavian Barnes**](/)
-> > *fa-clock-o* *time-2010-12-15*
+> > *fa-solid fa-user* [**Tavian Barnes**](/)
+> > *fa-regular fa-clock* *time-2010-12-15*
 > >
 > > Look for the RC4_KEY variable.
 
 > **JC**
-> *fa-clock-o* *time-2010-12-21*
+> *fa-regular fa-clock* *time-2010-12-21*
 >
 > Hello, \
 > I'm currently trying to modify a different game but also from MindJolt. \
@@ -87,12 +87,12 @@ If you do it right, the game will greet you with "Congratulations! You've just s
 > -JC
 >
 > > **JC**
-> > *fa-clock-o* *time-2010-12-21*
+> > *fa-regular fa-clock* *time-2010-12-21*
 > >
 > > NM found the RC4_KEY... Now I gotta figure out how to decrypt/encrypt string given key. :D
 
 > **Nick**
-> *fa-clock-o* *time-2011-01-11*
+> *fa-regular fa-clock* *time-2011-01-11*
 >
 > Very cool.
 > After getting the #1 legit high score for the week on that typing game, I was curious about the hacked ones.
@@ -102,8 +102,8 @@ If you do it right, the game will greet you with "Congratulations! You've just s
 >
 > You have a pretty neat website -- just thought I'd share that.
 >
-> > *fa-user* [**Tavian Barnes**](/)
-> > *fa-clock-o* *time-2011-01-11*
+> > *fa-solid fa-user* [**Tavian Barnes**](/)
+> > *fa-regular fa-clock* *time-2011-01-11*
 > >
 > > Thanks.
 > > Why do an AJAX request for the high scorers anyway?
@@ -113,7 +113,7 @@ If you do it right, the game will greet you with "Congratulations! You've just s
 > > But you've only got a signed 32-bit integer to work with when you do it that way, so the 4 or so 64-bit scores must've been done this way.
 > >
 > > > **Nick**
-> > > *fa-clock-o* *time-2011-01-12*
+> > > *fa-regular fa-clock* *time-2011-01-12*
 > > >
 > > > Oh, I wasn't writing my own requests -- I was just reading Facebook's with Firebug.
 > > > As far as I know, that's the only way to find the profile id's of the high scorers.

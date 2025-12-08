@@ -2,10 +2,10 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2016-09-10*
-*fa-user* Tavian Barnes
-[*fa-github* GitHub](https://github.com/tavianator/bfs)
-[Part 2 *fa-chevron-circle-right*](../2017/bfs_2.md)
+*fa-regular fa-clock* *time-2016-09-10*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-github* GitHub](https://github.com/tavianator/bfs)
+[Part 2 *fa-solid fa-circle-chevron-right*](../2017/bfs_2.md)
 
 </div>
 

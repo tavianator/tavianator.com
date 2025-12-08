@@ -4,9 +4,9 @@
 
 <div class="infobar">
 
-*fa-clock-o* *time-2020-05-03*
-*fa-user* Tavian Barnes
-[*fa-reddit* Reddit](https://www.reddit.com/r/rust/comments/gctk67/porting_kd_forests_to_rust/)
+*fa-regular fa-clock* *time-2020-05-03*
+*fa-solid fa-user* Tavian Barnes
+[*fa-brands fa-reddit* Reddit](https://www.reddit.com/r/rust/comments/gctk67/porting_kd_forests_to_rust/)
 
 </div>
 
