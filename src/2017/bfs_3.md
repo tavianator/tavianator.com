@@ -111,7 +111,7 @@ struct expr *optimize_not_expr(struct expr *expr) {
 		...
 ```
 
-Some tempting optimizations like `$(A \mathbin{\texttt{-and}} \texttt{-false}) \iff \texttt{-false}$` are not actually valid unless we know that `$A$` has no side effects. The next level is responsible for that kind of optimization.</p>
+Some tempting optimizations like `$(A \mathbin{\texttt{-and}} \texttt{-false}) \iff \texttt{-false}$` are not actually valid unless we know that `$A$` has no side effects. The next level is responsible for that kind of optimization.
 
 
 ## `-O2`
