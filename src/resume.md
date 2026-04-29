@@ -102,44 +102,53 @@ Software developer interested in low-level, high-performance software across man
     border-bottom: 1px dashed var(--icons);
     border-left: 2px solid var(--fg);
     break-inside: avoid;
-}
-.tli:not(:first-of-type) {
-    padding-top: 1em;
-}
-.tli:last-child {
-    margin-bottom: 1em;
-    @media only print {
-        margin-bottom: 0;
+    &.current {
+        @media not print {
+            background-color: var(--quote-bg);
+            padding-top: 1em;
+            p {
+                margin-right: 1em;
+            }
+        }
     }
-}
-.tli p {
-    margin-top: 0;
-    font-size: smaller;
-}
-.tli .tlh p {
-    font-size: inherit;
-    text-align: left;
-}
-.tli time {
-    position: relative;
-}
-.tli time svg {
-    position: absolute;
-    top: 0;
-    width: 16px;
-    height: 100%;
-    z-index: 1;
-    overflow: visible;
-    left: calc(-1px - var(--pad));
-    line {
-        stroke: var(--fg);
-        stroke-width: 2px;
-        stroke-linecap: round;
+    &:not(:first-of-type) {
+        padding-top: 1em;
     }
-    circle {
-        stroke: var(--fg);
-        stroke-width: 2px;
-        fill: var(--bg);
+    &:last-child {
+        margin-bottom: 1em;
+        @media only print {
+            margin-bottom: 0;
+        }
+    }
+    p {
+        margin-top: 0;
+        font-size: smaller;
+    }
+    .tlh p {
+        font-size: inherit;
+        text-align: left;
+    }
+    time {
+        position: relative;
+        svg {
+            position: absolute;
+            top: 0;
+            width: 16px;
+            height: 100%;
+            z-index: 1;
+            overflow: visible;
+            left: calc(-1px - var(--pad));
+            line {
+                stroke: var(--fg);
+                stroke-width: 2px;
+                stroke-linecap: round;
+            }
+            circle {
+                stroke: var(--fg);
+                stroke-width: 2px;
+                fill: var(--bg);
+            }
+        }
     }
 }
 #skills {
@@ -286,6 +295,7 @@ for (const time of document.querySelectorAll(".tl time")) {
     mask: center/contain no-repeat luminance;
     background: currentColor;
     --shop-logo: url(./resume/shop.svg);
+    --tahoma-logo: url(./resume/tahoma.png);
     --uw-logo: url(./resume/uw.png);
     --msft-logo: url(./resume/msft.svg);
     --maluuba-logo: url(./resume/maluuba.png);
@@ -294,11 +304,15 @@ for (const time of document.querySelectorAll(".tl time")) {
 html.light, html.rust {
     .tli .logo {
         --shop-logo: url(./resume/shop-light.svg);
+        --tahoma-logo: url(./resume/tahoma-light.png);
         --uw-logo: url(./resume/uw-light.png);
         --msft-logo: url(./resume/msft-light.svg);
         --maluuba-logo: url(./resume/maluuba-light.png);
         --uofc-logo: url(./resume/uofc-light.webp);
     }
+}
+#tahoma-logo {
+    mask-image: var(--tahoma-logo);
 }
 #shop-logo {
     mask-image: var(--shop-logo);
@@ -317,7 +331,7 @@ html.light, html.rust {
 }
 </style>
 <div class="tl">
-<div class="tli">
+<div class="tli current">
 
 <div class="logo" id="shop-logo"></div>
 
@@ -331,6 +345,21 @@ html.light, html.rust {
 
 Core contributor to Shopify's AI agent platform that powers [Sidekick](https://www.shopify.com/ca/magic) (Shopify's AI assistant for merchants) and other agentic experiences at Shopify.
 I'm focused on improving the performance, quality, and capabilities of the platform, working at every layer from the language runtime itself to the web server, load balancer, and fine-tuned models, as well as collaborating directly with major LLM vendors.
+
+</div>
+<div class="tli current">
+
+<div class="logo" id="tahoma-logo"></div>
+
+<div class="tlh">
+
+**Strategic Advisor**  
+[Tahoma AI](https://www.tahoma.io/)  
+<time>*2026&ndash;Present*</time>
+
+</div>
+
+Advising Tahoma AI on how to adopt, adapt, and apply frontier AI research into a system that streamlines revenue cycle management.
 
 </div>
 <div class="tli">
