@@ -57,7 +57,9 @@ for await (const file of files) {
 
     // JSDOM doesn't support e.g. nested CSS blocks, so suppress errors
     const virtualConsole = new VirtualConsole();
-    virtualConsole.forwardTo(console, { omitJSDOMErrors: true });
+    virtualConsole.forwardTo(console, {
+        jsdomErrors: ["not-implemented", "resource-loading", "unhandled-exception"],
+    });
 
     const dom = new JSDOM(source, {
         runScripts: "outside-only",
